@@ -181,7 +181,7 @@ var god = new Cocktail("GOD", longdrink, "Ginger Ale", [[1, Oranjebitter.naam], 
 
 var raketje = new Cocktail("Raketje", longdrink, "Fanta", [[1, BacardiRazz.naam]],
 													calcAlcPer(calcAlcVol(BacardiRazz, 1), volLongdrink),
-													calcPriceShot(BacardiRazz, 1) + prijsFrisGroot, null, null);
+													calcPriceShot(BacardiRazz, 1) + prijsFrisGroot, null, "Doe een raket ijsje in het glas voeg vervolgens de ingredienten toe");
 
 var redband = new Cocktail("Redband", social, "Sprite", [[1, Apfelkorn.naam], [1, CremeDeBananes.naam], [1, HagelEnDonder.naam], [1, Ketel1.naam], [1, Passoa.naam], [1, Disaronno.naam]],
 													calcAlcPer(calcAlcVol(Apfelkorn, 1) + calcAlcVol(CremeDeBananes, 1) + calcAlcVol(HagelEnDonder, 1) + calcAlcVol(Ketel1, 1) + calcAlcVol(Passoa, 1) + calcAlcVol(Disaronno,1), volSocial),
@@ -432,9 +432,6 @@ var blackWidowmakerZevensprong = new Cocktail("Black Widowmaker Zevensprong", so
 var destroyer = new Cocktail("Destroyer", social, null, [[1, SmirrnoffVodka.naam], [2, PisangAmbon.naam], [2, BlueCuracao.naam], [5, "Sinasappelsap"]],
 														calcAlcPer(calcAlcVol(SmirrnoffVodka, 1) + calcAlcVol(PisangAmbon, 2) + calcAlcVol(BlueCuracao, 2), 400),
 														calcPriceShot(SmirrnoffVodka, 1) + calcPriceShot(PisangAmbon, 2) + calcPriceShot(BlueCuracao, 2) + prijsFrisKlein, null, null);
-//var blackWidowmaker = new Cocktail("blackWidowmaker", 6, social, cassis)
-
-
 
 //array met alle cocktails
 var cocktailArray = [waternoodsramp, ak47, aquafreshdeo, b52, banaantje, bananenBoner, blackHeaven, blackWidowmakerZevensprong, blauweMeuk, brainexplosion, brainfuck, braveBull, brentSpar, bolkestein, boswachter, caribeanUltimate, chocomania, colaDream, destroyer, dieptebom, dubbelFris,
@@ -443,9 +440,7 @@ var cocktailArray = [waternoodsramp, ak47, aquafreshdeo, b52, banaantje, bananen
 										orgasmotron, pisangAmbier, rainbowWarrior, redband, redDevil, rexona, roelofMetPassie, rood, lustrumbocobaco, silentKiller, smurf, slappeSlet, stoplicht, sunKiller, sweetSurprise, systemShock ,tBeertje,
 										tnt, ubotter, vlaamseKopstoot, vuilverbrander, zonsondergang];
 
-var staticArray = [waternoodsramp, ak47, aquafreshdeo, b52, banaantje, bananenBoner, blackHeaven, blauweMeuk, braveBull, brentSpar, boswachter, caribeanUltimate, chocomania, colaDream, dieptebom, dubbelFris,
-										dubbelfrisss, fireball, froggy, fruitxxl, fryslanBopper, grandCafeMalibu, god, gps, groeneThee, hetzelfdeMaarDanZonderIjs, jcSpecial, jonasmania, kindercola, knipperbol, kutMetPeren, limonade, mijnTelefoon, paarseMoederneuker, raketje,
-										orgasmotron, pisangAmbier, rainbowWarrior, redband, rexona, rood, lustrumbocobaco, smurf, slappeSlet, stoplicht, sweetSurprise, systemShock ,tBeertje, ubotter, vlaamseKopstoot, zonsondergang];
+var staticArray = cocktailArray;
 
 //function die een string returned met het HTML van een cocktail
 function printCocktail(cocktail){
@@ -569,9 +564,8 @@ function randomCocktail(){
 	var randomNumber = Math.floor(Math.random() * cocktailArray.length);
 	document.getElementById('content').innerHTML = "";
 	document.getElementById('content').innerHTML = printCocktail(cocktailArray[randomNumber]);
-
 	document.getElementById('buttons').innerHTML = "<button class='afterclick' onclick='randomCocktail()'> Krijg een random Cocktail </button>" +
-	 																							 "<button class='afterclick' onclick='backToAll()'> Terug naar alle Cocktails </button>";
+	 											   "<button class='afterclick' onclick='backToAll()'> Terug naar alle Cocktails </button>";
 }
 
 //selecteer welk fris en of glas je wilt
@@ -611,7 +605,7 @@ function selectGlas(){
 
 function returnSelected(){
 	var glas = document.getElementById('selectGlas').value;
-  var fris = document.getElementById('selectFris').value;
+  	var fris = document.getElementById('selectFris').value;
 	var glasArray = [];
 	for (var i = 0; i < cocktailArray.length; i++){
 		if (glas == "Alle Glazen" && fris == "Alle Fris"){
@@ -654,6 +648,5 @@ function searchCocktail(array){
 	printToWebpage(searchedArray);
 }
 
-selectGlas();
 printToWebpage(cocktailArray);
 console.log("Leuk dat je de console geopend heb!");
