@@ -56,7 +56,7 @@ var Jagermeister = new Sterk("Jagermeister", 35, 1.60);
 var Jameson = new Sterk("Jameson", 40, 2.00);
 var Kontiki = new Sterk("Kontiki", 24, 1.30);
 var KuyperBessen = new Sterk("Kuyper Bessen", 20, 1.10);
-var KuyperCoconut = new Sterk("Kuyper Coconot", 15, 1.30);
+var KuyperCoconut = new Sterk("Kuyper Coconut", 15, 1.30);
 var Licor43 = new Sterk("Licor43", 31, 1.60);
 var Limoncello = new Sterk("Limoncello", 32, 2.00);
 var Marasquin = new Sterk("Marasquin", 29 , 1.60);
@@ -427,7 +427,7 @@ var roelofMetPassie = new Cocktail("Roelof met passie", social, null, [[2, Passo
 
 var blackWidowmakerZevensprong = new Cocktail("Black Widowmaker Zevensprong", social, null, [[1, "Cassis"], [1, BacardiBlanca.naam], [1, SmirrnoffVodka.naam], [1, BlueCuracao.naam], [1, Coebergh.naam], [1, Jameson.naam], [1, GordonsGin.naam]],
 																	calcAlcPer(calcAlcVol(BacardiBlanca, 1) + calcAlcVol(SmirrnoffVodka, 1) + calcAlcVol(BlueCuracao, 1) + calcAlcVol(Coebergh, 1) + calcAlcVol(Jameson, 1) + calcAlcVol(GordonsGin, 1), 240),
-																	calcPriceShot(BacardiBlanca, 1) + calcPriceShot(SmirrnoffVodka, 1) + calcPriceShot(BlueCuracao, 1) + calcAlcVol(Coebergh, 1) + calcPriceShot(Jameson, 1) + calcPriceShot(GordonsGin, 1) + 0.2 * prijsFrisGroot, null, "Goed Schudden, serveren met 7 rietjes <br> Brancars klaarhouden");
+																	calcPriceShot(BacardiBlanca, 1) + calcPriceShot(SmirrnoffVodka, 1) + calcPriceShot(BlueCuracao, 1) + calcAlcVol(Coebergh, 1) + calcPriceShot(Jameson, 1) + calcPriceShot(GordonsGin, 1) + 0.2 * prijsFrisGroot, null, "Goed Schudden, serveren met 7 rietjes <br> Brancards klaarhouden");
 
 var destroyer = new Cocktail("Destroyer", social, null, [[1, SmirrnoffVodka.naam], [2, PisangAmbon.naam], [2, BlueCuracao.naam], [5, "Sinasappelsap"]],
 														calcAlcPer(calcAlcVol(SmirrnoffVodka, 1) + calcAlcVol(PisangAmbon, 2) + calcAlcVol(BlueCuracao, 2), 400),
@@ -473,7 +473,7 @@ function printCocktail(cocktail){
 
 	printString +=
 									"<h3>" + cocktail.alcper + "%Alc</h3>" +
-									"<h3>€" + cocktail.prijs.toFixed(2) + "</h3>";
+									"<h3>€" + cocktail.prijs.toFixed(1) + "0</h3>";
 
 	//Zet de maker erbij al hij die heeft
 	if(cocktail.creator != null){
@@ -522,10 +522,22 @@ function sortAlpha(){
 }
 
 //zorgt voor de interactie op de webpagina
-document.getElementById("selectFris").onclick = function(){selectGlas()};
-document.getElementById("randomCocktail").onclick = function(){randomCocktail()};
-document.getElementById("search").onkeyup = function(){searchCocktail(cocktailArray)};
-document.getElementById("selectGlas").onchange = function(){selectGlas()};
+document.getElementById("selectFris").onclick = function(){
+	selectGlas()
+};
+
+document.getElementById("randomCocktail").onclick = function(){
+	randomCocktail()
+};
+
+document.getElementById("search").onkeyup = function(){
+	searchCocktail(cocktailArray)
+};
+
+document.getElementById("selectGlas").onchange = function(){
+	selectGlas()
+};
+
 document.getElementById("sorteer").onchange = function(){
 	switch(document.getElementById("sorteer").value){
 		case "Alfabetische Volgorde":
