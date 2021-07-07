@@ -5,6 +5,12 @@
 		<meta charset="utf-8">
 		<title> Bolksche Cocktailboek </title>
 		<link rel="shortcut icon" href="https://reserveren.debolk.nl/assets/images/providers/a10a8d79a455bc728dd95ab6b6ea82b9-bolk.png"/>
+		<script src="/script/sterk.js" defer></script>
+		<script src="/script/cocktails.js" defer></script>
+		<script src="/script/functions.js" defer></script>
+		<script src="/script/fris.js" defer></script>
+		<script src="/script/script.js" type="text/javascript" defer> </script>
+		<script src="/script/printCocktails.js" defer></script>
 	</head>
 
 	<body>
@@ -22,33 +28,25 @@
 						<option id="alchighlow"> Alcoholpercentage Hoog -> Laag </option>
 					</select>
 
-				<select id="selectFris">
-					<option selected="selected"> Alle Fris </option>
-					<option> Appelsap </option>
-					<option> Bitter Lemon </option>
-					<option> Cassis </option>
-					<option> Chocomel </option>
-					<option> Cola </option>
-					<option> Fanta </option>
-					<option> Sinasappelsap </option>
-					<option> Sprite </option>
-				</select>
+					<select id="selectFris">
+						
+					</select>
 
-				<select id="selectGlas">
-					<option selected="selected"> Alle Glazen </option>
-					<option id="selectLongdrink"> Longdrink </option>
-					<option id="selectTumbler"> Tumbler </option>
-					<option id="selectSocial"> Social </option>
-				</select>
-			</div>
+					<select id="selectGlas">
+						<option selected="selected"> Alle Glazen </option>
+						<option id="selectLongdrink"> Longdrink </option>
+						<option id="selectTumbler"> Tumbler </option>
+						<option id="selectSocial"> Social </option>
+					</select>
+				</div>
 
-			<div>
-				<input id="search" type="text" placeholder="Zoek een Cocktail"> </input>
-			</div>
+				<div>
+					<input id="search" type="text" placeholder="Zoek een Cocktail"> </input>
+				</div>
+			</div>	
 		</header>
 
 		<div id="content">
 		</div>
 	</body>
-	<script src="script.js" type="text/javascript"> </script>
 </html>
