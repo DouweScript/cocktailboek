@@ -1,16 +1,16 @@
 function printCocktail(cocktail){
-	var printString = "<div class='cocktail'>" +
-											"<h3>" + cocktail.naam + "</h3>" +
-											"<h3>" + cocktail.glass + "</h3>" +
-											"<ul>";
-
+	let printString = `<div class='cocktail'> 
+							<h3> ${cocktail.naam} </h3>
+							<h3> ${cocktail.glass} </h3>
+							<ul>`
+							
 	//loop die het aantal soorten sterk in een cocktail erbij zet
-	for (var i = 0; i < cocktail.spirits.length; i++){
+	for (let i = 0; i < cocktail.spirits.length; i++){
 		if(cocktail.spirits[i][0] <= 1){
-			printString += "<li>" + cocktail.spirits[i][0]+ " Borrel " + cocktail.spirits[i][1] + "</li>";
+			printString += `<li> ${cocktail.spirits[i][0]} Borrel ${cocktail.spirits[i][1]} </li>`
 		}
 		else{
-			printString += "<li>" + cocktail.spirits[i][0]+ " Borrels " + cocktail.spirits[i][1] + "</li>";
+			printString += `<li> ${cocktail.spirits[i][0]} Borrels ${cocktail.spirits[i][1]} </li>`
 		}
 	}
 
@@ -18,62 +18,49 @@ function printCocktail(cocktail){
 
 	//Zet het fris erbij als het het heeft
 	if (cocktail.fris != null){
-		printString += "Aanvullen met " + cocktail.fris;
+		printString += `Aanvullen met ${cocktail.fris}`
 	}
 
 	//Zet de omschrijving er bij als hij die heeft
 	if(cocktail.omschrijving != null){
-		printString += "<p>" + cocktail.omschrijving + "<p>"
+		printString += `<p> ${cocktail.omschrijving} </p>`
 	}
 
-	printString +=
-									"<h3>" + cocktail.alcper + "%Alc</h3>" +
-									"<h3>€" + cocktail.prijs.toFixed(1) + "0</h3>";
-
+	printString += `<h3> ${cocktail.alcper} %Alc</h3>
+					<h3> €${cocktail.prijs.toFixed(1)}0`
+	
 	//Zet de maker erbij al hij die heeft
 	if(cocktail.creator != null){
-		printString += "<p class='creator'> Deze cocktail is gemaakt door: <br>" + cocktail.creator +"</p>";
+		printString += `<p class='creator'> Deze cocktail is gemaakt door: <br> ${cocktail.creator} </p>`
 	}
-	printString += "</div>";
+
+	printString += `</div>`;
 	return printString;
 }
 
 function sortByPrice(){
-	var selectedArray = returnSelected();
-	selectedArray.sort(function(a, b){
-		return b.prijs - a.prijs
-	});
-	printToWebpage(selectedArray);
+	const priceHighToLow = returnSelected().sort((a,b) => (b.prijs - a.prijs))
+	printToWebpage(priceHighToLow)
 }
 
 function sortByAlcLH(){
-	var selectedArray = returnSelected();
-	selectedArray.sort(function(a, b){
-		return a.alcper - b.alcper
-	});
-	printToWebpage(selectedArray);
+	const alcLowToHigh = returnSelected().sort((a,b) => (a.alcper - b.alcper))
+	printToWebpage(alcLowToHigh);
 }
 
 function sortByAlc(){
-	var selectedArray = returnSelected();
-	selectedArray.sort(function(a, b){
-		return b.alcper - a.alcper
-	});
-	printToWebpage(selectedArray);
+	const alcHighToLow = returnSelected().sort((a,b) => (b.alcper - a.alcper))
+	printToWebpage(alcHighToLow)
 }
 
 function sortByPriceLH(){
-	var selectedArray = returnSelected();
-	selectedArray.sort(function(a, b){
-		return a.prijs - b.prijs
-	});
-	printToWebpage(selectedArray);
+	const priceLowToHigh = returnSelected().sort((a,b) => (a.prijs - b.prijs))
+	printToWebpage(priceLowToHigh)
 }
 
 function sortAlpha(){
-	var selectedArray = returnSelected();
-	selectedArray.sort();
-	printToWebpage(selectedArray);
+	const alphabeticOrder = returnSelected().sort()
+	printToWebpage(alphabeticOrder);
 }
 
 //zorgt voor de interactie op de webpagina
@@ -116,7 +103,7 @@ document.getElementById("sorteer").onchange = function(){
 //print alle cocktails op de webpagina
 function printToWebpage(cocktailArray){
 	document.getElementById('content').innerHTML = "";
-	for(var i = 0; i < cocktailArray.length; i++){
+	for(let i = 0; i < cocktailArray.length; i++){
 		document.getElementById('content').innerHTML += printCocktail(cocktailArray[i]);
 	}
 }
@@ -128,7 +115,7 @@ function backToAll(){
 
 //print 1 random cocktail op de webpagina
 function randomCocktail(){
-	var randomNumber = Math.floor(Math.random() * cocktailArray.length);
+	let randomNumber = Math.floor(Math.random() * cocktailArray.length);
 	document.getElementById('content').innerHTML = "";
 	document.getElementById('content').innerHTML = printCocktail(cocktailArray[randomNumber]);
 	document.getElementById('buttons').innerHTML = "<button class='afterclick' onclick='randomCocktail()'> Krijg een random Cocktail </button>" +
@@ -137,14 +124,14 @@ function randomCocktail(){
 
 //selecteer welk fris en of glas je wilt
 function selectGlas(){
-	var glas = document.getElementById('selectGlas').value;
-	var fris = document.getElementById('selectFris').value;
-	var glasArray = [];
+	let glas = document.getElementById('selectGlas').value;
+	let fris = document.getElementById('selectFris').value;
+	let glasArray = [];
 	if (glas == "Alle Glazen" && fris == "Alle Fris"){
 		printToWebpage(cocktailArray);
 	}
 	else{
-		for (var i = 0; i < cocktailArray.length; i++){
+		for (let i = 0; i < cocktailArray.length; i++){
 			if (glas == "Alle Glazen"){
 				if (fris == cocktailArray[i].fris){
 					glasArray.push(cocktailArray[i]);
@@ -171,27 +158,27 @@ function selectGlas(){
 }
 
 function returnSelected(){
-	var glas = document.getElementById('selectGlas').value;
-  	var fris = document.getElementById('selectFris').value;
-	var glasArray = [];
+	let glas = document.getElementById('selectGlas').value;
+  	let fris = document.getElementById('selectFris').value;
+	let glasArray = [];
 	for (var i = 0; i < cocktailArray.length; i++){
-		if (glas == "Alle Glazen" && fris == "Alle Fris"){
+		if (glas === "Alle Glazen" && fris === "Alle Fris"){
 			glasArray.push(cocktailArray[i]);
 		}
-		if (glas == "Alle Glazen"){
-			if (fris == cocktailArray[i].fris){
+		if (glas === "Alle Glazen"){
+			if (fris === cocktailArray[i].fris){
 				glasArray.push(cocktailArray[i]);
 			}
 		}
-		if (fris == "Alle Fris" && cocktailArray[i].glass == glas){
+		if (fris === "Alle Fris" && cocktailArray[i].glass === glas){
 			glasArray.push(cocktailArray[i]);
 		}
 
-		if (fris == cocktailArray[i].fris && glas == cocktailArray[i].glass){
+		if (fris === cocktailArray[i].fris && glas === cocktailArray[i].glass){
 			glasArray.push(cocktailArray[i]);
 		}
 
-		if(glasArray.length ==  0){
+		if(glasArray.length === 0){
 			document.getElementById('content').innerHTML = "";
 			document.getElementById('content').innerHTML = "<h2> Helaas heb ik dit niet gevonden </h2>";
 		}
@@ -201,16 +188,7 @@ function returnSelected(){
 
 //zoekfunctie op naam van de cocktail
 function searchCocktail(array){
-	var input = document.getElementById('search').value;
-	input = input.toString().toLowerCase();
-	var searchedArray = [];
-
-	for (var i = 0; i < array.length; i++){
-		var cocktailnaam = array[i].naam;
-		cocktailnaam = cocktailnaam.toString().toLowerCase();
-		if(cocktailnaam.includes(input)){
-			searchedArray.push(array[i]);
-		}
-	}
+	let input = document.getElementById('search').value.toString().toLowerCase();
+	let searchedArray = array.filter(element => element.naam.toString().toLowerCase().includes(input))
 	printToWebpage(searchedArray);
 }

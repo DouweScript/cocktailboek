@@ -1,5 +1,5 @@
 //array met alle cocktails
-var cocktailArray = [
+let cocktailArray = [
 	waternoodsramp, 
 	ak47, 
 	aquafreshdeo,
@@ -80,7 +80,7 @@ var cocktailArray = [
 	zonsondergang
 ];
 
-var staticArray = cocktailArray;
+const staticArray = cocktailArray;
 
 printToWebpage(cocktailArray);
 console.log("Leuk dat je de console geopend heb!");
