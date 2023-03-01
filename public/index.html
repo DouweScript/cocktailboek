@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="alles" content="yes">
+		<title>Bolksche Cocktailboek</title>
+		<link rel="shortcut icon" href="./assets/bolkvis.png"/>
+	</head>
+
+	<body>
+		<header id="header">
+			<div id="headercontainer">
+				<div id="buttons">
+					<button id="randomCocktail">Krijg een random Cocktail</button>
+					<button id="login" onclick="location.href='/login';">Log In</button>
+					<button id="logout" onclick="location.href='/logout';" style="display:none">Log Out</button>
+					<button id="new" onclick="location.href='/new';" style="display:none">Nieuwe Cocktail</button>
+					<button id="admin" onclick="location.href='/admin';" style="display:none">Admin</button>
+				</div>
+				<br>
+				<div id="selecteer">
+					<select id="sorteer">
+						<option id="alphabet">Alfabetische Volgorde</option>
+						<option id="lowhigh">Prijs Laag -> Hoog</option>
+						<option id="highlow">Prijs Hoog -> Laag</option>
+						<option id="alclowhigh">Alcoholpercentage Laag -> Hoog</option>
+						<option id="alchighlow">Alcoholpercentage Hoog -> Laag</option>
+					</select>
+
+					<select id="selectFris">
+						
+					</select>
+
+					<select id="selectGlas">
+						<option selected="selected"> Alle Glazen </option>
+						<option id="selectLongdrink"> Longdrink </option>
+						<option id="selectTumbler"> Tumbler </option>
+						<option id="selectPapa"> Papa </option>
+						<option id="selectSocial"> Social </option>
+					</select>
+				</div>
+
+				<div>
+					<input id="search" type="text" placeholder="Zoek een Cocktail"> </input>
+				</div>
+			</div>	
+		</header>
+
+		<div id="content">
+		</div>
+
+		<script src="/script/functions.js"> </script>
+		<script src="/script/get_fris.js"> </script>
+		<script src="/script/get_cocktails.js"> </script>
+
+		<script>
+			//test login token
+			let cookie = getCookie("bolk-oath-access-token");
+			if (cookie != null) {
+				let login = document.getElementById("login");
+				login.style.display = "none";
+
+				let logout = document.getElementById("logout");
+				logout.style.display = "inherit";
+
+				let new_cock = document.getElementById("new");
+				new_cock.style.display = "initial";
+
+				//test management
+				//https://login.i.bolkhuis.nl/ictcom/?access_token=example-access-token response should be 200 OK
+				if (true) {
+					let admin = document.getElementById("admin");
+					admin.style.display = "inherit";
+				}
+			}
+		</script>
+	</body>
+</html>

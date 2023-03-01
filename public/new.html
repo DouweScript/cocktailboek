@@ -1,0 +1,90 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="/style_nieuwecocktail.css" rel="stylesheet" type="text/css">
+      <meta charset="utf-8">
+      <title> Bolksche Cocktailboek </title>
+      <link rel="shortcut icon" href="./assets/bolkvis.png"/>
+    </head>
+
+    <header id="header">
+      <div id="headercontainer">
+        <div id="buttons">
+          <button id="terug">Terug</button><br>
+        </div>
+      </div>
+    </header>
+
+    <body>
+    <form action="/new" method="POST">
+      <fieldset>
+          <div class="field">
+            <h3>Nieuwe cocktail</h3>
+          </div>
+
+          <div class="field">
+              <label for="naam">Naam:</label>
+              <input type="text" name="naam" id="naam" required>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="selectGlas">Glas:</label>
+              <select name="selectGlas" id="selectGlas" required>
+                <option name="longdrink">Longdrink</option>
+                <option name="tumbler">Tumbler</option>
+                <option name="papa">Papa</option>
+                <option name="social">Social</option>
+              </select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="omschrijving">Omschrijving:</label>
+              <textarea name="omschrijving" id="omschrijving" rows="4" cols="30"></textarea>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="creator">Maker:</label>
+              <input type="text" name="creator" id="creator">
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="selectDrank" id="drankLabel">Drank:</label>
+              <select name="selectDrank" id="selectDrank" multiple></select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <div name="drankHoeveel" id="drankHoeveel" style="display:none">
+                  <label>Hoeveel drank?</label>
+              <br><br>
+              </div>
+          </div>
+
+          <div class="field">
+              <label for="selectFris">Fris:</label>
+              <select name="selectFris" id="selectFris" multiple></select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <div name="frisHoeveel" id="frisHoeveel" style="display:none">
+                  <label>Hoeveel fris?</label>
+              <br><br>
+              </div>
+          </div>
+
+          <button type="reset" id="reset">Reset</button>
+          <button type="submit" id="submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <script src="./script/get_fris.js"> </script>
+    <script src="./script/get_drank.js"> </script>
+    <script src="./script/nieuwecocktail_functions.js"></script>
+
+    </body>
+</html>

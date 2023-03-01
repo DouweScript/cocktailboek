@@ -1,0 +1,36 @@
+{
+  "name": "neuedelft",
+  "version": "1.0.0",
+  "description": "Bolsche cocktailboek maar dan online",
+  "main": "app.js",
+  "nodemonConfig": {
+    "ignore": [
+      "assets/*"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouweScript/cocktailboek.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DouweScript/cocktailboek/issues"
+  },
+  "homepage": "https://github.com/DouweScript/cocktailboek#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "keywords": []
+}

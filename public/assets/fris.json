@@ -1,0 +1,30 @@
+{
+	"appelsap": {
+		"naam": "Appelsap",
+		"prijs": 0.80
+	},
+	"bitter lemon": {
+		"naam": "Bitter Lemon",
+		"prijs": 0.80
+	},
+	"chocomel": {
+		"naam": "Chocomel",
+		"prijs": 0.80
+	},
+	"cola": {
+		"naam": "Cola",
+		"prijs": 0.80
+	},
+	"fanta": {
+		"naam": "Fanta",
+		"prijs": 0.80
+	},
+	"sinaasappelsap": {
+		"naam": "Sinaasappelsap",
+		"prijs": 0.80
+	},
+	"sprite": {
+		"naam": "Sprite",
+		"prijs": 0.80
+	}
+}
