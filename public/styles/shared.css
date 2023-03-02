@@ -1,0 +1,78 @@
+body {
+    font-family: 'Open sans';
+    text-align: center;
+    background-image: url("/assets/achtergrond.png");
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+p{
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button{
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    border-radius: 6px;
+    background-color: #80090C;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin: 4px;
+}
+
+header{
+    background-color: #CB2821;
+    width: 100%;
+    display: inline-block;
+}
+
+button:hover{
+    background-color: #CB2821;
+    transform: scale(1.02);
+}
+
+/* Desktop Scherm*/
+@media screen and (min-width: 1000px){
+
+    header{
+        height: 108px;
+    }
+
+    button{
+        float: left;
+        height: 100px;
+        width: 200px;
+    }
+}
+
+
+/* Tablet Scherm */
+@media screen and (min-width: 760px) and (max-width: 1000px){
+    header{
+        height: 108px;
+    }
+
+    button{
+        height: 100px;
+        width: 200px;
+    }
+}
+
+
+/* Telefoon Scherm*/
+@media screen and (max-width: 760px){
+    button{
+        height: 50px;
+        width: 35vw;
+    }
+
+    header{
+        height: 108px;
+    }
+}

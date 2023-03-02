@@ -1,13 +1,3 @@
-body{
-	font-family: 'Open sans';
-	text-align: center;
-	background-image: url("./assets/achtergrond.png");
-	margin: 0;
-	height: 100%;
-	width: 100%;
-}
-
-
 ul{
 	text-align: left;
 }
@@ -23,29 +13,10 @@ p{
 	padding: 0;
 }
 
-button{
-	font-weight: bold;
-	text-align: center;
-	color: white;
-	font-weight: 500;
-	font-family: "Roboto", sans-serif;
-	font-size: 20px;
-	border-radius: 6px;
-	background-color: #80090C;
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-	margin: 4px;
-}
-
 #content{
 	display: flex;
 	justify-content: center;
 	flex-flow: wrap;
-}
-
-#header{
-	background-color: #CB2821;
-	height: 108px;
-	width: 100%;
 }
 
 .cocktail{
@@ -74,17 +45,6 @@ button{
 		margin-left: 20px;
 	}
 
-	header{
-		height: 100px;
-		display:inline-block;
-	}
-
-	button{
-		float: left;
-		height: 100px;
-		width: 200px;
-	}
-
 	select{
 		float: left;
 		margin-left: 2%;
@@ -102,11 +62,6 @@ button{
 		border-radius: 2%;
 		height: 50%;
 		width: 20%;
-	}
-
-	button:hover{
-		background-color: #CB2821;
-		transform: scale(1.1);
 	}
 }
 
@@ -129,22 +84,9 @@ button{
 		margin-left: 20px;
 	}
 
-	header{
-		height: 220px;
-		display: inline-block;
-	}
-
 	#selecteer{
 		margin-left: 5%;
 		margin-right: 5%;
-	}
-
-	button{
-		margin: 10px;
-		height: 100px;
-		width: 84%;
-		margin-left: 8%;
-		margin-right: 8%;
 	}
 
 	.afterclick{
@@ -174,24 +116,11 @@ button{
 		margin-left: 8%;
 		margin-right: 8%;
 	}
-
-	button:hover{
-		background-color: #CB2821;
-		transform: scale(1.1);
-	}
 }
 
 
 /* Telefoon Scherm*/
 @media screen and (max-width: 760px){
-	button{
-		font-size: 30px;
-		margin-top: 2%;
-		margin-bottom: 2%;
-		min-height: 100px;
-		width: 82%;
-	}
-
 	.afterclick{
 		height: 100px;
 		float: center;
@@ -211,10 +140,6 @@ button{
 		margin: 5px;
 		content: "\A";
 		white-space: pre-line;
-	}
-
-	header{
-		height: 220px;
 	}
 
 	input{
