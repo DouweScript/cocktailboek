@@ -95,8 +95,8 @@ textarea{
 
 	.hoeveelheid {
 		float: right;
-		width: calc(30% - 4px);
-		margin-right: 4px;
+		width: calc(30% - 2px);
+		margin-left: 4px;
 	}
 
 	multi-input{

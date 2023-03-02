@@ -1,21 +1,17 @@
-function 
-
-window.onmousedown = function (e) {
+function selectEasy(e) {
     let el = e.target;
-    if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
+    if (el.tagName.toLowerCase() == "option" && el.parentNode.hasAttribute("multiple")) {
         e.preventDefault();
 
         // toggle selection
         if (el.hasAttribute('selected')) el.removeAttribute('selected');
         else el.setAttribute('selected', '');
 
-        // hack to correct buggy behavior
-        let select = el.parentNode.cloneNode(true);
-        el.parentNode.parentNode.replaceChild(select, el.parentNode);
-
         if (el.parentNode.name == "selectDrank" || el.parentNode.name == "selectFris") {
 
             let type = el.parentNode.name.replace("select", "").toLowerCase();
+
+            let xHoeveel = document.getElementById(type + "Hoeveel");
 
             for (let i = 0; i < el.parentNode.childElementCount; i++) {
 
@@ -35,8 +31,33 @@ window.onmousedown = function (e) {
                     input.name = "selectN" + ele.innerHTML.replaceAll(" ", "_");
                     input.required = true;
                     label.innerHTML = ele.innerHTML;
+                    label.style.marginLeft = '1%';
                     select.name = "selectType" + ele.innerHTML.replaceAll(" ", "_");
                     select.className = "hoeveelheid";
+                    select.onchange = function(e) {
+                        if (select.selectedIndex == 2){
+                            xHoeveel.setAttribute("aanvullen", select.name);
+                            select.style.width = "60%";
+                            input.style.display = "none";
+                            input.required = false;
+                        } else if (xHoeveel.hasAttribute("aanvullen")
+                            && xHoeveel.getAttribute("aanvullen") == select.name) {
+                            xHoeveel.removeAttribute("aanvullen");
+                            select.style.width = "initial";
+                            input.style.display = "initial";
+                            input.required = true;
+                        }
+                    };
+                    select.onmousedown = function() {
+                        if (xHoeveel.hasAttribute("aanvullen")
+                            && xHoeveel.getAttribute("aanvullen") != select.name
+                            && select.children.length == 3) {
+                            select.removeChild(aanvullen);
+                        } else if (!xHoeveel.hasAttribute("aanvullen")
+                            && select.children.length < 3) {
+                            select.appendChild(aanvullen);
+                        }
+                    }
                     shot.innerHTML = "shot";
                     glas.innerHTML = "glas";
                     aanvullen.name = "aanvullen";
@@ -49,37 +70,17 @@ window.onmousedown = function (e) {
                     div.appendChild(document.createElement("br"))
                     div.appendChild(document.createElement("br"))
                     div.id = ele.innerHTML.replaceAll(" ", "_");
-                    div.className = "field";
 
-                    let xHoeveel = document.getElementById(type + "Hoeveel");
                     xHoeveel.appendChild(div);
                     if (xHoeveel.style.display = "none") xHoeveel.style.display = "initial";
 
                 } else if (child != null && !ele.hasAttribute("selected")) {
-                    let xHoeveel = document.getElementById(type + "Hoeveel");
                     xHoeveel.removeChild(child);
                     if (xHoeveel.childElementCount <= 3) xHoeveel.style.display = "none";
-
-
                 }
             }
         }
-    } else if (el.tagName.toLowerCase() == 'select' && el.classList.contains("hoeveelheid")) {
-        if (isOptionSelected(el) && el.children.length == 3) {
-            el.removeChild(el.lastChild);
-        }
-    }
-}
-
-function isOptionSelected(node){
-    for (let x = 0; x < node.parentNode.parentNode.children.length; x++) {
-        let n = node.parentNode.parentNode.children.item(x);
-        for (let y = 0; y < n.children.length; y++) {
-            let s = n.children.item(y);
-            if (s.tagName.toLowerCase() == "select" && s.selectedIndex == 2) {
-                    return true;
-            }
-        }
+        return true;
     }
     return false;
 }

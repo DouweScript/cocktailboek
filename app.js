@@ -6,8 +6,8 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 //laad cocktails
-const sterk = require("/script/drank");
-const cocktails = require("/script/cocktails");
+const sterk = require("./script/drank");
+const cocktails = require("./script/cocktails");
 
 const app = express();
 
@@ -27,9 +27,13 @@ app.post("/new", (req, res) => {
     res.send("ok");
 });
 app.get("/login", (req, res) => {
-    res.setHeader("Set-Cookie", 'bolk-oath-access-token=true');
+    res.cookie('bolk-oath-access-token', 'true')
     res.redirect("/");
 });
+app.get("/logout", (req, res) => {
+    res.clearCookie("bolk-oath-access-token");
+    res.redirect("/");
+})
 
 
 app.listen(3000)
