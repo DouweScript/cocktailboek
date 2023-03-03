@@ -10,7 +10,8 @@ rawFile.onreadystatechange = function() {
         cocktailKeys = Object.keys(cocktailDB);
     }
 }
-rawFile.send(null);
 
+rawFile.send(null);
 printToWebpage(cocktailDB);
+
 console.log("Leuk dat je de console geopend heb!");

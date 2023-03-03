@@ -59,9 +59,11 @@ function selectEasy(e) {
                         }
                     }
                     shot.innerHTML = "shot";
+                    shot.name = "shot";
                     glas.innerHTML = "glas";
+                    glas.name = "glas";
                     aanvullen.name = "aanvullen";
-                    aanvullen.innerHTML = "met dit aanvullen";
+                    aanvullen.innerHTML = "aanvullen";
                     select.append(shot, glas, aanvullen);
 
                     div.appendChild(label);
@@ -83,4 +85,25 @@ function selectEasy(e) {
         return true;
     }
     return false;
+}
+
+function reset() {
+    document.getElementById("drankHoeveel").innerHTML = "";
+    document.getElementById("frisHoeveel").innerHTML = "";
+
+    let selectDrank = document.getElementById("selectDrank");
+    for (let i = 0; i < selectDrank.children.length; i++) {
+        let child = selectDrank.children.item(i);
+        if (child.hasAttribute("selected")) {
+            child.removeAttribute("selected");
+        }
+    }
+
+    let selectFris = document.getElementById("selectFris");
+    for (let i = 0; i < selectFris.children.length; i++) {
+        let child = selectFris.children.item(i);
+        if (child.hasAttribute("selected")) {
+            child.removeAttribute("selected");
+        }
+    }
 }

@@ -197,7 +197,3 @@ function getCookie(name) {
     //return unescape(dc.substring(begin + prefix.length, end));
     return decodeURI(dc.substring(begin + prefix.length, end));
 }
-
-function setCookie(name, value) {
-
-}

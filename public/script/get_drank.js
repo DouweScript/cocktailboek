@@ -1,19 +1,18 @@
-let rawFile = new XMLHttpRequest();
+let get_drank = new XMLHttpRequest();
 let drankDB = {};
 
-rawFile.open("GET", "./assets/drank.json", false);
-rawFile.onreadystatechange = function() {
-    if (rawFile.readyState == 4 && rawFile.status == 200 || rawFile.status == 0){
-        let jsonString = rawFile.responseText;
+get_drank.open("GET", "./assets/drank.json", false);
+get_drank.onreadystatechange = function() {
+    if (get_drank.readyState == 4 && get_drank.status == 200 || get_drank.status == 0){
+        let jsonString = get_drank.responseText;
         drankDB = JSON.parse(jsonString);
     }
 }
-rawFile.send(null);
+get_drank.send(null);
 
-//let optionsDrank = "";
-var select = document.getElementById('selectDrank');
+let select = document.getElementById('selectDrank');
+
 for (let key in drankDB) {
-    //optionsDrank += `<option name="${key}">${drankDB[key].naam}</option>\n`;
     let opt = document.createElement('option');
     opt.innerHTML = drankDB[key].naam
     select.appendChild(opt);

@@ -1,30 +1,37 @@
 {
 	"appelsap": {
 		"naam": "Appelsap",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
-	"bitter lemon": {
+	"bitter_lemon": {
 		"naam": "Bitter Lemon",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
 	"chocomel": {
 		"naam": "Chocomel",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
 	"cola": {
 		"naam": "Cola",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
 	"fanta": {
 		"naam": "Fanta",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
 	"sinaasappelsap": {
 		"naam": "Sinaasappelsap",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	},
 	"sprite": {
 		"naam": "Sprite",
-		"prijs": 0.80
+		"price": 0.80,
+		"vol": 250
 	}
 }

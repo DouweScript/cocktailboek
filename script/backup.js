@@ -1,67 +1,78 @@
-//lijst aan sterke drank van de soos
-const Apfelkorn = new Sterk("Apfelkorn", 14.5, 1.10);
-const AppleSour = new Sterk("Apple Sour", 17, 1.10);
-const BacardiBlack = new Sterk("Bacardi Black", 38, 1.60);
-const BacardiBlanca = new Sterk("Bacardi Blanca", 37.5, 1.60);
-const BacardiLemon = new Sterk("Bacardi Lemon", 32, 1.60);
-const BacardiRazz = new Sterk("Bacardi Razz", 32, 1.60);
-const Baileys  = new Sterk("Baileys", 17, 1.60);
-const Beerenburg = new Sterk("Beerenburg", 35, 1.10);
-const Blueberry = new Sterk("Blueberry", 17, 1.30);
-const BlueCuracao = new Sterk("Blue Curacao", 14.5, 1.10);
-const CafeMarakesh = new Sterk("Cafe Marakesh", 23, 1.30);
-const Coebergh = new Sterk("Coebergh", 14.5, 1.10);
-const CognacChateau = new Sterk("Cognac Chateau", 40, 2.30);
-const CognacRemyMartin = new Sterk("Cognac Remy Martin", 40, 3.00);
-const Cointreau = new Sterk("Cointreau", 40, 2.00);
-const CremeDeBananes  = new Sterk("Creme De Bananes", 15, 1.30);
-const CremeDeCassis = new Sterk("Creme De Cassis", 17, 1.10);
-const Disaronno = new Sterk("Disaronno", 28, 1.60);
-const Dommelsch = new Sterk("Dommelsch", 5, 1.00);
-const Dropshot = new Sterk("Dropshot", 20, 1.10);
-const GinBulldog = new Sterk("Gin Bulldog", 40, 3.00);
-const GinSylvius = new Sterk("Gin Sylvius", 45, 3.00);
-const GinTanqueray = new Sterk("Gin Tanqueray", 45.7, 2.00);
-const Goldstrike = new Sterk("Goldstrike", 50, 2.00);
-const GordonsGin = new Sterk("Gordons Gin", 37.5, 1.60);
-const GrandManier = new Sterk("Grand Manier", 40, 2.30);
-const HagelEnDonder = new Sterk("Hagel en Donder", 25, 1.30);
-const Hoegaarden = new Sterk("Hoegaarden", 5, 1.50);
-const Ketel1 = new Sterk("Ketel1", 35, 1.10);
-const Jagermeister = new Sterk("Jagermeister", 35, 1.60);
-const Jameson = new Sterk("Jameson", 40, 2.00);
-const Kontiki = new Sterk("Kontiki", 24, 1.30);
-const KuyperBessen = new Sterk("Kuyper Bessen", 20, 1.10);
-const KuyperCoconut = new Sterk("Kuyper Coconut", 15, 1.30);
-const Licor43 = new Sterk("Licor43", 31, 1.60);
-const Limoncello = new Sterk("Limoncello", 32, 2.00);
-const Marasquin = new Sterk("Marasquin", 29 , 1.60);
-const MartiniRosso = new Sterk("Martini Rosso", 15, 1.10);
-const Malibu = new Sterk("Malibu", 21, 1.30);
-const MispelbloemBrandewijn = new Sterk("Mispelbloem Brandewijn", 35, 1.30);
-const Oranjebitter = new Sterk("Oranjebitter", 30, 1.30);
-const Ouzo = new Sterk("Ouzo", 38, 1.30);
-const Passoa = new Sterk("Passoa", 14.9, 1.10);
-const PeachTree = new Sterk("Peach Tree", 20, 1.30);
-const Pernod = new Sterk("Pernod", 40, 1.60);
-const PinaColada = new Sterk("Pina Coloda", 15, 1.10);
-const PisangAmbon = new Sterk("Pisang Ambon", 21, 1.30);
-const PuschkinBlack = new Sterk("Puschkin Black", 16.6, 1.10);
-const Safari = new Sterk("Safari", 20, 1.30);
-const Sambuca  = new Sterk("Sambuca", 38, 1.60);
-const Schelvispekel = new Sterk("Schelvispekel", 35, 1.10);
-const Sippersbitter = new Sterk("Sippersbitter", 30, 1.10);
-const Sperma = new Sterk("Sperma", 15, 1.30);
-const SmirrnoffVodka = new Sterk("Smirrnoff Vodka", 37.5, 1.30);
-const Stroh80 = new Sterk("Stroh 80", 80,  3.00);
-const Tequila = new Sterk("Tequila", 38, 2.00);
-const TiaMaria = new Sterk("Tia Maria", 20, 1.60);
-const VodkaRood = new Sterk("Vodka Rood", 18, 1.10);
-const Vieux = new Sterk("Vieux", 35, 1.10);
-const Wortegemse = new Sterk("Wortegemse", 24.2, 1.10);
+const drankJS = require("./drank");
+const Drank = drankJS.Drank;
+const Fris = drankJS.Fris;
+let {drankDB} = drankJS.drankDB;
+let {frisDB} = drankJS.frisDB;
 
+drankDB = {};
+frisDB = {};
+
+//lijst aan sterke drank van de soos
+const Apfelkorn = new Drank("Apfelkorn", 14.5, 1.10, 40);
+const AppleSour = new Drank("Apple Sour", 17, 1.10, 40);
+const BacardiBlack = new Drank("Bacardi Black", 38, 1.60, 40);
+const BacardiBlanca = new Drank("Bacardi Blanca", 37.5, 1.60, 40);
+const BacardiLemon = new Drank("Bacardi Lemon", 32, 1.60, 40);
+const BacardiRazz = new Drank("Bacardi Razz", 32, 1.60, 40);
+const Baileys  = new Drank("Baileys", 17, 1.60, 40);
+const Beerenburg = new Drank("Beerenburg", 35, 1.10, 40);
+const Blueberry = new Drank("Blueberry", 17, 1.30, 40);
+const BlueCuracao = new Drank("Blue Curacao", 14.5, 1.10, 40);
+const CafeMarakesh = new Drank("Cafe Marakesh", 23, 1.30, 40);
+const Coebergh = new Drank("Coebergh", 14.5, 1.10, 40);
+const CognacChateau = new Drank("Cognac Chateau", 40, 2.30, 40);
+const CognacRemyMartin = new Drank("Cognac Remy Martin", 40, 3.00, 40);
+const Cointreau = new Drank("Cointreau", 40, 2.00, 40);
+const CremeDeBananes  = new Drank("Creme De Bananes", 15, 1.30, 40);
+const CremeDeCassis = new Drank("Creme De Cassis", 17, 1.10, 40);
+const Disaronno = new Drank("Disaronno", 28, 1.60, 40);
+const Dommelsch = new Drank("Dommelsch", 5, 1.00, 250);
+const Dropshot = new Drank("Dropshot", 20, 1.10, 40);
+const GinBulldog = new Drank("Gin Bulldog", 40, 3.00, 40);
+const GinSylvius = new Drank("Gin Sylvius", 45, 3.00, 40);
+const GinTanqueray = new Drank("Gin Tanqueray", 45.7, 2.00, 40);
+const Goldstrike = new Drank("Goldstrike", 50, 2.00, 40);
+const GordonsGin = new Drank("Gordons Gin", 37.5, 1.60, 40);
+const GrandManier = new Drank("Grand Manier", 40, 2.30, 40);
+const HagelEnDonder = new Drank("Hagel en Donder", 25, 1.30, 40);
+const Hoegaarden = new Drank("Hoegaarden", 5, 1.50, 40);
+const Ketel1 = new Drank("Ketel1", 35, 1.10, 40);
+const Jagermeister = new Drank("Jagermeister", 35, 1.60, 40);
+const Jameson = new Drank("Jameson", 40, 2.00, 40);
+const Kontiki = new Drank("Kontiki", 24, 1.30, 40);
+const KuyperBessen = new Drank("Kuyper Bessen", 20, 1.10, 40);
+const KuyperCoconut = new Drank("Kuyper Coconut", 15, 1.30, 40);
+const Licor43 = new Drank("Licor43", 31, 1.60, 40);
+const Limoncello = new Drank("Limoncello", 32, 2.00, 40);
+const Marasquin = new Drank("Marasquin", 29 , 1.60, 40);
+const MartiniRosso = new Drank("Martini Rosso", 15, 1.10, 40);
+const Malibu = new Drank("Malibu", 21, 1.30, 40);
+const MispelbloemBrandewijn = new Drank("Mispelbloem Brandewijn", 35, 1.30, 40);
+const Oranjebitter = new Drank("Oranjebitter", 30, 1.30, 40);
+const Ouzo = new Drank("Ouzo", 38, 1.30, 40);
+const Passoa = new Drank("Passoa", 14.9, 1.10, 40);
+const PeachTree = new Drank("Peach Tree", 20, 1.30, 40);
+const Pernod = new Drank("Pernod", 40, 1.60, 40);
+const PinaColada = new Drank("Pina Coloda", 15, 1.10, 40);
+const PisangAmbon = new Drank("Pisang Ambon", 21, 1.30, 40);
+const PuschkinBlack = new Drank("Puschkin Black", 16.6, 1.10, 40);
+const Safari = new Drank("Safari", 20, 1.30, 40);
+const Sambuca  = new Drank("Sambuca", 38, 1.60, 40);
+const Schelvispekel = new Drank("Schelvispekel", 35, 1.10, 40);
+const Sippersbitter = new Drank("Sippersbitter", 30, 1.10, 40);
+const Sperma = new Drank("Sperma", 15, 1.30, 40);
+const SmirrnoffVodka = new Drank("Smirrnoff Vodka", 37.5, 1.30, 40);
+const Stroh80 = new Drank("Stroh 80", 80,  3.00, 40);
+const Tequila = new Drank("Tequila", 38, 2.00, 40);
+const TiaMaria = new Drank("Tia Maria", 20, 1.60, 40);
+const VodkaRood = new Drank("Vodka Rood", 18, 1.10, 40);
+const Vieux = new Drank("Vieux", 35, 1.10, 40);
+const Wortegemse = new Drank("Wortegemse", 24.2, 1.10, 40);
+
+drankJS.databaseWriter("drank");
 
 //lijst van cocktails uit het cocktailboek
+/*
 const bananenBoner = new Cocktail("Bananenboner", longdrink, "Bananensap", [[1, Blueberry.naam], [1, Passoa.naam]],
     calcAlcPer(calcAlcVol(Blueberry, 1) + calcAlcVol(Passoa, 1), volLongdrink),
     (prijsFrisKlein + calcPriceShot(Blueberry, 1) + calcPriceShot(Passoa, 1)), "Bruno", null);
@@ -379,3 +390,4 @@ const destroyer = new Cocktail("Destroyer", social, null, [[1, SmirrnoffVodka.na
     calcPriceShot(SmirrnoffVodka, 1) + calcPriceShot(PisangAmbon, 2) + calcPriceShot(BlueCuracao, 2) + prijsFrisKlein, null, null);
 
 const natteOlijf = new Cocktail("Natte Olijf", shot, null, [[1, "Olijf"], [1, "Water"]], 0, 0, null, null);
+*/

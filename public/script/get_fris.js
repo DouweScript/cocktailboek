@@ -10,10 +10,9 @@ get_fris.onreadystatechange = function() {
 }
 get_fris.send(null);
 
-//let optionsDrank = "";
-var select = document.getElementById('selectFris');
+let select = document.getElementById('selectFris');
+
 for (let key in frisDB) {
-    //optionsDrank += `<option name="${key}">${drankDB[key].naam}</option>\n`;
     let opt = document.createElement('option');
     opt.innerHTML = frisDB[key].naam
     select.appendChild(opt);

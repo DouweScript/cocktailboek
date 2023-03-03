@@ -33,7 +33,7 @@
 		"creator": "Bruno",
 		"omschrijving": null
 	},
-	"dubbel fris": {
+	"dubbel_fris": {
 		"naam": "Dubbel Fris",
 		"glass": "Social",
 		"fris": "Sprite",
@@ -56,7 +56,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"paarse moederneuker": {
+	"paarse_moederneuker": {
 		"naam": "Paarse moederneuker",
 		"glass": "Longdrink",
 		"fris": "Cassis",
@@ -110,7 +110,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"brave bull": {
+	"brave_bull": {
 		"naam": "Brave bull",
 		"glass": "Tumbler",
 		"fris": "ijsblokjes",
@@ -175,7 +175,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"black heaven": {
+	"black_heaven": {
 		"naam": "Black Heaven",
 		"glass": "Shot",
 		"fris": null,
@@ -194,7 +194,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"slappe slet": {
+	"slappe_slet": {
 		"naam": "Slappe Slet",
 		"glass": "Longdrink",
 		"fris": "Sprite",
@@ -236,7 +236,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"caribean ultimate": {
+	"caribean_ultimate": {
 		"naam": "Caribean Ultimate",
 		"glass": "Tumbler",
 		"fris": "Sinaasappelsap",
@@ -309,7 +309,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"grand cafe malibu": {
+	"grand_cafe_malibu": {
 		"naam": "Grand Cafe Malibu",
 		"glass": "Longdrink",
 		"fris": "Chocomel",
@@ -462,7 +462,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"aqua-fresh deo": {
+	"aqua-fresh_deo": {
 		"naam": "Aqua-fresh Deo",
 		"glass": "Longdrink",
 		"fris": "Sinaas",
@@ -504,7 +504,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"blauwe meuk": {
+	"blauwe_meuk": {
 		"naam": "Blauwe Meuk",
 		"glass": "Longdrink",
 		"fris": "Sprite",
@@ -599,7 +599,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"fruit xxl": {
+	"fruit_xxl": {
 		"naam": "Fruit XXL",
 		"glass": "Longdrink",
 		"fris": "Appelsap",
@@ -622,7 +622,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"groene thee": {
+	"groene_thee": {
 		"naam": "Groene Thee",
 		"glass": "Longdrink",
 		"fris": "Ice Tea",
@@ -637,7 +637,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"hetzelfde, maar dan zonder ijs!": {
+	"hetzelfde,_maar_dan_zonder_ijs!": {
 		"naam": "Hetzelfde, maar dan zonder ijs!",
 		"glass": "Longdrink",
 		"fris": "Chocomel",
@@ -660,7 +660,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"j.c. special": {
+	"j.c._special": {
 		"naam": "J.C. Special",
 		"glass": "Longdrink",
 		"fris": "Sprite",
@@ -797,7 +797,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"mijn telefoon": {
+	"mijn_telefoon": {
 		"naam": "Mijn Telefoon",
 		"glass": "Longdrink",
 		"fris": "Ginger Ale",
@@ -843,7 +843,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"pisang ambier": {
+	"pisang_ambier": {
 		"naam": "Pisang Ambier",
 		"glass": "Longdrink",
 		"fris": "Bier",
@@ -858,7 +858,7 @@
 		"creator": null,
 		"omschrijving": "Serveren met een schuimbanaantje"
 	},
-	"rainbow warrio": {
+	"rainbow_warrio": {
 		"naam": "Rainbow Warrio",
 		"glass": "Longdrink",
 		"fris": "Sinaasappelsap",
@@ -885,7 +885,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"vlaamse kopstoot": {
+	"vlaamse_kopstoot": {
 		"naam": "Vlaamse Kopstoot",
 		"glass": "Hoegaarden glas",
 		"fris": "Hoegaarden",
@@ -946,7 +946,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"sweet surprise": {
+	"sweet_surprise": {
 		"naam": "Sweet Surprise",
 		"glass": "Longdrink",
 		"fris": "Chocomel",
@@ -969,7 +969,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"system shock": {
+	"system_shock": {
 		"naam": "System Shock",
 		"glass": "Longdrink",
 		"fris": "Tonic",
@@ -1018,7 +1018,7 @@
 		"creator": null,
 		"omschrijving": "Serveren met suikerrandje en schijfje citroen"
 	},
-	"brent spar": {
+	"brent_spar": {
 		"naam": "Brent Spar",
 		"glass": "Tumbler",
 		"fris": "Bitter Lemon",
@@ -1037,7 +1037,7 @@
 		"creator": null,
 		"omschrijving": "Afzinken in tumbler zodat het borrelglaasje net onder water staat"
 	},
-	"cola dream": {
+	"cola_dream": {
 		"naam": "Cola Dream",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1056,7 +1056,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"fryslan bopper": {
+	"fryslan_bopper": {
 		"naam": "Fryslan Bopper",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1079,7 +1079,7 @@
 		"creator": null,
 		"omschrijving": "Zet een tumbler die een beetje nat is in de vriezer. Laat deze 1 uur staan. Maak de cocktail al van te voren klaar in een borrelglas. Dien de cocktail op als er sterke zeilverhalen aan de bar worden verteld, in het ingevroren glas"
 	},
-	"de g.p.s.": {
+	"de_g.p.s.": {
 		"naam": "De G.P.S.",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1102,7 +1102,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"ineke's wraak": {
+	"ineke's_wraak": {
 		"naam": "Ineke's Wraak",
 		"glass": "Tumbler",
 		"fris": "Scheutje Grand Manier",
@@ -1121,7 +1121,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"de kater": {
+	"de_kater": {
 		"naam": "De Kater",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1144,7 +1144,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"de kitten": {
+	"de_kitten": {
 		"naam": "De Kitten",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1167,7 +1167,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"lemon with a bite": {
+	"lemon_with_a_bite": {
 		"naam": "Lemon with a bite",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1213,7 +1213,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"lu miniscent": {
+	"lu_miniscent": {
 		"naam": "Lu Miniscent",
 		"glass": "Tumbler",
 		"fris": "Sinaas",
@@ -1232,7 +1232,7 @@
 		"creator": "Lucas & Kossen",
 		"omschrijving": null
 	},
-	"marcs surprice": {
+	"marcs_surprice": {
 		"naam": "Marcs Surprice",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1259,7 +1259,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"mariëlle dondert op": {
+	"mariëlle_dondert_op": {
 		"naam": "Mariëlle Dondert Op",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1282,7 +1282,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"mururoa dreams": {
+	"mururoa_dreams": {
 		"naam": "Mururoa Dreams",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1324,7 +1324,7 @@
 		"creator": null,
 		"omschrijving": "In een keer acteroverslaan <br> Shale well with ice"
 	},
-	"oma's appeltaart": {
+	"oma's_appeltaart": {
 		"naam": "Oma's Appeltaart",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1343,7 +1343,7 @@
 		"creator": "Coline & Max",
 		"omschrijving": "Aanvullen met een aantal rozijnen"
 	},
-	"orange coin": {
+	"orange_coin": {
 		"naam": "Orange coin",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1358,7 +1358,7 @@
 		"creator": null,
 		"omschrijving": "Jus toevoegen naar smaak"
 	},
-	"rooie diesel": {
+	"rooie_diesel": {
 		"naam": "Rooie Diesel",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1385,7 +1385,7 @@
 		"creator": null,
 		"omschrijving": "Doe dit in een shaker, voeg ijs toe en shake er rustig op los. Giet het geheel door het shakerzeefje in een longdrinkglas. PAS OP ! Deze cocktail heeft een hoog cetaangetal"
 	},
-	"silent killer": {
+	"silent_killer": {
 		"naam": "Silent Killer",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1408,7 +1408,7 @@
 		"creator": null,
 		"omschrijving": "Afvullen met AA"
 	},
-	"sun killer": {
+	"sun_killer": {
 		"naam": "Sun Killer",
 		"glass": "Tumbler",
 		"fris": "Sprite",
@@ -1431,7 +1431,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"red devil": {
+	"red_devil": {
 		"naam": "Red Devil",
 		"glass": "Tumbler",
 		"fris": null,
@@ -1530,7 +1530,7 @@
 		"creator": null,
 		"omschrijving": "Aanvullen met lepeltje siroop"
 	},
-	"histos '92": {
+	"histos_'92": {
 		"naam": "Histos '92",
 		"glass": "Shot",
 		"fris": null,
@@ -1549,7 +1549,7 @@
 		"creator": null,
 		"omschrijving": "Deze cocktail is geinspireerd door de bovengenoemde dranken, de enige twee soorten sterke drank die tijden het Histos Teamzeiltoernooi '92 aanwezig waren en veelzijdig door de twee Harpyia-teams zijn genuttigd/gemixd"
 	},
-	"noorse milf": {
+	"noorse_milf": {
 		"naam": "Noorse Milf",
 		"glass": "Shot",
 		"fris": null,
@@ -1587,7 +1587,7 @@
 		"creator": null,
 		"omschrijving": "Paar druppels tabasco toevoegen"
 	},
-	"roelof met passie": {
+	"roelof_met_passie": {
 		"naam": "Roelof met passie",
 		"glass": "Social",
 		"fris": null,
@@ -1606,7 +1606,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"black widowmaker zevensprong": {
+	"black_widowmaker_zevensprong": {
 		"naam": "Black Widowmaker Zevensprong",
 		"glass": "Social",
 		"fris": null,
@@ -1672,7 +1672,7 @@
 		"creator": null,
 		"omschrijving": null
 	},
-	"natte olijf": {
+	"natte_olijf": {
 		"naam": "Natte Olijf",
 		"glass": "Shot",
 		"fris": null,

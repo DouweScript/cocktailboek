@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="/styles/newcocktail.css" rel="stylesheet" type="text/css">
       <link href="/styles/shared.css" rel="stylesheet" type="text/css">
       <meta charset="utf-8">
-      <title> Bolksche Cocktailboek </title>
+      <title>Bolksche Cocktailboek</title>
       <link rel="shortcut icon" href="/assets/bolkvis.png"/>
     </head>
 
@@ -36,6 +37,7 @@
                 <option name="tumbler">Tumbler</option>
                 <option name="papa">Papa</option>
                 <option name="social">Social</option>
+                <option name="shot">Shot</option>
               </select>
           </div>
           <br><br>
@@ -59,7 +61,7 @@
           <br><br>
 
           <div class="field">
-              <div name="drankHoeveel" id="drankHoeveel" style="display:none">
+              <div id="drankHoeveel" style="display:none">
                   <label>Hoeveel drank?</label>
               <br><br>
               </div>
@@ -72,7 +74,7 @@
           <br><br>
 
           <div class="field">
-              <div name="frisHoeveel" id="frisHoeveel" style="display:none">
+              <div id="frisHoeveel" style="display:none">
                   <label>Hoeveel fris?</label>
               <br><br>
               </div>
@@ -94,7 +96,8 @@
         document.getElementById("selectFris").addEventListener("mousedown", (e) => {
             selectEasy(e);
         });
-    </script>
 
+        document.getElementById("reset").onclick = reset;
+    </script>
     </body>
 </html>
