@@ -25,14 +25,14 @@
           </div>
 
           <div class="field">
-              <label for="naam">Naam:</label>
-              <input type="text" name="naam" id="naam" required>
+              <label for="name">Naam:</label>
+              <input type="text" name="name" id="name" required>
           </div>
           <br><br>
 
           <div class="field">
-              <label for="selectGlas">Glas:</label>
-              <select name="selectGlas" id="selectGlas" required>
+              <label for="selectGlass">Glas:</label>
+              <select name="selectGlass" id="selectGlass" required>
                 <option name="longdrink">Longdrink</option>
                 <option name="tumbler">Tumbler</option>
                 <option name="papa">Papa</option>
@@ -43,8 +43,8 @@
           <br><br>
 
           <div class="field">
-              <label for="omschrijving">Omschrijving:</label>
-              <textarea name="omschrijving" id="omschrijving" rows="4" cols="30"></textarea>
+              <label for="desc">Omschrijving:</label>
+              <textarea name="desc" id="desc" rows="4" cols="30"></textarea>
           </div>
           <br><br>
 
@@ -61,7 +61,7 @@
           <br><br>
 
           <div class="field">
-              <div id="drankHoeveel" style="display:none">
+              <div id="drankAmount" style="display:none">
                   <label>Hoeveel drank?</label>
               <br><br>
               </div>
@@ -74,7 +74,7 @@
           <br><br>
 
           <div class="field">
-              <div id="frisHoeveel" style="display:none">
+              <div id="frisAmount" style="display:none">
                   <label>Hoeveel fris?</label>
               <br><br>
               </div>
@@ -85,8 +85,7 @@
       </fieldset>
     </form>
 
-    <script src="/script/get_fris.js"> </script>
-    <script src="/script/get_drank.js"> </script>
+    <script src="/script/getDrank.js"> </script>
     <script src="/script/nieuwecocktail_functions.js"></script>
     <script>
         document.getElementById("selectDrank").addEventListener("mousedown", (e) => {

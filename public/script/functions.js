@@ -1,16 +1,16 @@
 function printCocktail(cocktail){
 	let printString = `<div class='cocktail'> 
-							<h3> ${cocktail.naam} </h3>
+							<h3> ${cocktail.name} </h3>
 							<h3> ${cocktail.glass} </h3>
 							<ul>`
 							
 	//loop die het aantal soorten sterk in een cocktail erbij zet
-	for (let i = 0; i < cocktail.spirits.length; i++){
-		if(cocktail.spirits[i][0] <= 1){
-			printString += `<li> ${cocktail.spirits[i][0]} Borrel ${cocktail.spirits[i][1]} </li>`
+	for (let i = 0; i < cocktail.drank.length; i++){
+		if(cocktail.drank[i][0] <= 1){
+			printString += `<li> ${cocktail.drank[i][0]} Shot ${cocktail.drank[i][1]} </li>`
 		}
 		else{
-			printString += `<li> ${cocktail.spirits[i][0]} Borrels ${cocktail.spirits[i][1]} </li>`
+			printString += `<li> ${cocktail.drank[i][0]} Shots ${cocktail.drank[i][1]} </li>`
 		}
 	}
 
@@ -22,16 +22,16 @@ function printCocktail(cocktail){
 	}
 
 	//Zet de omschrijving er bij als hij die heeft
-	if(cocktail.omschrijving != null){
-		printString += `<p> ${cocktail.omschrijving} </p>`
+	if(cocktail.desc != null){
+		printString += `<p> ${cocktail.desc} </p>`
 	}
 
 	printString += `<h3> ${cocktail.alcper} %Alc</h3>
-					<h3> €${cocktail.prijs}`
+					<h3> €${cocktail.price}`
 	
 	//Zet de maker erbij al hij die heeft
 	if(cocktail.creator != null){
-		printString += `<p class='creator'> Deze cocktail is gemaakt door: <br> ${cocktail.creator} </p>`
+		printString += `<p class='creator'> Deze cocktail is bedacht door: <br> ${cocktail.creator} </p>`
 	}
 
 	printString += `</div>`;
@@ -39,7 +39,7 @@ function printCocktail(cocktail){
 }
 
 function sortByPrice(){
-	const priceHighToLow = returnSelected().sort((a,b) => (b.prijs - a.prijs))
+	const priceHighToLow = returnSelected().sort((a,b) => (b.price - a.price))
 	printToWebpage(priceHighToLow)
 }
 
@@ -54,7 +54,7 @@ function sortByAlc(){
 }
 
 function sortByPriceLH(){
-	const priceLowToHigh = returnSelected().sort((a,b) => (a.prijs - b.prijs))
+	const priceLowToHigh = returnSelected().sort((a,b) => (a.price - b.price))
 	printToWebpage(priceLowToHigh)
 }
 

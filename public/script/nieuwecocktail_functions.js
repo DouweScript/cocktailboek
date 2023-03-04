@@ -11,7 +11,7 @@ function selectEasy(e) {
 
             let type = el.parentNode.name.replace("select", "").toLowerCase();
 
-            let xHoeveel = document.getElementById(type + "Hoeveel");
+            let xAmount = document.getElementById(type + "Amount");
 
             for (let i = 0; i < el.parentNode.childElementCount; i++) {
 
@@ -34,26 +34,26 @@ function selectEasy(e) {
                     label.style.marginLeft = '1%';
                     select.name = "selectType" + ele.innerHTML.replaceAll(" ", "_");
                     select.className = "hoeveelheid";
-                    select.onchange = function(e) {
+                    select.onchange = function() {
                         if (select.selectedIndex == 2){
-                            xHoeveel.setAttribute("aanvullen", select.name);
+                            xAmount.setAttribute("aanvullen", select.name);
                             select.style.width = "60%";
                             input.style.display = "none";
                             input.required = false;
-                        } else if (xHoeveel.hasAttribute("aanvullen")
-                            && xHoeveel.getAttribute("aanvullen") == select.name) {
-                            xHoeveel.removeAttribute("aanvullen");
+                        } else if (xAmount.hasAttribute("aanvullen")
+                            && xAmount.getAttribute("aanvullen") == select.name) {
+                            xAmount.removeAttribute("aanvullen");
                             select.style.width = "initial";
                             input.style.display = "initial";
                             input.required = true;
                         }
                     };
                     select.onmousedown = function() {
-                        if (xHoeveel.hasAttribute("aanvullen")
-                            && xHoeveel.getAttribute("aanvullen") != select.name
+                        if (xAmount.hasAttribute("aanvullen")
+                            && xAmount.getAttribute("aanvullen") != select.name
                             && select.children.length == 3) {
                             select.removeChild(aanvullen);
-                        } else if (!xHoeveel.hasAttribute("aanvullen")
+                        } else if (!xAmount.hasAttribute("aanvullen")
                             && select.children.length < 3) {
                             select.appendChild(aanvullen);
                         }
@@ -73,12 +73,12 @@ function selectEasy(e) {
                     div.appendChild(document.createElement("br"))
                     div.id = ele.innerHTML.replaceAll(" ", "_");
 
-                    xHoeveel.appendChild(div);
-                    if (xHoeveel.style.display = "none") xHoeveel.style.display = "initial";
+                    xAmount.appendChild(div);
+                    if (xAmount.style.display = "none") xAmount.style.display = "initial";
 
                 } else if (child != null && !ele.hasAttribute("selected")) {
-                    xHoeveel.removeChild(child);
-                    if (xHoeveel.childElementCount <= 3) xHoeveel.style.display = "none";
+                    xAmount.removeChild(child);
+                    if (xAmount.childElementCount <= 3) xAmount.style.display = "none";
                 }
             }
         }
@@ -88,8 +88,8 @@ function selectEasy(e) {
 }
 
 function reset() {
-    document.getElementById("drankHoeveel").innerHTML = "";
-    document.getElementById("frisHoeveel").innerHTML = "";
+    document.getElementById("drankAmount").innerHTML = "";
+    document.getElementById("frisAmount").innerHTML = "";
 
     let selectDrank = document.getElementById("selectDrank");
     for (let i = 0; i < selectDrank.children.length; i++) {

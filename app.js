@@ -28,18 +28,18 @@ app.post("/new", (req, res) => {
     let drank = {};
     let fris = {};
 
-    for (let item in data.selectDrank) {
-        item = data.selectDrank[item];
-        item = item.replaceAll(" ", "_")
-        if (data["selectType" + item] == "aanvullen") {
-            drank[item] = "aanvullen";
-        } else {
-            drank[item] = [data["selectN" + item], data["selectType" + item]];
+    if (typeof data.selectDrank != "string") {
+        for (let item in data.selectDrank) {
+            item = data.selectDrank[item];
+            item = item.replaceAll(" ", "_")
+            if (data["selectType" + item] == "aanvullen") {
+                drank[item] = "aanvullen";
+            } else {
+                drank[item] = [data["selectN" + item], data["selectType" + item]];
+            }
         }
-    }
-    for (let item in data.selectFris) {
-        item = data.selectFris[item];
-        item = item.replaceAll(" ", "_")
+    } else {
+        let item = data.selectFris.replaceAll(" ", "_")
         if (data["selectType" + item] == "aanvullen") {
             fris[item] = "aanvullen";
         } else {
@@ -47,7 +47,27 @@ app.post("/new", (req, res) => {
         }
     }
 
-    CocktailCreator(data.naam, data.selectGlas, drank, fris, data.creator, data.omschrijving);
+    if (typeof data.selectFris != "string") {
+        for (let item in data.selectFris) {
+            item = data.selectFris[item];
+            item = item.replaceAll(" ", "_")
+            if (data["selectType" + item] == "aanvullen") {
+                fris[item] = "aanvullen";
+            } else {
+                fris[item] = [data["selectN" + item], data["selectType" + item]];
+            }
+        }
+    } else {
+        let item = data.selectFris.replaceAll(" ", "_")
+        if (data["selectType" + item] == "aanvullen") {
+            fris[item] = "aanvullen";
+        } else {
+            fris[item] = [data["selectN" + item], data["selectType" + item]];
+        }
+    }
+
+    console.log(data);
+    CocktailCreator(data.name, data.selectGlass, drank, fris, data.creator, data.desc);
     res.send("ok");
 });
 
