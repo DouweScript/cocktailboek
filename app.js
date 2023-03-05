@@ -5,13 +5,12 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 //laad cocktails
-const drank = require("./script/drank");
-const cocktails = require("./script/cocktails");
-const {Cocktail} = require("./script/cocktails");
-const {CocktailCreator} = require("./script/cocktails");
-const {nonAlcoholDB} = require("./script/drank");
+const {nonAlcoholDB, alcoholDB} = require("./script/drank");
+const {Cocktail, refreshDatabase} = require("./script/cocktails");
 
 const app = express();
+
+refreshDatabase();
 
 //start server
 app.use(bodyParser.urlencoded({extended: true}));
@@ -67,7 +66,7 @@ app.post("/new", (req, res) => {
         }
     }
 
-    CocktailCreator(data.name, data.selectGlass, alcohol, nonAlcohol, data.creator, data.desc);
+    Cocktail.create(data.name, data.selectGlass, alcohol, nonAlcohol, data.creator, data.desc);
     res.send("ok");
 });
 

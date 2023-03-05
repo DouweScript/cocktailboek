@@ -22,9 +22,52 @@ function databaseReader() {
 	}
 }
 
+function refreshDatabase() {
+	for (let name in cocktailDB) {
+		try{
+			let cock = cocktailDB[name];
+			if (typeof cock.nonAlcohol === "string") {
+				let nonAlc = {}
+				if (cock.nonAlcohol.replace(" ", "_").toLowerCase() in nonAlcoholDB) {
+					nonAlc[cock.nonAlcohol.replace(" ", "_").toLowerCase()] = "aanvullen";
+					cock.nonAlcohol = nonAlc;
+				} else {
+					throw new Error(cock.nonAlcohol + " is not registered!");
+				}
+			}
+
+			if (Array.isArray(cock.alcohol)) {
+				let alc = {};
+				for (let i in cock.alcohol) {
+					let item = cock.alcohol[i];
+
+					if (item[1].replace(" ", "_").toLowerCase() in alcoholDB) {
+						alc[item[1].replace(" ", "_").toLowerCase()] = [item[0], "shot"];
+					} else if (item[1].replace(" ", "_").toLowerCase() in nonAlcoholDB) {
+						if (cock.nonAlcohol === null) {
+							cock.nonAlcohol = {};
+						}
+						cock.nonAlcohol[item[1].replace(" ", "_").toLowerCase()] = [item[0], "shot"];
+					} else {
+						throw new Error(item[1] + " is not registered!");
+					}
+				}
+				cock.alcohol = alc;
+			}
+
+			cocktailDB[name] = Cocktail.create(cock.name, cock.glass.toLowerCase(), cock.alcohol, cock.nonAlcohol, cock.creator, cock.desc, false);
+		} catch (e) {
+			console.log("ERR: " + name + " could not conform!");
+			console.log(e);
+			console.log(cocktailDB[name]);
+		}
+	}
+	databaseWriter();
+}
+
 //function die naar de database schrijft
-function databaseWriter(cocktail) {
-	const jsonString = JSON.stringify(cocktail);
+function databaseWriter() {
+	const jsonString = JSON.stringify(cocktailDB);
 	fs.writeFile("./public/assets/cocktails.json", jsonString, err => {
 		if (err){
 			console.log("Error writing database:", err)
@@ -38,102 +81,116 @@ function databaseWriter(cocktail) {
 databaseReader();
 
 //constructor voor een cocktail
-function Cocktail(name, glass, alcohol, nonAlcohol, alcPer, price, creator, desc){
-	this.name = name;
-	this.glass = glass;
-	this.nonAlcohol = nonAlcohol;
-	this.alcohol = alcohol;
-	this.alcper = alcPer;
-	this.price = price.toFixed(2);
-	this.creator = creator;
-	this.desc = desc;
-	cocktailDB[name.toLowerCase()] = this;
-}
+class Cocktail {
+	alcPer;
+	price;
+	constructor(name, glass, alcohol, nonAlcohol, alcPer, price, creator, desc){
+		this.name = name;
+		this.glass = glass;
+		this.nonAlcohol = nonAlcohol;
+		this.alcohol = alcohol;
 
-//constructor voor nieuwe cocktail
-//alcohol dict: { alcohol: aanvullen/[hoeveel, type] }
-function CocktailCreator(name, glass, alcohol, nonAlcohol, creator, desc) {
-	let glassVolume;
+		if (alcPer === null || price === null) {
+			this.calcAlcoholPrice();
+		} else {
+			this.alcPer = alcPer;
+			this.price = price;
+		}
 
-	switch(glass.toLowerCase()) {
-		case "longdrink":
-			glassVolume = volLongdrink;
-			break;
-		case "tumbler":
-			glassVolume = volTumbler;
-			break;
-		case "shot":
-			glassVolume = volShotglas;
-			break;
-		case "social":
-			glassVolume = volSocial;
-			break;
-		case "papa":
-			glassVolume = volPapa;
-			break;
+		this.creator = creator;
+		this.desc = desc;
+		cocktailDB[this.name.toLowerCase()] = this;
 	}
 
-	let alcCont = 0;
-	let price = 0;
-	let usedVolume = 0;
+	calcAlcoholPrice() {
+		let glassVolume;
 
-	let fill = []
+		switch(this.glass.toLowerCase()) {
+			case "longdrink":
+				glassVolume = volLongdrink;
+				break;
+			case "tumbler":
+				glassVolume = volTumbler;
+				break;
+			case "shot":
+				glassVolume = volShotglas;
+				break;
+			case "social":
+				glassVolume = volSocial;
+				break;
+			case "papa":
+				glassVolume = volPapa;
+				break;
+		}
 
-	for (let key in alcohol) {
-		let alcoholItem = alcoholDB[key.toLowerCase()];
+		let alcCont = 0;
+		let price = 0;
+		let usedVolume = 0;
 
-		if (alcohol[key] === "aanvullen") {
-			fill.push([alcoholItem, alcohol[key]]);
-		} else {
-			let vol = alcohol[key][0] * volShotglas;
+		let fill = []
+
+		for (let key in this.alcohol) {
+			let alcoholItem = alcoholDB[key.replace(" ", "_").toLowerCase()];
+
+			if (alcoholItem === undefined || alcoholItem === null) throw new Error(key + " is not defined!");
+
+			let vol;
+			if (this.alcohol[key] === "aanvullen") {
+				fill.push([alcoholItem, this.alcohol[key]]);
+				continue;
+			} else if (this.alcohol[key] === "fles") {
+				vol = this.alcohol[key][0] * alcoholItem.vol;
+			} else {
+				vol = this.alcohol[key][0] * volShotglas;
+			}
 			usedVolume += vol;
-			alcCont += alcoholItem.alcper/100 * vol;
+			alcCont += alcoholItem.alcPer/100 * vol;
 			price += alcoholItem.price * vol / alcoholItem.vol;
 		}
-	}
 
-	for (let key in nonAlcohol) {
-		let nonAlcoholItem = nonAlcoholDB[key.toLowerCase()];
+		for (let key in this.nonAlcohol) {
+			let nonAlcoholItem = nonAlcoholDB[key.replace(" ", "_").toLowerCase()];
 
-		if (nonAlcohol[key] === "aanvullen") {
-			fill.push([nonAlcoholItem, nonAlcohol[key]]);
-		} else if (nonAlcohol[key][1] === "shot") {
-			let vol = nonAlcohol[key][0] * volShotglas;
+			if (nonAlcoholItem === undefined || nonAlcoholItem === null) throw new Error(key + " is not defined!");
+
+			let vol;
+			if (this.nonAlcohol[key] === "aanvullen") {
+				console.log(nonAlcoholItem);
+				console.log(key);
+				fill.push([nonAlcoholItem, this.nonAlcohol[key]]);
+				continue;
+			} else if (this.nonAlcohol[key][1] === "fles") {
+				vol = this.nonAlcohol[key][0] * nonAlcoholItem.vol;
+			} else if (this.nonAlcohol[key][1] === "shot") {
+				vol = this.nonAlcohol[key][0] * volShotglas;
+			}
 			usedVolume += vol;
 			price += nonAlcoholItem.price * vol / nonAlcoholItem.vol;
 		}
-	}
 
-	for (let item in fill) {
-		let useVol = (glassVolume - usedVolume)/fill.length;
-		price += fill[item][0].price * useVol/fill[item][0].vol;
+		for (let item in fill) {
+			let useVol = (glassVolume - usedVolume)/fill.length;
+			price += fill[item][0].price * useVol/fill[item][0].vol;
 
-		if ("alcper" in fill[item][0]) {
-			alcCont += fill[item][0].alcper/100 * useVol;
-			alcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = ["aanvullen", (useVol/fill[item][0].vol).toFixed(2)];
-		} else {
-			console.log(fill);
-			console.log(fill[item]);
-			console.log(fill[item][0]);
-			nonAlcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = ["aanvullen", (useVol/fill[item][0].vol).toFixed(2)];
+			if ("alcPer" in fill[item][0]) {
+				alcCont += fill[item][0].alcPer/100 * useVol;
+				this.alcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = [(useVol/fill[item][0].vol).toFixed(1), "aanvullen"];
+			} else {
+				this.nonAlcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = [(useVol/fill[item][0].vol).toFixed(1), "aanvullen"];
+			}
+			usedVolume += useVol;
 		}
+
+		this.alcPer = (alcCont/usedVolume * 100).toFixed(2);
+		this.price = price.toFixed(2);
+		console.log(this.alcPer + "\t" + usedVolume + "\t" + this.name);
 	}
 
-	let alcPer = (alcCont/glassVolume * 100).toFixed(2);
-	price = price.toFixed(2);
-
-	console.log("----");
-
-	console.log(name);
-	console.log(glass);
-	console.log(alcohol);
-	console.log(nonAlcohol);
-	console.log(alcPer);
-	console.log(price);
-	console.log(creator);
-	console.log(desc);
-
-	//Cocktail(name, glas, alcohol, nonAlcohol, alcPer, prijs, creator, desc);
+	static create(name, glass, alcohol, nonAlcohol, creator, desc, write = true) {
+		let c = new Cocktail(name, glass, alcohol, nonAlcohol, null, null, creator, desc);
+		if (write) databaseWriter(cocktailDB);
+		return c;
+	}
 }
 
-module.exports = { cocktailDB, Cocktail, CocktailCreator};
+module.exports = { cocktailDB, Cocktail , refreshDatabase };

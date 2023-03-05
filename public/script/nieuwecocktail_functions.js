@@ -27,7 +27,8 @@ function selectEasy(e) {
                     let input = document.createElement("input");
                     let select = document.createElement("select");
                     let shot = document.createElement("option");
-                    let scheut = document.createElement("option");
+                    let fles = document.createElement("option");
+                    let scheutje = document.createElement("option");
                     let aanvullen = document.createElement("option");
                     input.type = "number";
                     input.className = "hoeveelheid";
@@ -38,7 +39,7 @@ function selectEasy(e) {
                     select.name = "selectType" + ele.innerHTML.replaceAll(" ", "_");
                     select.className = "hoeveelheid";
                     select.onchange = function() {
-                        if (select.selectedIndex === 1){
+                        if (select.item(select.selectedIndex) === aanvullen) {
                             select.style.width = "60%";
                             input.style.display = "none";
                             input.required = false;
@@ -50,14 +51,16 @@ function selectEasy(e) {
                     };
                     shot.innerHTML = "shot";
                     shot.name = "shot";
-                    scheut.innerHTML = "scheut";
-                    scheut.name = "scheut";
+                    scheutje.innerHTML = "scheutje";
+                    scheutje.name = "scheutje";
+                    fles.innerHTML = "fles";
+                    fles.name = "fles";
                     aanvullen.name = "aanvullen";
                     aanvullen.innerHTML = "aanvullen";
 
-                    select.append(shot, aanvullen);
+                    select.append(shot, fles, aanvullen);
                     if (type === "nonAlcohol") {
-                        select.append(scheut);
+                        select.insertBefore(scheutje, aanvullen);
                     }
 
                     div.appendChild(label);

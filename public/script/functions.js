@@ -1,41 +1,85 @@
+String.prototype.format = function () {
+	let i = 0, args = arguments;
+	return this.replace(/{}/g, function () {
+		return typeof args[i] != 'undefined' ? args[i++] : '';
+	});
+};
+
 function printCocktail(cocktail){
-	let printString = `<div class='cocktail'> 
-							<h3> ${cocktail.name} </h3>
-							<h3> ${cocktail.glass} </h3>
-							<ul>`
-							
+	console.log(cocktail);
+
+	let div = document.createElement("div");
+	div.class = 'cocktail';
+
+	let name = document.createElement("h3");
+	name.innerHTML = cocktail.name;
+
+	let glass = document.createElement("h3");
+	glass.innerHTML = cocktail.glass;
+
+	let alcohol = document.createElement("ul");
+
+	let fill = []
+
 	//loop die het aantal soorten sterk in een cocktail erbij zet
-	for (let i = 0; i < cocktail.alcohol.length; i++){
-		if(cocktail.alcohol[i][0] <= 1){
-			printString += `<li> ${cocktail.alcohol[i][0]} Shot ${cocktail.alcohol[i][1]} </li>`
+	for (let item in cocktail.alcohol) {
+		let li = document.createElement("li");
+		let alc = alcoholDB[item];
+
+		if (cocktail.alcohol[item][1] === "aanvullen") {
+			fill.append(alc, cocktail.alcohol[item]);
+		} else if (cocktail.alcohol[item][0] <= 1) {
+			li.innerHTML = "{} Shot {}".format(cocktail.alcohol[item][0], alc.name);
+		} else {
+			li.innerHTML = "{} Shots {}".format(cocktail.alcohol[item][0], alc.name);
 		}
-		else{
-			printString += `<li> ${cocktail.alcohol[i][0]} Shots ${cocktail.alcohol[i][1]} </li>`
-		}
+		alcohol.appendChild(li);
 	}
 
-	printString += 	"</ul>";
+	let nonAlcohol = document.createElement("ul");
 
 	//Zet het nonAlcohol erbij als het het heeft
 	if (cocktail.nonAlcohol != null){
-		printString += `Aanvullen met ${cocktail.nonAlcohol}`
+		for (let item in cocktail.nonAlcohol) {
+			let li = document.createElement("li");
+			let nonAlc = nonAlcoholDB[item];
+
+			if (cocktail.nonAlcohol[item][1] === "aanvullen") {
+				fill.append(nonAlc, cocktail.nonAlcohol[item]);
+			} else if (cocktail.nonAlcohol[item][0] <= 1) {
+				li.innerHTML = "{} {} {}".format(cocktail.nonAlcohol[item][0], cocktail.nonAlcohol[item][1], nonAlc.name);
+			} else {
+				li.innerHTML = "{} {}s {}".format(cocktail.nonAlcohol[item][0], cocktail.nonAlcohol[item][1], nonAlc.name);
+			}
+			nonAlcohol.appendChild(li);
+		}
 	}
+
+	div.append(name, glass, alcohol, nonAlcohol);
 
 	//Zet de omschrijving er bij als hij die heeft
 	if(cocktail.desc != null){
-		printString += `<p> ${cocktail.desc} </p>`
+		let desc = document.createElement("p");
+		desc.innerHTML = cocktail.desc;
+		div.appendChild(desc);
 	}
 
-	printString += `<h3> ${cocktail.alcper} %Alc</h3>
-					<h3> €${cocktail.price}`
-	
+	let alcPer = document.createElement("h3");
+	let price = document.createElement("h3");
+	alcPer.innerHTML = "{} % Alcohol".format(cocktail.alcPer);
+	price.innerHTML = "€ {}".format(cocktail.price);
+
+	div.append(alcPer, price);
+
 	//Zet de maker erbij al hij die heeft
 	if(cocktail.creator != null){
-		printString += `<p class='creator'> Deze cocktail is bedacht door: <br> ${cocktail.creator} </p>`
+		let creator = document.createElement("p");
+		creator.className = "creator";
+		creator.innerHTML = "Deze cocktail is bedacht door:<br>{}".format(cocktail.creator);
+		div.appendChild(creator);
 	}
 
-	printString += `</div>`;
-	return printString;
+	return div;
 }
 
 function sortByPrice(){
@@ -44,12 +88,12 @@ function sortByPrice(){
 }
 
 function sortByAlcLH(){
-	const alcLowToHigh = returnSelected().sort((a,b) => (a.alcper - b.alcper))
+	const alcLowToHigh = returnSelected().sort((a,b) => (a.alcPer - b.alcPer))
 	printToWebpage(alcLowToHigh);
 }
 
 function sortByAlc(){
-	const alcHighToLow = returnSelected().sort((a,b) => (b.alcper - a.alcper))
+	const alcHighToLow = returnSelected().sort((a,b) => (b.alcPer - a.alcPer))
 	printToWebpage(alcHighToLow)
 }
 
@@ -73,10 +117,10 @@ document.getElementById("randomCocktail").onclick = function(){
 };
 
 document.getElementById("search").onkeyup = function(){
-	searchCocktail(cocktailArray)
+	searchCocktail(cocktailDB)
 };
 
-document.getElementById("selectGlas").onchange = function(){
+document.getElementById("selectGlass").onchange = function(){
 	selectGlas()
 };
 
@@ -109,7 +153,7 @@ function printToWebpage(cocktails){
 }
 
 function backToAll(){
-	document.getElementById('buttons').innerHTML = "<button onclick='randomCocktail()'> Krijg een random Cocktail </button>";
+	document.getElementById('buttons').innerHTML = "<button onclick='randomCocktail()'>Krijg een random Cocktail</button>";
 	printToWebpage(cocktailDB);
 }
 
@@ -118,53 +162,51 @@ function randomCocktail(){
 	let randomNumber = Math.floor(Math.random() * cocktailKeys.length);
 	document.getElementById('content').innerHTML = "";
 	document.getElementById('content').innerHTML = printCocktail(cocktailDB[cocktailKeys[randomNumber]]);
-	document.getElementById('buttons').innerHTML = "<button class='afterclick' onclick='randomCocktail()'> Krijg een random Cocktail </button>" +
-	 											   "<button class='afterclick' onclick='backToAll()'> Terug naar alle Cocktails </button>";
+	document.getElementById('buttons').innerHTML = "<button class='afterclick' onclick='randomCocktail()'>Krijg een random Cocktail</button>" +
+	 											   "<button class='afterclick' onclick='backToAll()'>Terug naar alle Cocktails</button>";
 }
 
-//selecteer welk nonAlcohol en of glas je wilt
+//selecteer welk non alcohol en of glas je wilt
 function selectGlas(){
-	let glas = document.getElementById('selectGlas').value;
+	let glass = document.getElementById('selectGlass').value;
 	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
-	let glasArray = [];
-	if (glas === "Alle Glazen" && nonAlcohol === "Alle nonAlcohol") {
+	let glassArray = [];
+	if (glass === "Alle glazen" && nonAlcohol === "Alle non alcohol") {
 		printToWebpage(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas === "Alle Glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
-				(nonAlcohol === "Alle nonAlcohol" && glas === cocktailDB[key].glass) ||
-				(nonAlcohol === cocktailDB[key].nonAlcohol && glas === cocktailDB[key].glass)){
-				glasArray.push(cocktailDB[key]);
+			if ((glass === "Alle glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
+				(nonAlcohol === "Alle non alcohol" && glass === cocktailDB[key].glass) ||
+				(nonAlcohol === cocktailDB[key].nonAlcohol && glass === cocktailDB[key].glass)){
+				glassArray.push(cocktailDB[key]);
 			}
 		}
-		if(glasArray.length ===  0) {
-			document.getElementById('content').innerHTML = "";
-			document.getElementById('content').innerHTML = "<h2> Helaas heb ik dit niet gevonden </h2>";
+		if(glassArray.length ===  0) {
+			document.getElementById('content').innerHTML = "<h2>Helaas heb ik dit niet gevonden</h2>";
 		} else {
-			printToWebpage(glasArray);
+			printToWebpage(glassArray);
 		}
 	}
 }
 
 function returnSelected(){
-	let glas = document.getElementById('selectGlas').value;
+	let glass = document.getElementById('selectGlass').value;
 	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
-	let glasArray = [];
-	if (glas === "Alle Glazen" && nonAlcohol === "Alle nonAlcohol") {
+	let glassArray = [];
+	if (glass === "Alle glazen" && nonAlcohol === "Alle non alcohol") {
 		return Object.values(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas === "Alle Glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
-				(nonAlcohol === "Alle nonAlcohol" && glas === cocktailDB[key].glass) ||
-				(nonAlcohol === cocktailDB[key].nonAlcohol && glas === cocktailDB[key].glass)){
-				glasArray.push(cocktailDB[key]);
+			if ((glass === "Alle glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
+				(nonAlcohol === "Alle non alcohol" && glass === cocktailDB[key].glass) ||
+				(nonAlcohol === cocktailDB[key].nonAlcohol && glass === cocktailDB[key].glass)){
+				glassArray.push(cocktailDB[key]);
 			}
 		}
-		if(glasArray.length ===  0) {
-			document.getElementById('content').innerHTML = "";
-			document.getElementById('content').innerHTML = "<h2> Helaas heb ik dit niet gevonden </h2>";
+		if(glassArray.length ===  0) {
+			document.getElementById('content').innerHTML = "<h2>Helaas heb ik dit niet gevonden</h2>";
 		} else {
-			return glasArray;
+			return glassArray;
 		}
 	}
 }

@@ -44,9 +44,9 @@ function databaseWriter(type) {
 databaseReader();
 
 //constructor voor een alcohol object
-function alcohol(name, alcper, price, vol) {
+function alcohol(name, alcPer, price, vol) {
 	this.name = name;
-	this.alcper = alcper;
+	this.alcPer = alcPer;
 	this.price = price;
 	this.vol = vol;
 	alcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
