@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="/styles/newcocktail.css" rel="stylesheet" type="text/css">
@@ -55,8 +55,8 @@
           <br><br>
 
           <div class="field">
-              <label for="selectalcohol" id="alcoholLabel">alcohol:</label>
-              <select name="selectalcohol" id="selectalcohol" multiple></select>
+              <label for="selectAlcohol" id="alcoholLabel">Alcohol:</label>
+              <select name="selectAlcohol" id="selectAlcohol" multiple></select>
           </div>
           <br><br>
 
@@ -68,14 +68,14 @@
           </div>
 
           <div class="field">
-              <label for="selectnonalcohol">nonalcohol:</label>
-              <select name="selectnonalcohol" id="selectnonalcohol" multiple></select>
+              <label for="selectNonAlcohol">Non Alcohol:</label>
+              <select name="selectNonAlcohol" id="selectNonAlcohol" multiple></select>
           </div>
           <br><br>
 
           <div class="field">
-              <div id="nonalcoholAmount" style="display:none">
-                  <label>Hoeveel nonalcohol?</label>
+              <div id="nonAlcoholAmount" style="display:none">
+                  <label>Hoeveel non alcohol?</label>
               <br><br>
               </div>
           </div>
@@ -85,14 +85,14 @@
       </fieldset>
     </form>
 
-    <script src="/script/getalcohol.js"> </script>
+    <script src="/script/getDrank.js"> </script>
     <script src="/script/nieuwecocktail_functions.js"></script>
     <script>
-        document.getElementById("selectalcohol").addEventListener("mousedown", (e) => {
+        document.getElementById("selectAlcohol").addEventListener("mousedown", (e) => {
             selectEasy(e);
         });
 
-        document.getElementById("selectnonalcohol").addEventListener("mousedown", (e) => {
+        document.getElementById("selectNonAlcohol").addEventListener("mousedown", (e) => {
             selectEasy(e);
         });
 

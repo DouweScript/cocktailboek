@@ -16,9 +16,9 @@ function printCocktail(cocktail){
 
 	printString += 	"</ul>";
 
-	//Zet het nonalcohol erbij als het het heeft
-	if (cocktail.nonalcohol != null){
-		printString += `Aanvullen met ${cocktail.nonalcohol}`
+	//Zet het nonAlcohol erbij als het het heeft
+	if (cocktail.nonAlcohol != null){
+		printString += `Aanvullen met ${cocktail.nonAlcohol}`
 	}
 
 	//Zet de omschrijving er bij als hij die heeft
@@ -64,7 +64,7 @@ function sortAlpha(){
 }
 
 //zorgt voor de interactie op de webpagina
-document.getElementById("selectnonalcohol").onclick = function(){
+document.getElementById("selectNonAlcohol").onclick = function(){
 	selectGlas()
 };
 
@@ -122,22 +122,22 @@ function randomCocktail(){
 	 											   "<button class='afterclick' onclick='backToAll()'> Terug naar alle Cocktails </button>";
 }
 
-//selecteer welk nonalcohol en of glas je wilt
+//selecteer welk nonAlcohol en of glas je wilt
 function selectGlas(){
 	let glas = document.getElementById('selectGlas').value;
-	let nonalcohol = document.getElementById('selectnonalcohol').value;
+	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
 	let glasArray = [];
-	if (glas == "Alle Glazen" && nonalcohol == "Alle nonalcohol") {
+	if (glas === "Alle Glazen" && nonAlcohol === "Alle nonAlcohol") {
 		printToWebpage(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas == "Alle Glazen" && nonalcohol == cocktailDB[key].nonalcohol) ||
-				(nonalcohol == "Alle nonalcohol" && glas == cocktailDB[key].glass) ||
-				(nonalcohol == cocktailDB[key].nonalcohol && glas == cocktailDB[key].glass)){
+			if ((glas === "Alle Glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
+				(nonAlcohol === "Alle nonAlcohol" && glas === cocktailDB[key].glass) ||
+				(nonAlcohol === cocktailDB[key].nonAlcohol && glas === cocktailDB[key].glass)){
 				glasArray.push(cocktailDB[key]);
 			}
 		}
-		if(glasArray.length ==  0) {
+		if(glasArray.length ===  0) {
 			document.getElementById('content').innerHTML = "";
 			document.getElementById('content').innerHTML = "<h2> Helaas heb ik dit niet gevonden </h2>";
 		} else {
@@ -148,19 +148,19 @@ function selectGlas(){
 
 function returnSelected(){
 	let glas = document.getElementById('selectGlas').value;
-	let nonalcohol = document.getElementById('selectnonalcohol').value;
+	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
 	let glasArray = [];
-	if (glas == "Alle Glazen" && nonalcohol == "Alle nonalcohol") {
+	if (glas === "Alle Glazen" && nonAlcohol === "Alle nonAlcohol") {
 		return Object.values(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas == "Alle Glazen" && nonalcohol == cocktailDB[key].nonalcohol) ||
-				(nonalcohol == "Alle nonalcohol" && glas == cocktailDB[key].glass) ||
-				(nonalcohol == cocktailDB[key].nonalcohol && glas == cocktailDB[key].glass)){
+			if ((glas === "Alle Glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
+				(nonAlcohol === "Alle nonAlcohol" && glas === cocktailDB[key].glass) ||
+				(nonAlcohol === cocktailDB[key].nonAlcohol && glas === cocktailDB[key].glass)){
 				glasArray.push(cocktailDB[key]);
 			}
 		}
-		if(glasArray.length ==  0) {
+		if(glasArray.length ===  0) {
 			document.getElementById('content').innerHTML = "";
 			document.getElementById('content').innerHTML = "<h2> Helaas heb ik dit niet gevonden </h2>";
 		} else {
@@ -169,10 +169,10 @@ function returnSelected(){
 	}
 }
 
-//zoekfunctie op naam van de cocktail
+//zoekfunctie op name van de cocktail
 function searchCocktail(array){
 	let input = document.getElementById('search').value.toString().toLowerCase();
-	let searchedArray = array.filter(element => element.naam.toString().toLowerCase().includes(input))
+	let searchedArray = array.filter(element => element.name.toString().toLowerCase().includes(input))
 	printToWebpage(searchedArray);
 }
 
@@ -181,15 +181,15 @@ function getCookie(name) {
     let dc = document.cookie;
     let prefix = name + "=";
     let begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
+    if (begin === -1) {
         begin = dc.indexOf(prefix);
-        if (begin != 0) return null;
+        if (begin !== 0) return null;
     }
     else
     {
         begin += 2;
         var end = document.cookie.indexOf(";", begin);
-        if (end == -1) {
+        if (end === -1) {
         end = dc.length;
         }
     }

@@ -1,360 +1,360 @@
 {
   "apfelkorn": {
-    "naam": "Apfelkorn",
+    "name": "Apfelkorn",
     "alcper": 14.5,
     "price": 1.1,
     "vol": 40
   },
   "apple_sour": {
-    "naam": "Apple Sour",
+    "name": "Apple Sour",
     "alcper": 17,
     "price": 1.1,
     "vol": 40
   },
   "bacardi_black": {
-    "naam": "Bacardi Black",
+    "name": "Bacardi Black",
     "alcper": 38,
     "price": 1.6,
     "vol": 40
   },
   "bacardi_blanca": {
-    "naam": "Bacardi Blanca",
+    "name": "Bacardi Blanca",
     "alcper": 37.5,
     "price": 1.6,
     "vol": 40
   },
   "bacardi_lemon": {
-    "naam": "Bacardi Lemon",
+    "name": "Bacardi Lemon",
     "alcper": 32,
     "price": 1.6,
     "vol": 40
   },
   "bacardi_razz": {
-    "naam": "Bacardi Razz",
+    "name": "Bacardi Razz",
     "alcper": 32,
     "price": 1.6,
     "vol": 40
   },
   "baileys": {
-    "naam": "Baileys",
+    "name": "Baileys",
     "alcper": 17,
     "price": 1.6,
     "vol": 40
   },
   "beerenburg": {
-    "naam": "Beerenburg",
+    "name": "Beerenburg",
     "alcper": 35,
     "price": 1.1,
     "vol": 40
   },
   "blueberry": {
-    "naam": "Blueberry",
+    "name": "Blueberry",
     "alcper": 17,
     "price": 1.3,
     "vol": 40
   },
   "blue_curacao": {
-    "naam": "Blue Curacao",
+    "name": "Blue Curacao",
     "alcper": 14.5,
     "price": 1.1,
     "vol": 40
   },
   "cafe_marakesh": {
-    "naam": "Cafe Marakesh",
+    "name": "Cafe Marakesh",
     "alcper": 23,
     "price": 1.3,
     "vol": 40
   },
   "coebergh": {
-    "naam": "Coebergh",
+    "name": "Coebergh",
     "alcper": 14.5,
     "price": 1.1,
     "vol": 40
   },
   "cognac_chateau": {
-    "naam": "Cognac Chateau",
+    "name": "Cognac Chateau",
     "alcper": 40,
     "price": 2.3,
     "vol": 40
   },
   "cognac_remy_martin": {
-    "naam": "Cognac Remy Martin",
+    "name": "Cognac Remy Martin",
     "alcper": 40,
     "price": 3,
     "vol": 40
   },
   "cointreau": {
-    "naam": "Cointreau",
+    "name": "Cointreau",
     "alcper": 40,
     "price": 2,
     "vol": 40
   },
   "creme_de_bananes": {
-    "naam": "Creme De Bananes",
+    "name": "Creme De Bananes",
     "alcper": 15,
     "price": 1.3,
     "vol": 40
   },
   "creme_de_cassis": {
-    "naam": "Creme De Cassis",
+    "name": "Creme De Cassis",
     "alcper": 17,
     "price": 1.1,
     "vol": 40
   },
   "disaronno": {
-    "naam": "Disaronno",
+    "name": "Disaronno",
     "alcper": 28,
     "price": 1.6,
     "vol": 40
   },
   "dommelsch": {
-    "naam": "Dommelsch",
+    "name": "Dommelsch",
     "alcper": 5,
     "price": 1,
     "vol": 250
   },
   "dropshot": {
-    "naam": "Dropshot",
+    "name": "Dropshot",
     "alcper": 20,
     "price": 1.1,
     "vol": 40
   },
   "gin_bulldog": {
-    "naam": "Gin Bulldog",
+    "name": "Gin Bulldog",
     "alcper": 40,
     "price": 3,
     "vol": 40
   },
   "gin_sylvius": {
-    "naam": "Gin Sylvius",
+    "name": "Gin Sylvius",
     "alcper": 45,
     "price": 3,
     "vol": 40
   },
   "gin_tanqueray": {
-    "naam": "Gin Tanqueray",
+    "name": "Gin Tanqueray",
     "alcper": 45.7,
     "price": 2,
     "vol": 40
   },
   "goldstrike": {
-    "naam": "Goldstrike",
+    "name": "Goldstrike",
     "alcper": 50,
     "price": 2,
     "vol": 40
   },
   "gordons_gin": {
-    "naam": "Gordons Gin",
+    "name": "Gordons Gin",
     "alcper": 37.5,
     "price": 1.6,
     "vol": 40
   },
   "grand_manier": {
-    "naam": "Grand Manier",
+    "name": "Grand Manier",
     "alcper": 40,
     "price": 2.3,
     "vol": 40
   },
   "hagel_en_donder": {
-    "naam": "Hagel en Donder",
+    "name": "Hagel en Donder",
     "alcper": 25,
     "price": 1.3,
     "vol": 40
   },
   "hoegaarden": {
-    "naam": "Hoegaarden",
+    "name": "Hoegaarden",
     "alcper": 5,
     "price": 1.5,
     "vol": 40
   },
   "ketel1": {
-    "naam": "Ketel1",
+    "name": "Ketel1",
     "alcper": 35,
     "price": 1.1,
     "vol": 40
   },
   "jagermeister": {
-    "naam": "Jagermeister",
+    "name": "Jagermeister",
     "alcper": 35,
     "price": 1.6,
     "vol": 40
   },
   "jameson": {
-    "naam": "Jameson",
+    "name": "Jameson",
     "alcper": 40,
     "price": 2,
     "vol": 40
   },
   "kontiki": {
-    "naam": "Kontiki",
+    "name": "Kontiki",
     "alcper": 24,
     "price": 1.3,
     "vol": 40
   },
   "kuyper_bessen": {
-    "naam": "Kuyper Bessen",
+    "name": "Kuyper Bessen",
     "alcper": 20,
     "price": 1.1,
     "vol": 40
   },
   "kuyper_coconut": {
-    "naam": "Kuyper Coconut",
+    "name": "Kuyper Coconut",
     "alcper": 15,
     "price": 1.3,
     "vol": 40
   },
   "licor43": {
-    "naam": "Licor43",
+    "name": "Licor43",
     "alcper": 31,
     "price": 1.6,
     "vol": 40
   },
   "limoncello": {
-    "naam": "Limoncello",
+    "name": "Limoncello",
     "alcper": 32,
     "price": 2,
     "vol": 40
   },
   "marasquin": {
-    "naam": "Marasquin",
+    "name": "Marasquin",
     "alcper": 29,
     "price": 1.6,
     "vol": 40
   },
   "martini_rosso": {
-    "naam": "Martini Rosso",
+    "name": "Martini Rosso",
     "alcper": 15,
     "price": 1.1,
     "vol": 40
   },
   "malibu": {
-    "naam": "Malibu",
+    "name": "Malibu",
     "alcper": 21,
     "price": 1.3,
     "vol": 40
   },
   "mispelbloem_brandewijn": {
-    "naam": "Mispelbloem Brandewijn",
+    "name": "Mispelbloem Brandewijn",
     "alcper": 35,
     "price": 1.3,
     "vol": 40
   },
   "oranjebitter": {
-    "naam": "Oranjebitter",
+    "name": "Oranjebitter",
     "alcper": 30,
     "price": 1.3,
     "vol": 40
   },
   "ouzo": {
-    "naam": "Ouzo",
+    "name": "Ouzo",
     "alcper": 38,
     "price": 1.3,
     "vol": 40
   },
   "passoa": {
-    "naam": "Passoa",
+    "name": "Passoa",
     "alcper": 14.9,
     "price": 1.1,
     "vol": 40
   },
   "peach_tree": {
-    "naam": "Peach Tree",
+    "name": "Peach Tree",
     "alcper": 20,
     "price": 1.3,
     "vol": 40
   },
   "pernod": {
-    "naam": "Pernod",
+    "name": "Pernod",
     "alcper": 40,
     "price": 1.6,
     "vol": 40
   },
   "pina_coloda": {
-    "naam": "Pina Coloda",
+    "name": "Pina Coloda",
     "alcper": 15,
     "price": 1.1,
     "vol": 40
   },
   "pisang_ambon": {
-    "naam": "Pisang Ambon",
+    "name": "Pisang Ambon",
     "alcper": 21,
     "price": 1.3,
     "vol": 40
   },
   "puschkin_black": {
-    "naam": "Puschkin Black",
+    "name": "Puschkin Black",
     "alcper": 16.6,
     "price": 1.1,
     "vol": 40
   },
   "safari": {
-    "naam": "Safari",
+    "name": "Safari",
     "alcper": 20,
     "price": 1.3,
     "vol": 40
   },
   "sambuca": {
-    "naam": "Sambuca",
+    "name": "Sambuca",
     "alcper": 38,
     "price": 1.6,
     "vol": 40
   },
   "schelvispekel": {
-    "naam": "Schelvispekel",
+    "name": "Schelvispekel",
     "alcper": 35,
     "price": 1.1,
     "vol": 40
   },
   "sippersbitter": {
-    "naam": "Sippersbitter",
+    "name": "Sippersbitter",
     "alcper": 30,
     "price": 1.1,
     "vol": 40
   },
   "sperma": {
-    "naam": "Sperma",
+    "name": "Sperma",
     "alcper": 15,
     "price": 1.3,
     "vol": 40
   },
   "smirrnoff_vodka": {
-    "naam": "Smirrnoff Vodka",
+    "name": "Smirrnoff Vodka",
     "alcper": 37.5,
     "price": 1.3,
     "vol": 40
   },
   "stroh_80": {
-    "naam": "Stroh 80",
+    "name": "Stroh 80",
     "alcper": 80,
     "price": 3,
     "vol": 40
   },
   "tequila": {
-    "naam": "Tequila",
+    "name": "Tequila",
     "alcper": 38,
     "price": 2,
     "vol": 40
   },
   "tia_maria": {
-    "naam": "Tia Maria",
+    "name": "Tia Maria",
     "alcper": 20,
     "price": 1.6,
     "vol": 40
   },
   "vodka_rood": {
-    "naam": "Vodka Rood",
+    "name": "Vodka Rood",
     "alcper": 18,
     "price": 1.1,
     "vol": 40
   },
   "vieux": {
-    "naam": "Vieux",
+    "name": "Vieux",
     "alcper": 35,
     "price": 1.1,
     "vol": 40
   },
   "wortegemse": {
-    "naam": "Wortegemse",
+    "name": "Wortegemse",
     "alcper": 24.2,
     "price": 1.1,
     "vol": 40

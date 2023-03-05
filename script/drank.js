@@ -1,8 +1,7 @@
 //database cocktails
 const fs = require("fs");
-const express = require("express");
 let alcoholDB = {};
-let nonalcoholDB = {};
+let nonAlcoholDB = {};
 
 //function die de database leest en in een callback zet
 function databaseReader() {
@@ -14,8 +13,8 @@ function databaseReader() {
 	}
 
 	try {
-		const jsonString = fs.readFileSync("./public/assets/nonalcohol.json", "utf8");
-		nonalcoholDB = JSON.parse(jsonString);
+		const jsonString = fs.readFileSync("./public/assets/nonAlcohol.json", "utf8");
+		nonAlcoholDB = JSON.parse(jsonString);
 	} catch (err){
 		console.log("Error reading database:", err);
 	}
@@ -24,10 +23,10 @@ function databaseReader() {
 //function die naar de database schrijft
 function databaseWriter(type) {
 	let jsonString;
-	if (type == "alcohol") {
+	if (type === "alcohol") {
 		jsonString = JSON.stringify(alcoholDB);
-	} else if (type == "nonalcohol") {
-		jsonString = JSON.stringify(nonalcoholDB);
+	} else if (type === "nonAlcohol") {
+		jsonString = JSON.stringify(nonAlcoholDB);
 	} else {
 		jsonString = "";
 	}
@@ -45,19 +44,19 @@ function databaseWriter(type) {
 databaseReader();
 
 //constructor voor een alcohol object
-function alcohol(naam, alcper, price, vol) {
-	this.naam = naam;
+function alcohol(name, alcper, price, vol) {
+	this.name = name;
 	this.alcper = alcper;
 	this.price = price;
 	this.vol = vol;
-	alcoholDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
+	alcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
 }
 
-function nonalcohol(naam, price, vol) {
-	this.naam = naam;
+function nonAlcohol(name, price, vol) {
+	this.name = name;
 	this.price = price;
 	this.vol = vol;
-	nonalcoholDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
+	nonAlcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
 }
 
-module.exports = { alcoholDB, alcohol, nonalcoholDB, nonalcohol, databaseWriter}
+module.exports = { alcoholDB, alcohol, nonAlcoholDB, nonAlcohol, databaseWriter}

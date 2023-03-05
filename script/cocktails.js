@@ -1,6 +1,6 @@
 const fs = require('fs');
-const {alcoholDB} = require("./alcohol");
-const {nonalcoholDB} = require("./alcohol");
+const {alcoholDB} = require("./drank");
+const {nonAlcoholDB} = require("./drank");
 
 //volume van glazen in mililiter
 const volShotglas = 40;
@@ -38,10 +38,10 @@ function databaseWriter(cocktail) {
 databaseReader();
 
 //constructor voor een cocktail
-function Cocktail(name, glass, alcohol, nonalcohol, alcPer, price, creator, desc){
+function Cocktail(name, glass, alcohol, nonAlcohol, alcPer, price, creator, desc){
 	this.name = name;
 	this.glass = glass;
-	this.nonalcohol = nonalcohol;
+	this.nonAlcohol = nonAlcohol;
 	this.alcohol = alcohol;
 	this.alcper = alcPer;
 	this.price = price.toFixed(2);
@@ -52,34 +52,38 @@ function Cocktail(name, glass, alcohol, nonalcohol, alcPer, price, creator, desc
 
 //constructor voor nieuwe cocktail
 //alcohol dict: { alcohol: aanvullen/[hoeveel, type] }
-function CocktailCreator(name, glass, alcohol, nonalcohol, creator, desc) {
+function CocktailCreator(name, glass, alcohol, nonAlcohol, creator, desc) {
 	let glassVolume;
+
 	switch(glass.toLowerCase()) {
 		case "longdrink":
 			glassVolume = volLongdrink;
+			break;
 		case "tumbler":
 			glassVolume = volTumbler;
+			break;
 		case "shot":
 			glassVolume = volShotglas;
+			break;
 		case "social":
 			glassVolume = volSocial;
+			break;
 		case "papa":
 			glassVolume = volPapa;
+			break;
 	}
 
 	let alcCont = 0;
 	let price = 0;
 	let usedVolume = 0;
 
-	let aanvul = []
+	let fill = []
 
 	for (let key in alcohol) {
 		let alcoholItem = alcoholDB[key.toLowerCase()];
 
-		if (alcohol[key] == "aanvullen") {
-			aanvul.push([alcoholItem, alcohol[key]]);
-		} else if (alcohol[key][1] == "glas") {
-			aanvul.push([alcoholItem, alcohol[key][0], alcohol[key][1]]);
+		if (alcohol[key] === "aanvullen") {
+			fill.push([alcoholItem, alcohol[key]]);
 		} else {
 			let vol = alcohol[key][0] * volShotglas;
 			usedVolume += vol;
@@ -88,42 +92,32 @@ function CocktailCreator(name, glass, alcohol, nonalcohol, creator, desc) {
 		}
 	}
 
-	console.log(alcCont);
+	for (let key in nonAlcohol) {
+		let nonAlcoholItem = nonAlcoholDB[key.toLowerCase()];
 
-	for (let key in nonalcohol) {
-		let nonalcoholItem = nonalcoholDB[key.toLowerCase()];
-
-		if (nonalcohol[key] == "aanvullen") {
-			aanvul.push([nonalcoholItem, nonalcohol[key]]);
-		} else if (nonalcohol[key][1] == "glas") {
-			aanvul.push([nonalcoholItem, nonalcohol[key][0], nonalcohol[key][1]]);
-		} else {
-			let vol = nonalcohol[key][0] * volShotglas;
+		if (nonAlcohol[key] === "aanvullen") {
+			fill.push([nonAlcoholItem, nonAlcohol[key]]);
+		} else if (nonAlcohol[key][1] === "shot") {
+			let vol = nonAlcohol[key][0] * volShotglas;
 			usedVolume += vol;
-			price += nonalcoholItem.price * vol / nonalcoholItem.vol;
+			price += nonAlcoholItem.price * vol / nonAlcoholItem.vol;
 		}
 	}
 
-	console.log(alcCont);
+	for (let item in fill) {
+		let useVol = (glassVolume - usedVolume)/fill.length;
+		price += fill[item][0].price * useVol/fill[item][0].vol;
 
-	for (let item in aanvul) {
-		let volRemain = glassVolume - usedVolume;
-		if (item.length == 3) { //als glass
-
-			let useVol = volRemain * aanvul[item][1];
-			price += aanvul[item][0].price * useVol/aanvul[item][0].vol;
-			if ("alcper" in aanvul[item][0]) {
-				alcCont += aanvul[item][0].alcper * useVol;
-			}
-		} else { //als aanvullen
-			price += aanvul[item][0].price * volRemain/aanvul[item][0].vol;
-			if ("alcper" in aanvul[item][0]) {
-				alcCont += aanvul[item][0].alcper * volRemain;
-			}
+		if ("alcper" in fill[item][0]) {
+			alcCont += fill[item][0].alcper/100 * useVol;
+			alcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = ["aanvullen", (useVol/fill[item][0].vol).toFixed(2)];
+		} else {
+			console.log(fill);
+			console.log(fill[item]);
+			console.log(fill[item][0]);
+			nonAlcohol[fill[item][0].name.replace(" ", "_").toLowerCase()] = ["aanvullen", (useVol/fill[item][0].vol).toFixed(2)];
 		}
 	}
-
-	console.log(alcCont);
 
 	let alcPer = (alcCont/glassVolume * 100).toFixed(2);
 	price = price.toFixed(2);
@@ -132,14 +126,14 @@ function CocktailCreator(name, glass, alcohol, nonalcohol, creator, desc) {
 
 	console.log(name);
 	console.log(glass);
-	console.log(nonalcohol);
 	console.log(alcohol);
+	console.log(nonAlcohol);
 	console.log(alcPer);
 	console.log(price);
 	console.log(creator);
 	console.log(desc);
 
-	//Cocktail(name, glas, alcohol, nonalcohol, alcPer, prijs, creator, desc);
+	//Cocktail(name, glas, alcohol, nonAlcohol, alcPer, prijs, creator, desc);
 }
 
 module.exports = { cocktailDB, Cocktail, CocktailCreator};
