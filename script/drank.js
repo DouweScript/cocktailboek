@@ -1,21 +1,21 @@
 //database cocktails
 const fs = require("fs");
 const express = require("express");
-let drankDB = {};
-let frisDB = {};
+let alcoholDB = {};
+let nonalcoholDB = {};
 
 //function die de database leest en in een callback zet
 function databaseReader() {
 	try {
-		const jsonString = fs.readFileSync("./public/assets/drank.json", "utf8");
-		drankDB = JSON.parse(jsonString);
+		const jsonString = fs.readFileSync("./public/assets/alcohol.json", "utf8");
+		alcoholDB = JSON.parse(jsonString);
 	} catch (err){
 		console.log("Error reading database:", err);
 	}
 
 	try {
-		const jsonString = fs.readFileSync("./public/assets/fris.json", "utf8");
-		frisDB = JSON.parse(jsonString);
+		const jsonString = fs.readFileSync("./public/assets/nonalcohol.json", "utf8");
+		nonalcoholDB = JSON.parse(jsonString);
 	} catch (err){
 		console.log("Error reading database:", err);
 	}
@@ -24,10 +24,10 @@ function databaseReader() {
 //function die naar de database schrijft
 function databaseWriter(type) {
 	let jsonString;
-	if (type == "drank") {
-		jsonString = JSON.stringify(drankDB);
-	} else if (type == "fris") {
-		jsonString = JSON.stringify(frisDB);
+	if (type == "alcohol") {
+		jsonString = JSON.stringify(alcoholDB);
+	} else if (type == "nonalcohol") {
+		jsonString = JSON.stringify(nonalcoholDB);
 	} else {
 		jsonString = "";
 	}
@@ -44,20 +44,20 @@ function databaseWriter(type) {
 //init database
 databaseReader();
 
-//constructor voor een drank object
-function Drank(naam, alcper, price, vol) {
+//constructor voor een alcohol object
+function alcohol(naam, alcper, price, vol) {
 	this.naam = naam;
 	this.alcper = alcper;
 	this.price = price;
 	this.vol = vol;
-	drankDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
+	alcoholDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
 }
 
-function Fris(naam, price, vol) {
+function nonalcohol(naam, price, vol) {
 	this.naam = naam;
 	this.price = price;
 	this.vol = vol;
-	frisDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
+	nonalcoholDB[naam.toLowerCase().replaceAll(" ", "_")] = this;
 }
 
-module.exports = { drankDB, Drank, frisDB, Fris, databaseWriter}
+module.exports = { alcoholDB, alcohol, nonalcoholDB, nonalcohol, databaseWriter}

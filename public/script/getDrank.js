@@ -1,39 +1,39 @@
 let rawFile = new XMLHttpRequest();
-let drankDB = {};
-let frisDB = {};
+let alcoholDB = {};
+let nonalcoholDB = {};
 
-rawFile.open("GET", "./assets/drank.json", false);
+rawFile.open("GET", "./assets/alcohol.json", false);
 rawFile.onreadystatechange = function() {
     if (rawFile.readyState == 4 && rawFile.status == 200 || rawFile.status == 0){
         let jsonString = rawFile.responseText;
-        drankDB = JSON.parse(jsonString);
+        alcoholDB = JSON.parse(jsonString);
     }
 }
 rawFile.send(null);
 
-select = document.getElementById('selectDrank');
+select = document.getElementById('selectalcohol');
 
-for (let key in drankDB) {
+for (let key in alcoholDB) {
     let opt = document.createElement('option');
-    opt.innerHTML = drankDB[key].naam
+    opt.innerHTML = alcoholDB[key].naam
     select.appendChild(opt);
 }
 
 rawFile = new XMLHttpRequest();
 
-rawFile.open("GET", "./assets/fris.json", false);
+rawFile.open("GET", "./assets/nonalcohol.json", false);
 rawFile.onreadystatechange = function() {
     if (rawFile.readyState == 4 && rawFile.status == 200 || rawFile.status == 0){
         let jsonString = rawFile.responseText;
-        frisDB = JSON.parse(jsonString);
+        nonalcoholDB = JSON.parse(jsonString);
     }
 }
 rawFile.send(null);
 
-select = document.getElementById('selectFris');
+select = document.getElementById('selectnonalcohol');
 
-for (let key in frisDB) {
+for (let key in nonalcoholDB) {
     let opt = document.createElement('option');
-    opt.innerHTML = frisDB[key].naam
+    opt.innerHTML = nonalcoholDB[key].naam
     select.appendChild(opt);
 }

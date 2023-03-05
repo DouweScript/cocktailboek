@@ -5,20 +5,20 @@ function printCocktail(cocktail){
 							<ul>`
 							
 	//loop die het aantal soorten sterk in een cocktail erbij zet
-	for (let i = 0; i < cocktail.drank.length; i++){
-		if(cocktail.drank[i][0] <= 1){
-			printString += `<li> ${cocktail.drank[i][0]} Shot ${cocktail.drank[i][1]} </li>`
+	for (let i = 0; i < cocktail.alcohol.length; i++){
+		if(cocktail.alcohol[i][0] <= 1){
+			printString += `<li> ${cocktail.alcohol[i][0]} Shot ${cocktail.alcohol[i][1]} </li>`
 		}
 		else{
-			printString += `<li> ${cocktail.drank[i][0]} Shots ${cocktail.drank[i][1]} </li>`
+			printString += `<li> ${cocktail.alcohol[i][0]} Shots ${cocktail.alcohol[i][1]} </li>`
 		}
 	}
 
 	printString += 	"</ul>";
 
-	//Zet het fris erbij als het het heeft
-	if (cocktail.fris != null){
-		printString += `Aanvullen met ${cocktail.fris}`
+	//Zet het nonalcohol erbij als het het heeft
+	if (cocktail.nonalcohol != null){
+		printString += `Aanvullen met ${cocktail.nonalcohol}`
 	}
 
 	//Zet de omschrijving er bij als hij die heeft
@@ -64,7 +64,7 @@ function sortAlpha(){
 }
 
 //zorgt voor de interactie op de webpagina
-document.getElementById("selectFris").onclick = function(){
+document.getElementById("selectnonalcohol").onclick = function(){
 	selectGlas()
 };
 
@@ -122,18 +122,18 @@ function randomCocktail(){
 	 											   "<button class='afterclick' onclick='backToAll()'> Terug naar alle Cocktails </button>";
 }
 
-//selecteer welk fris en of glas je wilt
+//selecteer welk nonalcohol en of glas je wilt
 function selectGlas(){
 	let glas = document.getElementById('selectGlas').value;
-	let fris = document.getElementById('selectFris').value;
+	let nonalcohol = document.getElementById('selectnonalcohol').value;
 	let glasArray = [];
-	if (glas == "Alle Glazen" && fris == "Alle Fris") {
+	if (glas == "Alle Glazen" && nonalcohol == "Alle nonalcohol") {
 		printToWebpage(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas == "Alle Glazen" && fris == cocktailDB[key].fris) ||
-				(fris == "Alle Fris" && glas == cocktailDB[key].glass) ||
-				(fris == cocktailDB[key].fris && glas == cocktailDB[key].glass)){
+			if ((glas == "Alle Glazen" && nonalcohol == cocktailDB[key].nonalcohol) ||
+				(nonalcohol == "Alle nonalcohol" && glas == cocktailDB[key].glass) ||
+				(nonalcohol == cocktailDB[key].nonalcohol && glas == cocktailDB[key].glass)){
 				glasArray.push(cocktailDB[key]);
 			}
 		}
@@ -148,15 +148,15 @@ function selectGlas(){
 
 function returnSelected(){
 	let glas = document.getElementById('selectGlas').value;
-	let fris = document.getElementById('selectFris').value;
+	let nonalcohol = document.getElementById('selectnonalcohol').value;
 	let glasArray = [];
-	if (glas == "Alle Glazen" && fris == "Alle Fris") {
+	if (glas == "Alle Glazen" && nonalcohol == "Alle nonalcohol") {
 		return Object.values(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glas == "Alle Glazen" && fris == cocktailDB[key].fris) ||
-				(fris == "Alle Fris" && glas == cocktailDB[key].glass) ||
-				(fris == cocktailDB[key].fris && glas == cocktailDB[key].glass)){
+			if ((glas == "Alle Glazen" && nonalcohol == cocktailDB[key].nonalcohol) ||
+				(nonalcohol == "Alle nonalcohol" && glas == cocktailDB[key].glass) ||
+				(nonalcohol == cocktailDB[key].nonalcohol && glas == cocktailDB[key].glass)){
 				glasArray.push(cocktailDB[key]);
 			}
 		}

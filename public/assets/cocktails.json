@@ -2,8 +2,8 @@
 	"1953": {
 		"name": "1953",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				1,
 				"Blue Curacao"
@@ -17,8 +17,8 @@
 	"bananenboner": {
 		"name": "Bananenboner",
 		"glass": "Longdrink",
-		"fris": "Bananensap",
-		"drank": [
+		"nonalcohol": "Bananensap",
+		"alcohol": [
 			[
 				1,
 				"Blueberry"
@@ -33,11 +33,11 @@
 		"creator": "Bruno",
 		"desc": null
 	},
-	"dubbel_fris": {
-		"name": "Dubbel Fris",
+	"dubbel_nonalcohol": {
+		"name": "Dubbel nonalcohol",
 		"glass": "Social",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				1,
 				"Bacardi Lemon"
@@ -59,8 +59,8 @@
 	"paarse_moederneuker": {
 		"name": "Paarse moederneuker",
 		"glass": "Longdrink",
-		"fris": "Cassis",
-		"drank": [
+		"nonalcohol": "Cassis",
+		"alcohol": [
 			[
 				0.5,
 				"Blue Curacao"
@@ -86,8 +86,8 @@
 	"lustrumbocobaco": {
 		"name": "LustrumBoCoBaCo",
 		"glass": "Social",
-		"fris": "Cola",
-		"drank": [
+		"nonalcohol": "Cola",
+		"alcohol": [
 			[
 				1,
 				"Bacardi Razz"
@@ -113,8 +113,8 @@
 	"brave_bull": {
 		"name": "Brave bull",
 		"glass": "Tumbler",
-		"fris": "ijsblokjes",
-		"drank": [
+		"nonalcohol": "ijsblokjes",
+		"alcohol": [
 			[
 				1,
 				"Tequila"
@@ -132,8 +132,8 @@
 	"ak-47": {
 		"name": "AK-47",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Dropshot"
@@ -155,8 +155,8 @@
 	"b52": {
 		"name": "B52",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Baileys"
@@ -178,8 +178,8 @@
 	"black_heaven": {
 		"name": "Black Heaven",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Dropshot"
@@ -197,8 +197,8 @@
 	"slappe_slet": {
 		"name": "Slappe Slet",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				0.5,
 				"Kontiki"
@@ -216,8 +216,8 @@
 	"smurf": {
 		"name": "Smurf",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				0.5,
 				"Blue Curacao"
@@ -239,8 +239,8 @@
 	"caribean_ultimate": {
 		"name": "Caribean Ultimate",
 		"glass": "Tumbler",
-		"fris": "Sinaasappelsap",
-		"drank": [
+		"nonalcohol": "Sinaasappelsap",
+		"alcohol": [
 			[
 				1,
 				"Blue Curacao"
@@ -262,8 +262,8 @@
 	"chocomania": {
 		"name": "Chocomania",
 		"glass": "Social",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				1,
 				"Pina Coloda"
@@ -293,8 +293,8 @@
 	"fireball": {
 		"name": "Fireball",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Sambuca"
@@ -312,8 +312,8 @@
 	"grand_cafe_malibu": {
 		"name": "Grand Cafe Malibu",
 		"glass": "Longdrink",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				0.5,
 				"Grand Manier"
@@ -335,8 +335,8 @@
 	"nysa": {
 		"name": "Nysa",
 		"glass": "Tumbler",
-		"fris": "Fanta",
-		"drank": [
+		"nonalcohol": "Fanta",
+		"alcohol": [
 			[
 				0.5,
 				"Ketel1"
@@ -354,8 +354,8 @@
 	"god": {
 		"name": "GOD",
 		"glass": "Longdrink",
-		"fris": "Ginger Ale",
-		"drank": [
+		"nonalcohol": "Ginger Ale",
+		"alcohol": [
 			[
 				1,
 				"Oranjebitter"
@@ -373,8 +373,8 @@
 	"raketje": {
 		"name": "Raketje",
 		"glass": "Longdrink",
-		"fris": "Fanta",
-		"drank": [
+		"nonalcohol": "Fanta",
+		"alcohol": [
 			[
 				1,
 				"Bacardi Razz"
@@ -388,8 +388,8 @@
 	"redband": {
 		"name": "Redband",
 		"glass": "Social",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				1,
 				"Apfelkorn"
@@ -423,8 +423,8 @@
 	"stoplicht": {
 		"name": "Stoplicht",
 		"glass": "Longdrink",
-		"fris": "Sinaasappelsap",
-		"drank": [
+		"nonalcohol": "Sinaasappelsap",
+		"alcohol": [
 			[
 				0.5,
 				"Pisang Ambon"
@@ -442,8 +442,8 @@
 	"u-botter": {
 		"name": "U-Botter",
 		"glass": "Tumbler",
-		"fris": "Bitter Lemon",
-		"drank": [
+		"nonalcohol": "Bitter Lemon",
+		"alcohol": [
 			[
 				0.33,
 				"Pisang Ambon"
@@ -465,8 +465,8 @@
 	"aqua-fresh_deo": {
 		"name": "Aqua-fresh Deo",
 		"glass": "Longdrink",
-		"fris": "Sinaas",
-		"drank": [
+		"nonalcohol": "Sinaas",
+		"alcohol": [
 			[
 				1,
 				"Blue Curacao"
@@ -484,8 +484,8 @@
 	"banaantje": {
 		"name": "Banaantje",
 		"glass": "Longdrink",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				1,
 				"Smirrnoff Vodka"
@@ -507,8 +507,8 @@
 	"blauwe_meuk": {
 		"name": "Blauwe Meuk",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				1,
 				"Disaronno"
@@ -526,8 +526,8 @@
 	"boswachter": {
 		"name": "Boswachter",
 		"glass": "Longdrink",
-		"fris": "Cola",
-		"drank": [
+		"nonalcohol": "Cola",
+		"alcohol": [
 			[
 				0.5,
 				"Apfelkorn"
@@ -549,8 +549,8 @@
 	"dieptebom": {
 		"name": "Dieptebom",
 		"glass": "Longdrink",
-		"fris": "Ginger Ale",
-		"drank": [
+		"nonalcohol": "Ginger Ale",
+		"alcohol": [
 			[
 				1,
 				"Hagel en Donder"
@@ -561,11 +561,11 @@
 		"creator": null,
 		"desc": "Borrel glas in longdrink laten vallen. Het wapen tegen de U-130"
 	},
-	"dubbelfrisss": {
-		"name": "Dubbelfrisss",
+	"dubbelnonalcoholss": {
+		"name": "Dubbelnonalcoholss",
 		"glass": "Longdrink",
-		"fris": "Appelsap",
-		"drank": [
+		"nonalcohol": "Appelsap",
+		"alcohol": [
 			[
 				1,
 				"Cointreau"
@@ -583,8 +583,8 @@
 	"froggy": {
 		"name": "Froggy",
 		"glass": "Longdrink",
-		"fris": "Tonic",
-		"drank": [
+		"nonalcohol": "Tonic",
+		"alcohol": [
 			[
 				1,
 				"Kontiki"
@@ -602,8 +602,8 @@
 	"fruit_xxl": {
 		"name": "Fruit XXL",
 		"glass": "Longdrink",
-		"fris": "Appelsap",
-		"drank": [
+		"nonalcohol": "Appelsap",
+		"alcohol": [
 			[
 				1,
 				"Safari"
@@ -625,8 +625,8 @@
 	"groene_thee": {
 		"name": "Groene Thee",
 		"glass": "Longdrink",
-		"fris": "Ice Tea",
-		"drank": [
+		"nonalcohol": "Ice Tea",
+		"alcohol": [
 			[
 				1,
 				"Pisang Ambon"
@@ -640,8 +640,8 @@
 	"hetzelfde,_maar_dan_zonder_ijs!": {
 		"name": "Hetzelfde, maar dan zonder ijs!",
 		"glass": "Longdrink",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				0.5,
 				"Grand Manier"
@@ -663,8 +663,8 @@
 	"j.c._special": {
 		"name": "J.C. Special",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				1,
 				"Bacardi Blanca"
@@ -686,8 +686,8 @@
 	"jonasmania": {
 		"name": "Jonasmania",
 		"glass": "Longdrink",
-		"fris": "Appelsap",
-		"drank": [
+		"nonalcohol": "Appelsap",
+		"alcohol": [
 			[
 				0.5,
 				"Coebergh"
@@ -709,8 +709,8 @@
 	"kindercola": {
 		"name": "Kindercola",
 		"glass": "Longdrink",
-		"fris": "Cola",
-		"drank": [
+		"nonalcohol": "Cola",
+		"alcohol": [
 			[
 				2,
 				"Stroh 80"
@@ -724,8 +724,8 @@
 	"knipperbol": {
 		"name": "Knipperbol",
 		"glass": "Longdrink",
-		"fris": "Sinaasappelsap",
-		"drank": [
+		"nonalcohol": "Sinaasappelsap",
+		"alcohol": [
 			[
 				1,
 				"Ketel1"
@@ -739,8 +739,8 @@
 	"koetjeboe!": {
 		"name": "KoetjeBoe!",
 		"glass": "Longdrink",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				0.5,
 				"Malibu"
@@ -762,8 +762,8 @@
 	"kut-met-peren": {
 		"name": "Kut-Met-Peren",
 		"glass": "Longdrink",
-		"fris": "Bier",
-		"drank": [
+		"nonalcohol": "Bier",
+		"alcohol": [
 			[
 				1,
 				"Tia Maria"
@@ -781,8 +781,8 @@
 	"limonade": {
 		"name": "Limonade",
 		"glass": "Longdrink",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				0.5,
 				"Passoa"
@@ -800,8 +800,8 @@
 	"mijn_telefoon": {
 		"name": "Mijn Telefoon",
 		"glass": "Longdrink",
-		"fris": "Ginger Ale",
-		"drank": [
+		"nonalcohol": "Ginger Ale",
+		"alcohol": [
 			[
 				1,
 				"Stroh 80"
@@ -819,8 +819,8 @@
 	"orgasmotron": {
 		"name": "orgasmotron",
 		"glass": "Longdrink",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Baileys"
@@ -846,8 +846,8 @@
 	"pisang_ambier": {
 		"name": "Pisang Ambier",
 		"glass": "Longdrink",
-		"fris": "Bier",
-		"drank": [
+		"nonalcohol": "Bier",
+		"alcohol": [
 			[
 				0.5,
 				"Pisang Ambon"
@@ -861,8 +861,8 @@
 	"rainbow_warrio": {
 		"name": "Rainbow Warrio",
 		"glass": "Longdrink",
-		"fris": "Sinaasappelsap",
-		"drank": [
+		"nonalcohol": "Sinaasappelsap",
+		"alcohol": [
 			[
 				0.25,
 				"Passoa"
@@ -888,8 +888,8 @@
 	"vlaamse_kopstoot": {
 		"name": "Vlaamse Kopstoot",
 		"glass": "Hoegaarden glas",
-		"fris": "Hoegaarden",
-		"drank": [
+		"nonalcohol": "Hoegaarden",
+		"alcohol": [
 			[
 				1,
 				"Wortegemse"
@@ -903,8 +903,8 @@
 	"rexona": {
 		"name": "Rexona",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Blue Curacao"
@@ -926,8 +926,8 @@
 	"rood": {
 		"name": "Rood",
 		"glass": "Longdrink",
-		"fris": "Fanta",
-		"drank": [
+		"nonalcohol": "Fanta",
+		"alcohol": [
 			[
 				1,
 				"Passoa"
@@ -949,8 +949,8 @@
 	"sweet_surprise": {
 		"name": "Sweet Surprise",
 		"glass": "Longdrink",
-		"fris": "Chocomel",
-		"drank": [
+		"nonalcohol": "Chocomel",
+		"alcohol": [
 			[
 				1,
 				"Tia Maria"
@@ -972,8 +972,8 @@
 	"system_shock": {
 		"name": "System Shock",
 		"glass": "Longdrink",
-		"fris": "Tonic",
-		"drank": [
+		"nonalcohol": "Tonic",
+		"alcohol": [
 			[
 				1,
 				"Tequila"
@@ -987,8 +987,8 @@
 	"t-beertje": {
 		"name": "T-Beertje",
 		"glass": "Longdrink",
-		"fris": "Ice Tea",
-		"drank": [
+		"nonalcohol": "Ice Tea",
+		"alcohol": [
 			[
 				1,
 				"Beerenburg"
@@ -1002,8 +1002,8 @@
 	"zonsondergang": {
 		"name": "Zonsondergang",
 		"glass": "Longdrink",
-		"fris": "Sinaasappelsap",
-		"drank": [
+		"nonalcohol": "Sinaasappelsap",
+		"alcohol": [
 			[
 				0.75,
 				"Cointreau"
@@ -1021,8 +1021,8 @@
 	"brent_spar": {
 		"name": "Brent Spar",
 		"glass": "Tumbler",
-		"fris": "Bitter Lemon",
-		"drank": [
+		"nonalcohol": "Bitter Lemon",
+		"alcohol": [
 			[
 				0.5,
 				"Jameson"
@@ -1040,8 +1040,8 @@
 	"cola_dream": {
 		"name": "Cola Dream",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Cola"
@@ -1059,8 +1059,8 @@
 	"fryslan_bopper": {
 		"name": "Fryslan Bopper",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Sippersbitter"
@@ -1082,8 +1082,8 @@
 	"de_g.p.s.": {
 		"name": "De G.P.S.",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Gordons Gin"
@@ -1105,8 +1105,8 @@
 	"ineke's_wraak": {
 		"name": "Ineke's Wraak",
 		"glass": "Tumbler",
-		"fris": "Scheutje Grand Manier",
-		"drank": [
+		"nonalcohol": "Scheutje Grand Manier",
+		"alcohol": [
 			[
 				0.67,
 				"Baileys"
@@ -1124,8 +1124,8 @@
 	"de_kater": {
 		"name": "De Kater",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Jameson"
@@ -1147,8 +1147,8 @@
 	"de_kitten": {
 		"name": "De Kitten",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Jameson"
@@ -1170,8 +1170,8 @@
 	"lemon_with_a_bite": {
 		"name": "Lemon with a bite",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Jameson"
@@ -1189,8 +1189,8 @@
 	"lr-special": {
 		"name": "LR-special",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Bacardi Blanca"
@@ -1216,8 +1216,8 @@
 	"lu_miniscent": {
 		"name": "Lu Miniscent",
 		"glass": "Tumbler",
-		"fris": "Sinaas",
-		"drank": [
+		"nonalcohol": "Sinaas",
+		"alcohol": [
 			[
 				0.5,
 				"Kontiki"
@@ -1235,8 +1235,8 @@
 	"marcs_surprice": {
 		"name": "Marcs Surprice",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Kontiki"
@@ -1262,8 +1262,8 @@
 	"mariëlle_dondert_op": {
 		"name": "Mariëlle Dondert Op",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Blue Curacao"
@@ -1285,8 +1285,8 @@
 	"mururoa_dreams": {
 		"name": "Mururoa Dreams",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Blue Curacao"
@@ -1308,8 +1308,8 @@
 	"nikita": {
 		"name": "Nikita",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Smirrnoff Vodka"
@@ -1327,8 +1327,8 @@
 	"oma's_appeltaart": {
 		"name": "Oma's Appeltaart",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Goldstrike"
@@ -1346,8 +1346,8 @@
 	"orange_coin": {
 		"name": "Orange coin",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				2,
 				"Cointreau"
@@ -1361,8 +1361,8 @@
 	"rooie_diesel": {
 		"name": "Rooie Diesel",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Apfelkorn"
@@ -1388,8 +1388,8 @@
 	"silent_killer": {
 		"name": "Silent Killer",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Vodka Rood"
@@ -1411,8 +1411,8 @@
 	"sun_killer": {
 		"name": "Sun Killer",
 		"glass": "Tumbler",
-		"fris": "Sprite",
-		"drank": [
+		"nonalcohol": "Sprite",
+		"alcohol": [
 			[
 				0.5,
 				"Kontiki"
@@ -1434,8 +1434,8 @@
 	"red_devil": {
 		"name": "Red Devil",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				null
@@ -1457,8 +1457,8 @@
 	"tnt": {
 		"name": "TNT",
 		"glass": "Tumbler",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Jameson"
@@ -1476,8 +1476,8 @@
 	"bolkestein": {
 		"name": "Bolkestein",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Blue Curacao"
@@ -1495,8 +1495,8 @@
 	"brainexplosion": {
 		"name": "Brainexplosion",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Peach Tree"
@@ -1514,8 +1514,8 @@
 	"brainfuck": {
 		"name": "Brainfuck",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Peach Tree"
@@ -1533,8 +1533,8 @@
 	"histos_'92": {
 		"name": "Histos '92",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.33,
 				"Sippersbitter"
@@ -1547,13 +1547,13 @@
 		"alcper": "33.4",
 		"price": "1.10",
 		"creator": null,
-		"desc": "Deze cocktail is geinspireerd door de bovengenoemde dranken, de enige twee soorten sterke drank die tijden het Histos Teamzeiltoernooi '92 aanwezig waren en veelzijdig door de twee Harpyia-teams zijn genuttigd/gemixd"
+		"desc": "Deze cocktail is geinspireerd door de bovengenoemde alcoholen, de enige twee soorten sterke alcohol die tijden het Histos Teamzeiltoernooi '92 aanwezig waren en veelzijdig door de twee Harpyia-teams zijn genuttigd/gemixd"
 	},
 	"noorse_milf": {
 		"name": "Noorse Milf",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Tequila"
@@ -1571,8 +1571,8 @@
 	"vuilverbrander": {
 		"name": "Vuilverbrander",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				0.5,
 				"Grand Manier"
@@ -1590,8 +1590,8 @@
 	"roelof_met_passie": {
 		"name": "Roelof met passie",
 		"glass": "Social",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				2,
 				"Passoa"
@@ -1609,8 +1609,8 @@
 	"black_widowmaker_zevensprong": {
 		"name": "Black Widowmaker Zevensprong",
 		"glass": "Social",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Cassis"
@@ -1648,8 +1648,8 @@
 	"destroyer": {
 		"name": "Destroyer",
 		"glass": "Social",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Smirrnoff Vodka"
@@ -1675,8 +1675,8 @@
 	"natte_olijf": {
 		"name": "Natte Olijf",
 		"glass": "Shot",
-		"fris": null,
-		"drank": [
+		"nonalcohol": null,
+		"alcohol": [
 			[
 				1,
 				"Olijf"

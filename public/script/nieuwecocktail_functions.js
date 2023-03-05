@@ -7,7 +7,7 @@ function selectEasy(e) {
         if (el.hasAttribute('selected')) el.removeAttribute('selected');
         else el.setAttribute('selected', '');
 
-        if (el.parentNode.name == "selectDrank" || el.parentNode.name == "selectFris") {
+        if (el.parentNode.name == "selectalcohol" || el.parentNode.name == "selectnonalcohol") {
 
             let type = el.parentNode.name.replace("select", "").toLowerCase();
 
@@ -88,20 +88,20 @@ function selectEasy(e) {
 }
 
 function reset() {
-    document.getElementById("drankAmount").innerHTML = "";
-    document.getElementById("frisAmount").innerHTML = "";
+    document.getElementById("alcoholAmount").innerHTML = "";
+    document.getElementById("nonalcoholAmount").innerHTML = "";
 
-    let selectDrank = document.getElementById("selectDrank");
-    for (let i = 0; i < selectDrank.children.length; i++) {
-        let child = selectDrank.children.item(i);
+    let selectalcohol = document.getElementById("selectalcohol");
+    for (let i = 0; i < selectalcohol.children.length; i++) {
+        let child = selectalcohol.children.item(i);
         if (child.hasAttribute("selected")) {
             child.removeAttribute("selected");
         }
     }
 
-    let selectFris = document.getElementById("selectFris");
-    for (let i = 0; i < selectFris.children.length; i++) {
-        let child = selectFris.children.item(i);
+    let selectnonalcohol = document.getElementById("selectnonalcohol");
+    for (let i = 0; i < selectnonalcohol.children.length; i++) {
+        let child = selectnonalcohol.children.item(i);
         if (child.hasAttribute("selected")) {
             child.removeAttribute("selected");
         }

@@ -1,6 +1,6 @@
 const fs = require('fs');
-const {drankDB} = require("./drank");
-const {frisDB} = require("./drank");
+const {alcoholDB} = require("./alcohol");
+const {nonalcoholDB} = require("./alcohol");
 
 //volume van glazen in mililiter
 const volShotglas = 40;
@@ -38,11 +38,11 @@ function databaseWriter(cocktail) {
 databaseReader();
 
 //constructor voor een cocktail
-function Cocktail(name, glass, drank, fris, alcPer, price, creator, desc){
+function Cocktail(name, glass, alcohol, nonalcohol, alcPer, price, creator, desc){
 	this.name = name;
 	this.glass = glass;
-	this.fris = fris;
-	this.drank = drank;
+	this.nonalcohol = nonalcohol;
+	this.alcohol = alcohol;
 	this.alcper = alcPer;
 	this.price = price.toFixed(2);
 	this.creator = creator;
@@ -51,8 +51,8 @@ function Cocktail(name, glass, drank, fris, alcPer, price, creator, desc){
 }
 
 //constructor voor nieuwe cocktail
-//drank dict: { drank: aanvullen/[hoeveel, type] }
-function CocktailCreator(name, glass, drank, fris, creator, desc) {
+//alcohol dict: { alcohol: aanvullen/[hoeveel, type] }
+function CocktailCreator(name, glass, alcohol, nonalcohol, creator, desc) {
 	let glassVolume;
 	switch(glass.toLowerCase()) {
 		case "longdrink":
@@ -73,34 +73,34 @@ function CocktailCreator(name, glass, drank, fris, creator, desc) {
 
 	let aanvul = []
 
-	for (let key in drank) {
-		let drankItem = drankDB[key.toLowerCase()];
+	for (let key in alcohol) {
+		let alcoholItem = alcoholDB[key.toLowerCase()];
 
-		if (drank[key] == "aanvullen") {
-			aanvul.push([drankItem, drank[key]]);
-		} else if (drank[key][1] == "glas") {
-			aanvul.push([drankItem, drank[key][0], drank[key][1]]);
+		if (alcohol[key] == "aanvullen") {
+			aanvul.push([alcoholItem, alcohol[key]]);
+		} else if (alcohol[key][1] == "glas") {
+			aanvul.push([alcoholItem, alcohol[key][0], alcohol[key][1]]);
 		} else {
-			let vol = drank[key][0] * volShotglas;
+			let vol = alcohol[key][0] * volShotglas;
 			usedVolume += vol;
-			alcCont += drankItem.alcper/100 * vol;
-			price += drankItem.price * vol / drankItem.vol;
+			alcCont += alcoholItem.alcper/100 * vol;
+			price += alcoholItem.price * vol / alcoholItem.vol;
 		}
 	}
 
 	console.log(alcCont);
 
-	for (let key in fris) {
-		let frisItem = frisDB[key.toLowerCase()];
+	for (let key in nonalcohol) {
+		let nonalcoholItem = nonalcoholDB[key.toLowerCase()];
 
-		if (fris[key] == "aanvullen") {
-			aanvul.push([frisItem, fris[key]]);
-		} else if (fris[key][1] == "glas") {
-			aanvul.push([frisItem, fris[key][0], fris[key][1]]);
+		if (nonalcohol[key] == "aanvullen") {
+			aanvul.push([nonalcoholItem, nonalcohol[key]]);
+		} else if (nonalcohol[key][1] == "glas") {
+			aanvul.push([nonalcoholItem, nonalcohol[key][0], nonalcohol[key][1]]);
 		} else {
-			let vol = fris[key][0] * volShotglas;
+			let vol = nonalcohol[key][0] * volShotglas;
 			usedVolume += vol;
-			price += frisItem.price * vol / frisItem.vol;
+			price += nonalcoholItem.price * vol / nonalcoholItem.vol;
 		}
 	}
 
@@ -132,14 +132,14 @@ function CocktailCreator(name, glass, drank, fris, creator, desc) {
 
 	console.log(name);
 	console.log(glass);
-	console.log(fris);
-	console.log(drank);
+	console.log(nonalcohol);
+	console.log(alcohol);
 	console.log(alcPer);
 	console.log(price);
 	console.log(creator);
 	console.log(desc);
 
-	//Cocktail(name, glas, drank, fris, alcPer, prijs, creator, desc);
+	//Cocktail(name, glas, alcohol, nonalcohol, alcPer, prijs, creator, desc);
 }
 
 module.exports = { cocktailDB, Cocktail, CocktailCreator};

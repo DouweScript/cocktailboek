@@ -6,7 +6,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 //laad cocktails
-const sterk = require("./script/drank");
+const sterk = require("./script/alcohol");
 const cocktails = require("./script/cocktails");
 const {Cocktail} = require("./script/cocktails");
 const {CocktailCreator} = require("./script/cocktails");
@@ -25,49 +25,49 @@ app.get('/new', (req, res) => {
 });
 app.post("/new", (req, res) => {
     const data = req.body;
-    let drank = {};
-    let fris = {};
+    let alcohol = {};
+    let nonalcohol = {};
 
-    if (typeof data.selectDrank != "string") {
-        for (let item in data.selectDrank) {
-            item = data.selectDrank[item];
+    if (typeof data.selectalcohol != "string") {
+        for (let item in data.selectalcohol) {
+            item = data.selectalcohol[item];
             item = item.replaceAll(" ", "_")
             if (data["selectType" + item] == "aanvullen") {
-                drank[item] = "aanvullen";
+                alcohol[item] = "aanvullen";
             } else {
-                drank[item] = [data["selectN" + item], data["selectType" + item]];
+                alcohol[item] = [data["selectN" + item], data["selectType" + item]];
             }
         }
     } else {
-        let item = data.selectFris.replaceAll(" ", "_")
+        let item = data.selectnonalcohol.replaceAll(" ", "_")
         if (data["selectType" + item] == "aanvullen") {
-            fris[item] = "aanvullen";
+            nonalcohol[item] = "aanvullen";
         } else {
-            fris[item] = [data["selectN" + item], data["selectType" + item]];
+            nonalcohol[item] = [data["selectN" + item], data["selectType" + item]];
         }
     }
 
-    if (typeof data.selectFris != "string") {
-        for (let item in data.selectFris) {
-            item = data.selectFris[item];
+    if (typeof data.selectnonalcohol != "string") {
+        for (let item in data.selectnonalcohol) {
+            item = data.selectnonalcohol[item];
             item = item.replaceAll(" ", "_")
             if (data["selectType" + item] == "aanvullen") {
-                fris[item] = "aanvullen";
+                nonalcohol[item] = "aanvullen";
             } else {
-                fris[item] = [data["selectN" + item], data["selectType" + item]];
+                nonalcohol[item] = [data["selectN" + item], data["selectType" + item]];
             }
         }
     } else {
-        let item = data.selectFris.replaceAll(" ", "_")
+        let item = data.selectnonalcohol.replaceAll(" ", "_")
         if (data["selectType" + item] == "aanvullen") {
-            fris[item] = "aanvullen";
+            nonalcohol[item] = "aanvullen";
         } else {
-            fris[item] = [data["selectN" + item], data["selectType" + item]];
+            nonalcohol[item] = [data["selectN" + item], data["selectType" + item]];
         }
     }
 
     console.log(data);
-    CocktailCreator(data.name, data.selectGlass, drank, fris, data.creator, data.desc);
+    CocktailCreator(data.name, data.selectGlass, alcohol, nonalcohol, data.creator, data.desc);
     res.send("ok");
 });
 
