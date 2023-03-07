@@ -33,5 +33,15 @@
 		"name": "Sprite",
 		"price": 0.80,
 		"vol": 250
+	},
+	"bananensap": {
+		"name": "Bananensap",
+		"price": 1.00,
+		"vol": 250
+	},
+	"cassis": {
+		"name": "Cassis",
+		"price": 0.80,
+		"vol": 250
 	}
 }

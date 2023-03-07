@@ -58,7 +58,7 @@ function refreshDatabase() {
 			cocktailDB[name] = Cocktail.create(cock.name, cock.glass.toLowerCase(), cock.alcohol, cock.nonAlcohol, cock.creator, cock.desc, false);
 		} catch (e) {
 			console.log("ERR: " + name + " could not conform!");
-			console.log(e);
+			console.log(e.message);
 			console.log(cocktailDB[name]);
 		}
 	}
@@ -82,13 +82,17 @@ databaseReader();
 
 //constructor voor een cocktail
 class Cocktail {
+	name;
+	glass;
+	alcohol;
+	nonAlcohol;
 	alcPer;
 	price;
 	constructor(name, glass, alcohol, nonAlcohol, alcPer, price, creator, desc){
 		this.name = name;
 		this.glass = glass;
-		this.nonAlcohol = nonAlcohol;
 		this.alcohol = alcohol;
+		this.nonAlcohol = nonAlcohol;
 
 		if (alcPer === null || price === null) {
 			this.calcAlcoholPrice();
@@ -155,8 +159,6 @@ class Cocktail {
 
 			let vol;
 			if (this.nonAlcohol[key] === "aanvullen") {
-				console.log(nonAlcoholItem);
-				console.log(key);
 				fill.push([nonAlcoholItem, this.nonAlcohol[key]]);
 				continue;
 			} else if (this.nonAlcohol[key][1] === "fles") {
@@ -183,7 +185,7 @@ class Cocktail {
 
 		this.alcPer = (alcCont/usedVolume * 100).toFixed(2);
 		this.price = price.toFixed(2);
-		console.log(this.alcPer + "\t" + usedVolume + "\t" + this.name);
+		if (Number.isNaN(usedVolume)) console.log(this.alcPer + "\t" + usedVolume + "\t" + this.name);
 	}
 
 	static create(name, glass, alcohol, nonAlcohol, creator, desc, write = true) {
