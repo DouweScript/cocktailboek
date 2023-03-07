@@ -1,0 +1,1689 @@
+{
+	"1953": {
+		"name": "1953",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				1,
+				"Blue Curacao"
+			]
+		],
+		"alcper": "1.9",
+		"price": "1.90",
+		"creator": "Coline & Max",
+		"desc": "Op de bar zetten en scheutje suiker toevoegen. Dan zie je waarom hij 1953 heet"
+	},
+	"bananenboner": {
+		"name": "Bananenboner",
+		"glass": "Longdrink",
+		"nonAlcohol": "Bananensap",
+		"alcohol": [
+			[
+				1,
+				"Blueberry"
+			],
+			[
+				1,
+				"Passoa"
+			]
+		],
+		"alcper": "4.3",
+		"price": "3.40",
+		"creator": "Bruno",
+		"desc": null
+	},
+	"dubbel_fris": {
+		"name": "Dubbel Fris",
+		"glass": "Social",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				1,
+				"Bacardi Lemon"
+			],
+			[
+				1,
+				"Vodka"
+			],
+			[
+				1,
+				"Apfelkorn"
+			]
+		],
+		"alcper": "7.9",
+		"price": "7.20",
+		"creator": null,
+		"desc": null
+	},
+	"paarse_moederneuker": {
+		"name": "Paarse moederneuker",
+		"glass": "Longdrink",
+		"nonAlcohol": "Cassis",
+		"alcohol": [
+			[
+				0.5,
+				"Blue Curacao"
+			],
+			[
+				0.5,
+				"Coebergh"
+			],
+			[
+				0.5,
+				"Gordons Gin"
+			],
+			[
+				0.5,
+				"Vodka"
+			]
+		],
+		"alcper": "6.9",
+		"price": "3.35",
+		"creator": null,
+		"desc": null
+	},
+	"lustrumbocobaco": {
+		"name": "LustrumBoCoBaCo",
+		"glass": "Social",
+		"nonAlcohol": "Cola",
+		"alcohol": [
+			[
+				1,
+				"Bacardi Razz"
+			],
+			[
+				1,
+				"Bacardi Black"
+			],
+			[
+				1,
+				"Bacardi Lemon"
+			],
+			[
+				1,
+				"Bacardi Blanca"
+			]
+		],
+		"alcper": "11.2",
+		"price": "8.00",
+		"creator": null,
+		"desc": null
+	},
+	"brave_bull": {
+		"name": "Brave bull",
+		"glass": "Tumbler",
+		"nonAlcohol": "ijsblokjes",
+		"alcohol": [
+			[
+				1,
+				"Tequila"
+			],
+			[
+				1,
+				"Cafe Marakesh"
+			]
+		],
+		"alcper": "30.5",
+		"price": "3.30",
+		"creator": "Christiaan",
+		"desc": null
+	},
+	"ak-47": {
+		"name": "AK-47",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Dropshot"
+			],
+			[
+				0.33,
+				"Cafe Marakesh"
+			],
+			[
+				0.33,
+				"Stroh 80"
+			]
+		],
+		"alcper": "40.6",
+		"price": "1.78",
+		"creator": null,
+		"desc": null
+	},
+	"b52": {
+		"name": "B52",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Baileys"
+			],
+			[
+				0.33,
+				"Cafe Marakesh"
+			],
+			[
+				0.33,
+				"Grand Manier"
+			]
+		],
+		"alcper": "26.4",
+		"price": "1.72",
+		"creator": null,
+		"desc": null
+	},
+	"black_heaven": {
+		"name": "Black Heaven",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Dropshot"
+			],
+			[
+				0.5,
+				"Sambuca"
+			]
+		],
+		"alcper": "29.0",
+		"price": "1.35",
+		"creator": null,
+		"desc": null
+	},
+	"slappe_slet": {
+		"name": "Slappe Slet",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				0.5,
+				"Kontiki"
+			],
+			[
+				0.5,
+				"Vodka Rood"
+			]
+		],
+		"alcper": "2.8",
+		"price": "2.00",
+		"creator": null,
+		"desc": null
+	},
+	"smurf": {
+		"name": "Smurf",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				0.5,
+				"Blue Curacao"
+			],
+			[
+				0.5,
+				"Sambuca"
+			],
+			[
+				0.5,
+				"Pina Coloda"
+			]
+		],
+		"alcper": "4.5",
+		"price": "2.70",
+		"creator": null,
+		"desc": null
+	},
+	"caribean_ultimate": {
+		"name": "Caribean Ultimate",
+		"glass": "Tumbler",
+		"nonAlcohol": "Sinaasappelsap",
+		"alcohol": [
+			[
+				1,
+				"Blue Curacao"
+			],
+			[
+				1,
+				"Bacardi Blanca"
+			],
+			[
+				1,
+				"Passoa"
+			]
+		],
+		"alcper": "8.9",
+		"price": "4.80",
+		"creator": null,
+		"desc": null
+	},
+	"chocomania": {
+		"name": "Chocomania",
+		"glass": "Social",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				1,
+				"Pina Coloda"
+			],
+			[
+				1,
+				"Malibu"
+			],
+			[
+				1,
+				"Passoa"
+			],
+			[
+				1,
+				"Jameson"
+			],
+			[
+				1,
+				"Bacardi Black"
+			]
+		],
+		"alcper": "13.4",
+		"price": "9.70",
+		"creator": null,
+		"desc": null
+	},
+	"fireball": {
+		"name": "Fireball",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Sambuca"
+			],
+			[
+				0.67,
+				"Goldstrike"
+			]
+		],
+		"alcper": "46.0",
+		"price": "1.87",
+		"creator": null,
+		"desc": null
+	},
+	"grand_cafe_malibu": {
+		"name": "Grand Cafe Malibu",
+		"glass": "Longdrink",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				0.5,
+				"Grand Manier"
+			],
+			[
+				0.5,
+				"Cafe Marakesh"
+			],
+			[
+				1,
+				"Malibu"
+			]
+		],
+		"alcper": "7.0",
+		"price": "4.10",
+		"creator": null,
+		"desc": null
+	},
+	"nysa": {
+		"name": "Nysa",
+		"glass": "Tumbler",
+		"nonAlcohol": "Fanta",
+		"alcohol": [
+			[
+				0.5,
+				"Ketel1"
+			],
+			[
+				0.5,
+				"Blue Curacao"
+			]
+		],
+		"alcper": "3.3",
+		"price": "1.90",
+		"creator": null,
+		"desc": null
+	},
+	"god": {
+		"name": "GOD",
+		"glass": "Longdrink",
+		"nonAlcohol": "Ginger Ale",
+		"alcohol": [
+			[
+				1,
+				"Oranjebitter"
+			],
+			[
+				1,
+				"Disaronno"
+			]
+		],
+		"alcper": "7.7",
+		"price": "3.90",
+		"creator": null,
+		"desc": null
+	},
+	"raketje": {
+		"name": "Raketje",
+		"glass": "Longdrink",
+		"nonAlcohol": "Fanta",
+		"alcohol": [
+			[
+				1,
+				"Bacardi Razz"
+			]
+		],
+		"alcper": "4.3",
+		"price": "2.40",
+		"creator": null,
+		"desc": "Doe een raket ijsje in het glas voeg vervolgens de ingredienten toe"
+	},
+	"redband": {
+		"name": "Redband",
+		"glass": "Social",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				1,
+				"Apfelkorn"
+			],
+			[
+				1,
+				"Creme De Bananes"
+			],
+			[
+				1,
+				"Hagel en Donder"
+			],
+			[
+				1,
+				"Ketel1"
+			],
+			[
+				1,
+				"Passoa"
+			],
+			[
+				1,
+				"Disaronno"
+			]
+		],
+		"alcper": "10.6",
+		"price": "8.30",
+		"creator": null,
+		"desc": null
+	},
+	"stoplicht": {
+		"name": "Stoplicht",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sinaasappelsap",
+		"alcohol": [
+			[
+				0.5,
+				"Pisang Ambon"
+			],
+			[
+				0.5,
+				"Coebergh"
+			]
+		],
+		"alcper": "2.4",
+		"price": "2.20",
+		"creator": null,
+		"desc": null
+	},
+	"u-botter": {
+		"name": "U-Botter",
+		"glass": "Tumbler",
+		"nonAlcohol": "Bitter Lemon",
+		"alcohol": [
+			[
+				0.33,
+				"Pisang Ambon"
+			],
+			[
+				0.33,
+				"Tia Maria"
+			],
+			[
+				0.33,
+				"Jameson"
+			]
+		],
+		"alcper": "3.6",
+		"price": "2.62",
+		"creator": null,
+		"desc": null
+	},
+	"aqua-fresh_deo": {
+		"name": "Aqua-fresh Deo",
+		"glass": "Longdrink",
+		"nonAlcohol": "sinaasappelsap",
+		"alcohol": [
+			[
+				1,
+				"Blue Curacao"
+			],
+			[
+				1,
+				"Vodka"
+			]
+		],
+		"alcper": "6.9",
+		"price": "3.20",
+		"creator": null,
+		"desc": "remt physiologica"
+	},
+	"banaantje": {
+		"name": "Banaantje",
+		"glass": "Longdrink",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				1,
+				"Vodka"
+			],
+			[
+				1,
+				"Cointreau"
+			],
+			[
+				1,
+				"Baileys"
+			]
+		],
+		"alcper": "7.5",
+		"price": "3.02",
+		"creator": null,
+		"desc": null
+	},
+	"blauwe_meuk": {
+		"name": "Blauwe Meuk",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				1,
+				"Disaronno"
+			],
+			[
+				1,
+				"Blue Curacao"
+			]
+		],
+		"alcper": "5.7",
+		"price": "3.50",
+		"creator": null,
+		"desc": null
+	},
+	"boswachter": {
+		"name": "Boswachter",
+		"glass": "Longdrink",
+		"nonAlcohol": "Cola",
+		"alcohol": [
+			[
+				0.5,
+				"Apfelkorn"
+			],
+			[
+				0.25,
+				"Malibu"
+			],
+			[
+				0.25,
+				"Jagermeister"
+			]
+		],
+		"alcper": "2.8",
+		"price": "2.27",
+		"creator": null,
+		"desc": null
+	},
+	"dieptebom": {
+		"name": "Dieptebom",
+		"glass": "Longdrink",
+		"nonAlcohol": "Ginger Ale",
+		"alcohol": [
+			[
+				1,
+				"Hagel en Donder"
+			]
+		],
+		"alcper": "3.3",
+		"price": "2.30",
+		"creator": null,
+		"desc": "Borrel glas in longdrink laten vallen. Het wapen tegen de U-130"
+	},
+	"dubbelfrisss": {
+		"name": "Dubbelfrisss",
+		"glass": "Longdrink",
+		"nonAlcohol": "Appelsap",
+		"alcohol": [
+			[
+				1,
+				"Cointreau"
+			],
+			[
+				1,
+				"Kontiki"
+			]
+		],
+		"alcper": "8.5",
+		"price": "4.30",
+		"creator": "Coline & Max",
+		"desc": "Serveren met Rietjes"
+	},
+	"froggy": {
+		"name": "Froggy",
+		"glass": "Longdrink",
+		"nonAlcohol": "Tonic",
+		"alcohol": [
+			[
+				1,
+				"Kontiki"
+			],
+			[
+				1,
+				"Pisang Ambon"
+			]
+		],
+		"alcper": "6.0",
+		"price": "3.40",
+		"creator": null,
+		"desc": null
+	},
+	"fruit_xxl": {
+		"name": "Fruit XXL",
+		"glass": "Longdrink",
+		"nonAlcohol": "Appelsap",
+		"alcohol": [
+			[
+				1,
+				"Safari"
+			],
+			[
+				1,
+				"Kontiki"
+			],
+			[
+				1,
+				"Bacardi Lemon"
+			]
+		],
+		"alcper": "10.1",
+		"price": "5.20",
+		"creator": null,
+		"desc": null
+	},
+	"groene_thee": {
+		"name": "Groene Thee",
+		"glass": "Longdrink",
+		"nonAlcohol": "Ice Tea",
+		"alcohol": [
+			[
+				1,
+				"Pisang Ambon"
+			]
+		],
+		"alcper": "2.8",
+		"price": "2.10",
+		"creator": null,
+		"desc": null
+	},
+	"hetzelfde,_maar_dan_zonder_ijs!": {
+		"name": "Hetzelfde, maar dan zonder ijs!",
+		"glass": "Longdrink",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				0.5,
+				"Grand Manier"
+			],
+			[
+				0.5,
+				"Cafe Marakesh"
+			],
+			[
+				1,
+				"Malibu"
+			]
+		],
+		"alcper": "7.0",
+		"price": "4.10",
+		"creator": null,
+		"desc": null
+	},
+	"j.c._special": {
+		"name": "J.C. Special",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				1,
+				"Bacardi Blanca"
+			],
+			[
+				1,
+				"Vieux"
+			],
+			[
+				0.5,
+				"Gordons Gin"
+			]
+		],
+		"alcper": "12.2",
+		"price": "4.30",
+		"creator": null,
+		"desc": null
+	},
+	"jonasmania": {
+		"name": "Jonasmania",
+		"glass": "Longdrink",
+		"nonAlcohol": "Appelsap",
+		"alcohol": [
+			[
+				0.5,
+				"Coebergh"
+			],
+			[
+				0.5,
+				"Hagel en Donder"
+			],
+			[
+				0.33,
+				"Pina Coloda"
+			]
+		],
+		"alcper": "3.3",
+		"price": "2.56",
+		"creator": null,
+		"desc": "SHAKE WELL WITH ICE AND STIRR INTO GLASS"
+	},
+	"kindercola": {
+		"name": "Kindercola",
+		"glass": "Longdrink",
+		"nonAlcohol": "Cola",
+		"alcohol": [
+			[
+				2,
+				"Stroh 80"
+			]
+		],
+		"alcper": "21.3",
+		"price": "6.80",
+		"creator": null,
+		"desc": null
+	},
+	"knipperbol": {
+		"name": "Knipperbol",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sinaasappelsap",
+		"alcohol": [
+			[
+				1,
+				"Ketel1"
+			]
+		],
+		"alcper": "4.7",
+		"price": "2.10",
+		"creator": null,
+		"desc": null
+	},
+	"koetjeboe!": {
+		"name": "KoetjeBoe!",
+		"glass": "Longdrink",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				0.5,
+				"Malibu"
+			],
+			[
+				0.5,
+				"Pina Coloda"
+			],
+			[
+				0.5,
+				"Bacardi Blanca"
+			]
+		],
+		"alcper": "4.9",
+		"price": "3.00",
+		"creator": null,
+		"desc": "Dit was een cocktail van de dierendag 2001.5"
+	},
+	"kut-met-peren": {
+		"name": "Kut-Met-Peren",
+		"glass": "Longdrink",
+		"nonAlcohol": "Bier",
+		"alcohol": [
+			[
+				1,
+				"Tia Maria"
+			],
+			[
+				1,
+				"Pisang Ambon"
+			]
+		],
+		"alcper": "9.6",
+		"price": "3.90",
+		"creator": null,
+		"desc": "In vaasje met inlegkruisje(zonder vleugels)"
+	},
+	"limonade": {
+		"name": "Limonade",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				0.5,
+				"Passoa"
+			],
+			[
+				0.5,
+				"Bacardi Razz"
+			]
+		],
+		"alcper": "3.1",
+		"price": "2.15",
+		"creator": null,
+		"desc": null
+	},
+	"mijn_telefoon": {
+		"name": "Mijn Telefoon",
+		"glass": "Longdrink",
+		"nonAlcohol": "Ginger Ale",
+		"alcohol": [
+			[
+				1,
+				"Stroh 80"
+			],
+			[
+				0.5,
+				"Gordons Gin"
+			]
+		],
+		"alcper": "15.7",
+		"price": "4.80",
+		"creator": null,
+		"desc": null
+	},
+	"orgasmotron": {
+		"name": "orgasmotron",
+		"glass": "Longdrink",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Baileys"
+			],
+			[
+				1,
+				"Cointreau"
+			],
+			[
+				1,
+				"Tia Maria"
+			],
+			[
+				1,
+				"Vodka"
+			]
+		],
+		"alcper": "15.3",
+		"price": "6.50",
+		"creator": null,
+		"desc": null
+	},
+	"pisang_ambier": {
+		"name": "Pisang Ambier",
+		"glass": "Longdrink",
+		"nonAlcohol": "Bier",
+		"alcohol": [
+			[
+				0.5,
+				"Pisang Ambon"
+			]
+		],
+		"alcper": "5.6",
+		"price": "1.65",
+		"creator": null,
+		"desc": "Serveren met een schuimbanaantje"
+	},
+	"rainbow_warrio": {
+		"name": "Rainbow Warrio",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sinaasappelsap",
+		"alcohol": [
+			[
+				0.25,
+				"Passoa"
+			],
+			[
+				0.25,
+				"Blue Curacao"
+			],
+			[
+				0.25,
+				"Pisang Ambon"
+			],
+			[
+				0.25,
+				"Coebergh"
+			]
+		],
+		"alcper": "2.2",
+		"price": "2.15",
+		"creator": null,
+		"desc": null
+	},
+	"vlaamse_kopstoot": {
+		"name": "Vlaamse Kopstoot",
+		"glass": "Hoegaarden glas",
+		"nonAlcohol": "Hoegaarden",
+		"alcohol": [
+			[
+				1,
+				"Wortegemse"
+			]
+		],
+		"alcper": "7.4",
+		"price": "2.60",
+		"creator": null,
+		"desc": "Doe de Wortegemse in een shotglas en doe deze omgekeerd in het glas, doe daarna de hoegaarden erbij"
+	},
+	"rexona": {
+		"name": "Rexona",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Blue Curacao"
+			],
+			[
+				1,
+				"Hagel en Donder"
+			],
+			[
+				1,
+				"Pina Coloda"
+			]
+		],
+		"alcper": "18.2",
+		"price": "3.50",
+		"creator": null,
+		"desc": null
+	},
+	"rood": {
+		"name": "Rood",
+		"glass": "Longdrink",
+		"nonAlcohol": "Fanta",
+		"alcohol": [
+			[
+				1,
+				"Passoa"
+			],
+			[
+				1,
+				"Gordons Gin"
+			],
+			[
+				0.5,
+				"Coebergh"
+			]
+		],
+		"alcper": "8.9",
+		"price": "4.05",
+		"creator": null,
+		"desc": null
+	},
+	"sweet_surprise": {
+		"name": "Sweet Surprise",
+		"glass": "Longdrink",
+		"nonAlcohol": "Chocomel",
+		"alcohol": [
+			[
+				1,
+				"Tia Maria"
+			],
+			[
+				1,
+				"Disaronno"
+			],
+			[
+				0.25,
+				"Cognac Remy Martin"
+			]
+		],
+		"alcper": "7.7",
+		"price": "4.95",
+		"creator": null,
+		"desc": null
+	},
+	"system_shock": {
+		"name": "System Shock",
+		"glass": "Longdrink",
+		"nonAlcohol": "Tonic",
+		"alcohol": [
+			[
+				1,
+				"Tequila"
+			]
+		],
+		"alcper": "5.1",
+		"price": "2.80",
+		"creator": null,
+		"desc": "Shockerend !!"
+	},
+	"t-beertje": {
+		"name": "T-Beertje",
+		"glass": "Longdrink",
+		"nonAlcohol": "Ice Tea",
+		"alcohol": [
+			[
+				1,
+				"Beerenburg"
+			]
+		],
+		"alcper": "4.7",
+		"price": "1.90",
+		"creator": null,
+		"desc": null
+	},
+	"zonsondergang": {
+		"name": "Zonsondergang",
+		"glass": "Longdrink",
+		"nonAlcohol": "Sinaasappelsap",
+		"alcohol": [
+			[
+				0.75,
+				"Cointreau"
+			],
+			[
+				0.25,
+				"Ketel1"
+			]
+		],
+		"alcper": "5.2",
+		"price": "2.77",
+		"creator": null,
+		"desc": "Serveren met suikerrandje en schijfje citroen"
+	},
+	"brent_spar": {
+		"name": "Brent Spar",
+		"glass": "Tumbler",
+		"nonAlcohol": "Bitter Lemon",
+		"alcohol": [
+			[
+				0.5,
+				"Jameson"
+			],
+			[
+				0.5,
+				"Tia Maria"
+			]
+		],
+		"alcper": "4.0",
+		"price": "2.60",
+		"creator": null,
+		"desc": "Afzinken in tumbler zodat het borrelglaasje net onder water staat"
+	},
+	"cola_dream": {
+		"name": "Cola Dream",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Cola"
+			],
+			[
+				2,
+				"Vieux"
+			]
+		],
+		"alcper": "23.3",
+		"price": "2.20",
+		"creator": null,
+		"desc": null
+	},
+	"fryslan_bopper": {
+		"name": "Fryslan Bopper",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Sippersbitter"
+			],
+			[
+				0.33,
+				"Beerenburg"
+			],
+			[
+				0.33,
+				"Ketel1"
+			]
+		],
+		"alcper": "33.0",
+		"price": "1.09",
+		"creator": null,
+		"desc": "Zet een tumbler die een beetje nat is in de vriezer. Laat deze 1 uur staan. Maak de cocktail al van te voren klaar in een borrelglas. Dien de cocktail op als er sterke zeilverhalen aan de bar worden verteld, in het ingevroren glas"
+	},
+	"de_g.p.s.": {
+		"name": "De G.P.S.",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Gordons Gin"
+			],
+			[
+				1,
+				"Passoa"
+			],
+			[
+				1,
+				"Safari"
+			]
+		],
+		"alcper": "24.1",
+		"price": "4.00",
+		"creator": null,
+		"desc": null
+	},
+	"ineke's_wraak": {
+		"name": "Ineke's Wraak",
+		"glass": "Tumbler",
+		"nonAlcohol": "Scheutje Grand Manier",
+		"alcohol": [
+			[
+				0.67,
+				"Baileys"
+			],
+			[
+				0.33,
+				"Disaronno"
+			]
+		],
+		"alcper": "20.6",
+		"price": "1.60",
+		"creator": null,
+		"desc": null
+	},
+	"de_kater": {
+		"name": "De Kater",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Jameson"
+			],
+			[
+				1,
+				"Hagel en Donder"
+			],
+			[
+				1,
+				"Stroh 80"
+			]
+		],
+		"alcper": "48.3",
+		"price": "6.30",
+		"creator": null,
+		"desc": null
+	},
+	"de_kitten": {
+		"name": "De Kitten",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Jameson"
+			],
+			[
+				1,
+				"Hagel en Donder"
+			],
+			[
+				2,
+				"Fanta"
+			]
+		],
+		"alcper": "16.3",
+		"price": "3.62",
+		"creator": null,
+		"desc": null
+	},
+	"lemon_with_a_bite": {
+		"name": "Lemon with a bite",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Jameson"
+			],
+			[
+				0.5,
+				"Martini Rosso"
+			]
+		],
+		"alcper": "27.5",
+		"price": "1.55",
+		"creator": null,
+		"desc": "Tumbler afbinden met een zuur matje"
+	},
+	"lr-special": {
+		"name": "LR-special",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Bacardi Blanca"
+			],
+			[
+				1,
+				"Gordons Gin"
+			],
+			[
+				0.5,
+				"Creme De Cassis"
+			],
+			[
+				3,
+				"Sinaasappelsap"
+			]
+		],
+		"alcper": "15.2",
+		"price": "4.35",
+		"creator": null,
+		"desc": null
+	},
+	"lu_miniscent": {
+		"name": "Lu Miniscent",
+		"glass": "Tumbler",
+		"nonAlcohol": "sinaasappelsap",
+		"alcohol": [
+			[
+				0.5,
+				"Kontiki"
+			],
+			[
+				0.5,
+				"Safari"
+			]
+		],
+		"alcper": "2.9",
+		"price": "2.10",
+		"creator": "Lucas & Kossen",
+		"desc": null
+	},
+	"marcs_surprice": {
+		"name": "Marcs Surprice",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Kontiki"
+			],
+			[
+				1,
+				"Pisang Ambon"
+			],
+			[
+				1,
+				"Disaronno"
+			],
+			[
+				1,
+				"Sinaasappelsap"
+			]
+		],
+		"alcper": "18.3",
+		"price": "4.40",
+		"creator": null,
+		"desc": null
+	},
+	"mariëlle_dondert_op": {
+		"name": "Mariëlle Dondert Op",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Blue Curacao"
+			],
+			[
+				0.5,
+				"Bacardi Lemon"
+			],
+			[
+				1,
+				"Hagel en Donder"
+			]
+		],
+		"alcper": "16.1",
+		"price": "2.65",
+		"creator": null,
+		"desc": null
+	},
+	"mururoa_dreams": {
+		"name": "Mururoa Dreams",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Blue Curacao"
+			],
+			[
+				2,
+				"Kontiki"
+			],
+			[
+				1,
+				"Bacardi Blanca"
+			]
+		],
+		"alcper": "25.0",
+		"price": "5.30",
+		"creator": "Tjerry & Bouke",
+		"desc": "Serveren met rietjes, evt met ijs"
+	},
+	"nikita": {
+		"name": "Nikita",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Vodka"
+			],
+			[
+				0.67,
+				"Cointreau"
+			]
+		],
+		"alcper": "19.6",
+		"price": "1.77",
+		"creator": null,
+		"desc": "In een keer acteroverslaan <br> Shale well with ice"
+	},
+	"oma's_appeltaart": {
+		"name": "Oma's Appeltaart",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Goldstrike"
+			],
+			[
+				1.5,
+				"Apfelkorn"
+			]
+		],
+		"alcper": "23.4",
+		"price": "2.65",
+		"creator": "Coline & Max",
+		"desc": "Aanvullen met een aantal rozijnen"
+	},
+	"orange_coin": {
+		"name": "Orange coin",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				2,
+				"Cointreau"
+			]
+		],
+		"alcper": "40.0",
+		"price": "4.00",
+		"creator": null,
+		"desc": "Jus toevoegen naar smaak"
+	},
+	"rooie_diesel": {
+		"name": "Rooie Diesel",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Apfelkorn"
+			],
+			[
+				0.5,
+				"Passoa"
+			],
+			[
+				0.5,
+				"Grand Manier"
+			],
+			[
+				0.5,
+				"Tequila"
+			]
+		],
+		"alcper": "26.8",
+		"price": "3.25",
+		"creator": null,
+		"desc": "Doe dit in een shaker, voeg ijs toe en shake er rustig op los. Giet het geheel door het shakerzeefje in een longdrinkglas. PAS OP ! Deze cocktail heeft een hoog cetaangetal"
+	},
+	"silent_killer": {
+		"name": "Silent Killer",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Vodka Rood"
+			],
+			[
+				0.5,
+				"Kontiki"
+			],
+			[
+				0.5,
+				"Vodka"
+			]
+		],
+		"alcper": "5.3",
+		"price": "2.85",
+		"creator": null,
+		"desc": "Afvullen met AA"
+	},
+	"sun_killer": {
+		"name": "Sun Killer",
+		"glass": "Tumbler",
+		"nonAlcohol": "Sprite",
+		"alcohol": [
+			[
+				0.5,
+				"Kontiki"
+			],
+			[
+				0.5,
+				"Malibu"
+			],
+			[
+				1,
+				"Tequila"
+			]
+		],
+		"alcper": "8.1",
+		"price": "4.10",
+		"creator": null,
+		"desc": null
+	},
+	"red_devil": {
+		"name": "Red Devil",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				null
+			],
+			[
+				0.5,
+				"Stroh 80"
+			],
+			[
+				1,
+				"Fanta"
+			]
+		],
+		"alcper": "27.3",
+		"price": "2.30",
+		"creator": null,
+		"desc": null
+	},
+	"tnt": {
+		"name": "TNT",
+		"glass": "Tumbler",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Jameson"
+			],
+			[
+				0.5,
+				"Pernod"
+			]
+		],
+		"alcper": "40.0",
+		"price": "1.80",
+		"creator": null,
+		"desc": null
+	},
+	"bolkestein": {
+		"name": "Bolkestein",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Blue Curacao"
+			],
+			[
+				0.5,
+				"Oranjebitter"
+			]
+		],
+		"alcper": "22.3",
+		"price": "1.20",
+		"creator": null,
+		"desc": null
+	},
+	"brainexplosion": {
+		"name": "Brainexplosion",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Peach Tree"
+			],
+			[
+				0.5,
+				"Baileys"
+			]
+		],
+		"alcper": "18.5",
+		"price": "1.45",
+		"creator": null,
+		"desc": "Aanvullen met lepeltje siroop"
+	},
+	"brainfuck": {
+		"name": "Brainfuck",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Peach Tree"
+			],
+			[
+				0.5,
+				"Sperma"
+			]
+		],
+		"alcper": "17.5",
+		"price": "1.30",
+		"creator": null,
+		"desc": "Aanvullen met lepeltje siroop"
+	},
+	"histos_'92": {
+		"name": "Histos '92",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.33,
+				"Sippersbitter"
+			],
+			[
+				0.67,
+				"Beerenburg"
+			]
+		],
+		"alcper": "33.4",
+		"price": "1.10",
+		"creator": null,
+		"desc": "Deze cocktail is geinspireerd door de bovengenoemde alcoholen, de enige twee soorten sterke alcohol die tijden het Histos Teamzeiltoernooi '92 aanwezig waren en veelzijdig door de twee Harpyia-teams zijn genuttigd/gemixd"
+	},
+	"noorse_milf": {
+		"name": "Noorse Milf",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Tequila"
+			],
+			[
+				0.5,
+				"Sambuca"
+			]
+		],
+		"alcper": "38.0",
+		"price": "1.80",
+		"creator": null,
+		"desc": "Paar druppels tabasco toevoegen"
+	},
+	"vuilverbrander": {
+		"name": "Vuilverbrander",
+		"glass": "Shot",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				0.5,
+				"Grand Manier"
+			],
+			[
+				0.5,
+				"Stroh 80"
+			]
+		],
+		"alcper": "60.0",
+		"price": "2.65",
+		"creator": null,
+		"desc": "Paar druppels tabasco toevoegen"
+	},
+	"roelof_met_passie": {
+		"name": "Roelof met passie",
+		"glass": "Social",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				2,
+				"Passoa"
+			],
+			[
+				1,
+				"AA"
+			]
+		],
+		"alcper": "2.4",
+		"price": "3.20",
+		"creator": null,
+		"desc": null
+	},
+	"black_widowmaker_zevensprong": {
+		"name": "Black Widowmaker Zevensprong",
+		"glass": "Social",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Cassis"
+			],
+			[
+				1,
+				"Bacardi Blanca"
+			],
+			[
+				1,
+				"Vodka"
+			],
+			[
+				1,
+				"Blue Curacao"
+			],
+			[
+				1,
+				"Coebergh"
+			],
+			[
+				1,
+				"Jameson"
+			],
+			[
+				1,
+				"Gordons Gin"
+			]
+		],
+		"alcper": "30.2",
+		"price": "8.86",
+		"creator": null,
+		"desc": "Goed Schudden, serveren met 7 rietjes <br> Brancards klaarhouden"
+	},
+	"destroyer": {
+		"name": "Destroyer",
+		"glass": "Social",
+		"nonAlcohol": null,
+		"alcohol": [
+			[
+				1,
+				"Vodka"
+			],
+			[
+				2,
+				"Pisang Ambon"
+			],
+			[
+				2,
+				"Blue Curacao"
+			],
+			[
+				5,
+				"Sinaasappelsap"
+			]
+		],
+		"alcper": "10.8",
+		"price": "7.10",
+		"creator": null,
+		"desc": null
+	},"natte_olijf": {
+  "name": "Natte Olijf",
+  "glass": "Shot",
+  "nonAlcohol": null,
+  "alcohol": [
+    [
+      1,
+      "Water"
+    ]
+  ],
+  "alcper": 0,
+  "price": "0.00",
+  "creator": null,
+  "desc": "Gooi een olijf in een shotje water en voila!"
+}
+}
