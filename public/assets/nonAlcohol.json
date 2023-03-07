@@ -34,15 +34,10 @@
 		"price": 0.80,
 		"vol": 250
 	},
-	"ijsblokjes": {
-		"name": "Ijsblokjes",
-		"price": 0,
-		"vol": 1
-	},
 	"bananensap": {
 		"name": "Bananensap",
-		"price": 1,
-		"vol": 200
+		"price": 1.00,
+		"vol": 250
 	},
 	"cassis": {
 		"name": "Cassis",
