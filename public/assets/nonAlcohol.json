@@ -69,11 +69,6 @@
 		"price": 0.80,
 		"vol": 40
 	},
-	"water": {
-		"name": "Water",
-		"price": 0,
-		"vol": 250
-	},
 	"tonic": {
 		"name": "Tonic",
 		"price": 0.80,
@@ -97,6 +92,11 @@
 	"aa": {
 		"name": "AA",
 		"price": 1.20,
-		"vol": 200
+		"vol": 330
+	},
+	"water": {
+		"name": "water",
+		"price": 0,
+		"vol": 1
 	}
 }
