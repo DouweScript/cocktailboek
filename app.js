@@ -10,8 +10,6 @@ const {Cocktail, refreshDatabase} = require("./script/cocktails");
 
 const app = express();
 
-refreshDatabase();
-
 //start server
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));

@@ -43,5 +43,60 @@
 		"name": "Cassis",
 		"price": 0.80,
 		"vol": 250
+	},
+	"monin_rietsuiker": {
+		"name": "Monin Rietsuiker",
+		"price": 0.80,
+		"vol": 40
+	},
+	"monin_amaretto": {
+		"name": "Monin Amaretto",
+		"price": 0.80,
+		"vol": 40
+	},
+	"monin_hazelnoot": {
+		"name": "Monin Hazelnoot",
+		"price": 0.80,
+		"vol": 40
+	},
+	"monin_karamel": {
+		"name": "Monin Karamel",
+		"price": 0.80,
+		"vol": 40
+	},
+	"monin_grenadine": {
+		"name": "Monin Grenadine",
+		"price": 0.80,
+		"vol": 40
+	},
+	"water": {
+		"name": "Water",
+		"price": 0,
+		"vol": 250
+	},
+	"tonic": {
+		"name": "Tonic",
+		"price": 0.80,
+		"vol": 250
+	},
+	"ginger_ale": {
+		"name": "Ginger Ale",
+		"price": 0.80,
+		"vol": 250
+	},
+	"ice_tea": {
+		"name": "Ice Tea",
+		"price": 0.80,
+		"vol": 250
+	},
+	"ice_tea_green": {
+		"name": "Ice Tea Green",
+		"price": 0.80,
+		"vol": 250
+	},
+	"aa": {
+		"name": "AA",
+		"price": 1.20,
+		"vol": 200
 	}
 }
