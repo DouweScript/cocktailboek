@@ -1,8 +1,5 @@
-function selectEasy(e) {
-    let el = e.target;
+function selectEasy(el) {
     if (el.tagName.toLowerCase() === "option" && el.parentNode.hasAttribute("multiple")) {
-        e.preventDefault();
-
         // toggle selection
         if (el.hasAttribute('selected')) el.removeAttribute('selected');
         else el.setAttribute('selected', '');
@@ -11,8 +8,6 @@ function selectEasy(e) {
 
             let type = el.parentNode.name.replace("select", "");
             type = type.charAt(0).toLowerCase() + type.slice(1);
-
-            console.log(type)
 
             let xAmount = document.getElementById(type + "Amount");
 
@@ -31,12 +26,15 @@ function selectEasy(e) {
                     let scheutje = document.createElement("option");
                     let aanvullen = document.createElement("option");
                     input.type = "number";
+                    input.step = "any";
                     input.className = "hoeveelheid";
-                    input.name = "selectN" + ele.innerHTML.replaceAll(" ", "_");
+                    input.name = "selectN" + ele.value.replaceAll(" ", "_");
+                    input.id = "selectN" + ele.value.replaceAll(" ", "_");
                     input.required = true;
                     label.innerHTML = ele.innerHTML;
                     label.style.marginLeft = '1%';
-                    select.name = "selectType" + ele.innerHTML.replaceAll(" ", "_");
+                    select.name = "selectType" + ele.value.replaceAll(" ", "_");
+                    select.id = "selectType" + ele.value.replaceAll(" ", "_");
                     select.className = "hoeveelheid";
                     select.onchange = function() {
                         if (select.item(select.selectedIndex) === aanvullen) {
@@ -64,8 +62,8 @@ function selectEasy(e) {
                     }
 
                     div.appendChild(label);
-                    div.appendChild(input);
                     div.appendChild(select);
+                    div.appendChild(input);
                     div.appendChild(document.createElement("br"))
                     div.appendChild(document.createElement("br"))
                     div.id = ele.innerHTML.replaceAll(" ", "_");

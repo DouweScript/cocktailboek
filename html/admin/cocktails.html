@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/style.css" rel="stylesheet" type="text/css">
+		<link href="/styles/shared.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="alles" content="yes">
+		<title>Bolksche Cocktailboek</title>
+		<link rel="shortcut icon" href="/assets/bolkvis.png"/>
+	</head>
+
+	<header id="header">
+		<div id="headercontainer">
+			<div id="buttons">
+				<a href="/"><button id="terug">Terug</button></a>
+				<button id="randomCocktail">Krijg een random Cocktail</button>
+				<button id="backToAll" style="display: none">Terug naar alle cocktails</button>
+				<a href="/logout"><button id="logout">Log Out</button></a>
+			</div>
+			<br>
+			<div id="selecteer">
+				<select id="sorteer" style="float:left;margin-right:2%;">
+					<option id="alphabet">Alfabetische Volgorde</option>
+					<option id="lowhigh">Prijs Laag -> Hoog</option>
+					<option id="highlow">Prijs Hoog -> Laag</option>
+					<option id="alclowhigh">Alcoholpercentage Laag -> Hoog</option>
+					<option id="alchighlow">Alcoholpercentage Hoog -> Laag</option>
+				</select>
+
+				<select id="selectGlass" style="float:right;margin-left:2%;">
+					<option selected="selected">Alle Glazen</option>
+					<option id="selectLongdrink">Longdrink</option>
+					<option id="selectTumbler">Tumbler</option>
+					<option id="selectPapa">Papa</option>
+					<option id="selectPul">Pul</option>
+					<option id="selectPitcher">Pitcher</option>
+					<option id="selectShot">Shot</option>
+				</select>
+
+				<br>
+
+				<select id="selectNonAlcohol" style="float:left;margin-right:2%;">
+					<option selected="selected">Alle Non Alcohol</option>
+				</select>
+
+				<select id="selectAlcohol" style="float:right;margin-left:2%;">
+					<option selected="selected">Alle Alcohol</option>
+				</select>
+
+				<br>
+
+				<input id="search" type="text" placeholder="Zoek een Cocktail">
+			</div>
+		</div>
+	</header>
+
+	<body>
+
+		<div id="content">
+		</div>
+
+		<div id="overlay"></div>
+
+		<div id="removeConfirm" class="window">
+			<h1>Weet je het zeker?</h1>
+			<button id="yes" style="float: left; margin-right: 2%;">Ja</button>
+			<button id="no"  style="float: right; margin-left: 2%;">Nee</button>
+		</div>
+
+		<script src="/script/getDrank.js"></script>
+		<script src="/script/functions.js"></script>
+		<script src="/script/getCocktails.js"></script>
+		<script src="/script/adminFunctions.js"></script>
+		<script src="/script/enableButtons.js"></script>
+
+	</body>
+</html>

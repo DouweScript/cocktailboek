@@ -13,10 +13,9 @@ p{
 	padding: 0;
 }
 
-#content{
-	display: flex;
-	justify-content: center;
-	flex-flow: wrap;
+#headercontainer{
+	height: inherit;
+	width: inherit;
 }
 
 .cocktail{
@@ -25,7 +24,41 @@ p{
 	border-width: 2px;
 	border-style: solid;
 	text-align: center;
+	position: relative;
 }
+
+.fill_hid{
+	display:none;
+}
+
+#selecteer{
+	float: right;
+	margin: auto 2%;
+}
+
+#adminDiv{
+	max-width: inherit;
+	width: inherit;
+	max-height: 15%;
+	height: 15%;
+	position: absolute;
+	bottom: 10px;
+}
+
+#edit{
+	max-width: calc(35% - 10px);
+	max-height: 100%;
+	margin: 0px 10px;
+	float: left;
+}
+
+#remove{
+	max-width: calc(35% - 10px);
+	max-height: 100%;
+	margin: 0px 10px;
+	float: right;
+}
+
 
 
 /* Desktop Scherm*/
@@ -45,23 +78,24 @@ p{
 		margin-left: 20px;
 	}
 
+	#selecteer{
+		max-width: 30vw;
+		min-width: 30vw;
+	}
+
 	select{
-		float: left;
-		margin-left: 2%;
-		margin-right: 2%;
-		height: 50%;
-		max-width: 12%;
-		width: 12%;
+		height: available;
+		margin-bottom: 2%;
+		max-width: 12vw;
+		width: 12vw;
 	}
 
 	input{
-		position: relative;
-		bottom: 0%;
-		left: 5%;
 		text-align: center;
-		border-radius: 2%;
-		height: 50%;
-		width: 20%;
+		border: 1px solid darkgray;
+		padding: 0px;
+		width: 30vw;
+		max-width: calc(30vw - 2px);
 	}
 }
 
@@ -94,7 +128,6 @@ p{
 		margin-left: 4%;
 		margin-right: 2%;
 		font-size: 16px;
-		float: center;
 	}
 
 	select{
@@ -123,7 +156,6 @@ p{
 @media screen and (max-width: 760px){
 	.afterclick{
 		height: 100px;
-		float: center;
 		font-size: 16px;
 		margin: 1%;
 		width: 40%;

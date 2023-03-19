@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/style.css" rel="stylesheet" type="text/css">
+		<link href="/styles/shared.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="alles" content="yes">
+		<title>Bolksche Cocktailboek</title>
+		<link rel="shortcut icon" href="/assets/bolkvis.png"/>
+	</head>
+
+	<body>
+		<header id="header">
+			<div id="headercontainer">
+				<div id="buttons">
+					<button id="randomCocktail">Krijg een random Cocktail</button>
+					<button id="backToAll" style="display: none">Terug naar alle cocktails</button>
+					<a href="/login"><button id="login">Log In</button></a>
+					<a href="/logout"><button id="logout" style="display:none">Log Out</button></a>
+					<a href="/new"><button id="new" style="display:none">Nieuwe Cocktail</button></a>
+					<a href="/admin"><button id="admin" style="display:none">Admin</button></a>
+				</div>
+				<br>
+				<div id="selecteer">
+					<select id="sorteer" style="float:left;margin-right:2%;">
+						<option id="alphabet">Alfabetische Volgorde</option>
+						<option id="lowhigh">Prijs Laag -> Hoog</option>
+						<option id="highlow">Prijs Hoog -> Laag</option>
+						<option id="alclowhigh">Alcoholpercentage Laag -> Hoog</option>
+						<option id="alchighlow">Alcoholpercentage Hoog -> Laag</option>
+					</select>
+
+					<select id="selectGlass" style="float:right;margin-left:2%;">
+						<option selected="selected">Alle Glazen</option>
+						<option id="selectLongdrink">Longdrink</option>
+						<option id="selectTumbler">Tumbler</option>
+						<option id="selectPapa">Papa</option>
+						<option id="selectPul">Pul</option>
+						<option id="selectPitcher">Pitcher</option>
+						<option id="selectShot">Shot</option>
+					</select>
+
+					<br>
+
+					<select id="selectNonAlcohol" style="float:left;margin-right:2%;">
+						<option selected="selected">Alle Non Alcohol</option>
+					</select>
+
+					<select id="selectAlcohol" style="float:right;margin-left:2%;">
+						<option selected="selected">Alle Alcohol</option>
+					</select>
+
+					<br>
+
+					<input id="search" type="text" placeholder="Zoek een Cocktail">
+				</div>
+			</div>	
+		</header>
+
+		<div id="content">
+		</div>
+
+		<script src="/script/getDrank.js"></script>
+		<script src="/script/functions.js"></script>
+		<script src="/script/getCocktails.js"></script>
+		<script src="/script/loginButtons.js"></script>
+		<script src="/script/enableButtons.js"></script>
+
+	</body>
+</html>

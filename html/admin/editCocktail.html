@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="/styles/newcocktail.css" rel="stylesheet" type="text/css">
+      <link href="/styles/shared.css" rel="stylesheet" type="text/css">
+      <meta charset="utf-8">
+      <title>Bolksche Cocktailboek</title>
+      <link rel="shortcut icon" href="/assets/bolkvis.png"/>
+    </head>
+
+    <header id="header">
+      <div id="headercontainer">
+        <div id="buttons">
+            <a href="/admin/cocktails"><button id="terug">Terug</button></a>
+            <a href="/admin"><button id="admin">Admin</button></a>
+        </div>
+      </div>
+    </header>
+
+    <body>
+    <form action="/admin/cocktails/edit" method="POST">
+      <fieldset>
+          <div class="field">
+            <h3>Edit cocktail</h3>
+          </div>
+
+          <div class="field">
+              <label for="name">Naam:</label>
+              <input type="text" name="name" id="name" required>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="selectGlass">Glas:</label>
+              <select name="selectGlass" id="selectGlass" required>
+                <option name="longdrink" value="longdrink">Longdrink</option>
+                <option name="tumbler" value="tumbler">Tumbler</option>
+                <option name="papa" value="papa">Papa</option>
+                <option name="pul" value="pul">Pul</option>
+                <option name="pitcher" value="pitcher">Pitcher</option>
+                <option name="shot" value="shot">Shot</option>
+              </select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="desc">Omschrijving:</label>
+              <textarea name="desc" id="desc" rows="4" cols="30"></textarea>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="creator">Maker:</label>
+              <input type="text" name="creator" id="creator">
+          </div>
+          <br><br>
+
+          <div class="field">
+              <label for="selectAlcohol" id="alcoholLabel">Alcohol:</label>
+              <select name="selectAlcohol" id="selectAlcohol" multiple></select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <div id="alcoholAmount" style="display:none">
+                  <label>Hoeveel alcohol?</label>
+              <br><br>
+              </div>
+          </div>
+
+          <div class="field">
+              <label for="selectNonAlcohol">Non Alcohol:</label>
+              <select name="selectNonAlcohol" id="selectNonAlcohol" multiple></select>
+          </div>
+          <br><br>
+
+          <div class="field">
+              <div id="nonAlcoholAmount" style="display:none">
+                  <label>Hoeveel non alcohol?</label>
+              <br><br>
+              </div>
+          </div>
+
+          <button type="reset" id="reset">Reset</button>
+          <button type="submit" id="submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <script src="/script/getDrank.js"></script>
+    <script src="/script/functions.js"></script>
+    <script src="/script/getCocktails.js"></script>
+    <script src="/script/nieuwecocktail_functions.js"></script>
+    <script src="/script/enableButtons.js"></script>
+    <script src="/script/adminFunctions.js"></script>
+
+    </body>
+</html>

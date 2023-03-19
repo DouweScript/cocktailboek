@@ -20,12 +20,30 @@ function databaseReader() {
 	}
 }
 
+function sortOnKeys(db) {
+
+    let sorted = [];
+    for(let key in db) {
+        sorted[sorted.length] = key;
+    }
+    sorted.sort();
+
+    let tempDict = {};
+    for(let i = 0; i < sorted.length; i++) {
+        tempDict[sorted[i]] = db[sorted[i]];
+    }
+
+    return db;
+}
+
 //function die naar de database schrijft
 function databaseWriter(type) {
 	let jsonString;
 	if (type === "alcohol") {
+		alcoholDB = sortOnKeys(alcoholDB);
 		jsonString = JSON.stringify(alcoholDB);
 	} else if (type === "nonAlcohol") {
+		nonAlcoholDB = sortOnKeys(nonAlcoholDB);
 		jsonString = JSON.stringify(nonAlcoholDB);
 	} else {
 		jsonString = "";

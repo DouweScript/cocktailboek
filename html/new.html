@@ -12,7 +12,8 @@
     <header id="header">
       <div id="headercontainer">
         <div id="buttons">
-          <button id="terug" onclick="location.href='/';">Terug</button><br>
+            <a href="/"><button id="terug">Terug</button></a>
+            <a href="/admin"><button id="admin">Admin</button></a>
         </div>
       </div>
     </header>
@@ -33,11 +34,12 @@
           <div class="field">
               <label for="selectGlass">Glas:</label>
               <select name="selectGlass" id="selectGlass" required>
-                <option name="longdrink">Longdrink</option>
-                <option name="tumbler">Tumbler</option>
-                <option name="papa">Papa</option>
-                <option name="social">Social</option>
-                <option name="shot">Shot</option>
+                <option name="longdrink" value="longdrink">Longdrink</option>
+                <option name="tumbler" value="tumbler">Tumbler</option>
+                <option name="papa" value="papa">Papa</option>
+                <option name="pul" value="pul">Pul</option>
+                <option name="pitcher" value="pitcher">Pitcher</option>
+                <option name="shot" value="shot">Shot</option>
               </select>
           </div>
           <br><br>
@@ -87,16 +89,6 @@
 
     <script src="/script/getDrank.js"> </script>
     <script src="/script/nieuwecocktail_functions.js"></script>
-    <script>
-        document.getElementById("selectAlcohol").addEventListener("mousedown", (e) => {
-            selectEasy(e);
-        });
-
-        document.getElementById("selectNonAlcohol").addEventListener("mousedown", (e) => {
-            selectEasy(e);
-        });
-
-        document.getElementById("reset").onclick = reset;
-    </script>
+    <script src="/script/enableButtons.js"></script>
     </body>
 </html>

@@ -48,20 +48,14 @@ label{
 select{
 	float: right;
 	font-size: inherit;
+	border: 1px solid darkgray;
 }
 
 input{
 	float: right;
 	text-align: left;
 	font-size: inherit;
-}
-
-multi-input{
-	float: right;
-	font-family: "Open sans";
-	border: 1px solid gray;
-	background-color: lightgray;
-	padding: 0px;
+	border: 1px solid darkgray;
 }
 
 textarea{
@@ -85,23 +79,18 @@ textarea{
 
 	select{
 		height: available;
-		width: 60%;
+		width: calc(60% - 2px);
 	}
 
 	input{
 		height: available;
-		width: 60%;
+		width: calc(60% - 2px);
 	}
 
 	.hoeveelheid {
 		float: right;
 		width: calc(30% - 2px);
 		margin-left: 4px;
-	}
-
-	multi-input{
-		width: calc(60% - 1px);
-		height: available;
 	}
 
 	textarea{
@@ -132,10 +121,6 @@ textarea{
 	input{
 		height: available;
 		width: 60%;
-	}
-
-	multi-input{
-		width: calc(60% - 1px);
 	}
 
 	textarea{
@@ -171,10 +156,6 @@ textarea{
 	input{
 		height: available;
 		width: 60%;
-	}
-
-	multi-input{
-		width: calc(60% - 1px);
 	}
 
 	textarea{

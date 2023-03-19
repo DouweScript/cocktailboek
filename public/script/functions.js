@@ -5,17 +5,21 @@ String.prototype.format = function () {
 	});
 };
 
-function printCocktail(cocktail){
-	console.log(cocktail);
+function getId(name) {
+	return name.toLowerCase().replace(/ /g, "_");
+}
 
+function printCocktail(cocktail){
 	let div = document.createElement("div");
-	div.class = 'cocktail';
+	div.className = 'cocktail';
 
 	let name = document.createElement("h3");
 	name.innerHTML = cocktail.name;
 
 	let glass = document.createElement("h3");
 	glass.innerHTML = cocktail.glass;
+
+	div.append(name, glass);
 
 	let alcohol = document.createElement("ul");
 
@@ -27,13 +31,18 @@ function printCocktail(cocktail){
 		let alc = alcoholDB[item];
 
 		if (cocktail.alcohol[item][1] === "aanvullen") {
-			fill.append(alc, cocktail.alcohol[item]);
+			fill.push([alc, cocktail.alcohol[item]]);
+			continue;
 		} else if (cocktail.alcohol[item][0] <= 1) {
-			li.innerHTML = "{} Shot {}".format(cocktail.alcohol[item][0], alc.name);
+			li.innerHTML = "{} shot {}".format(cocktail.alcohol[item][0], alc.name);
 		} else {
-			li.innerHTML = "{} Shots {}".format(cocktail.alcohol[item][0], alc.name);
+			li.innerHTML = "{} shots {}".format(cocktail.alcohol[item][0], alc.name);
 		}
 		alcohol.appendChild(li);
+	}
+
+	if (alcohol.childElementCount > 0) {
+		div.append(alcohol);
 	}
 
 	let nonAlcohol = document.createElement("ul");
@@ -45,7 +54,8 @@ function printCocktail(cocktail){
 			let nonAlc = nonAlcoholDB[item];
 
 			if (cocktail.nonAlcohol[item][1] === "aanvullen") {
-				fill.append(nonAlc, cocktail.nonAlcohol[item]);
+				fill.push([nonAlc, cocktail.nonAlcohol[item]]);
+				continue;
 			} else if (cocktail.nonAlcohol[item][0] <= 1) {
 				li.innerHTML = "{} {} {}".format(cocktail.nonAlcohol[item][0], cocktail.nonAlcohol[item][1], nonAlc.name);
 			} else {
@@ -55,7 +65,42 @@ function printCocktail(cocktail){
 		}
 	}
 
-	div.append(name, glass, alcohol, nonAlcohol);
+	if (nonAlcohol.childElementCount > 0) {
+		div.appendChild(nonAlcohol);
+	}
+
+	let fillList = document.createElement("label");
+	fillList.innerHTML = 'Aanvullen met ';
+	//zet het aan te vullen vocht erbij als het het heeft
+	if (fill.length > 0) {
+		for (let item in fill){
+			let drank = fill[item];
+			if (item > 1 && item < fill.length - 1) {
+				fillList.innerHTML += ", {} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
+			} else if (item === 0){
+				fillList.innerHTML += "{} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
+			} else {
+				fillList.innerHTML += " & {} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
+			}
+		}
+		div.appendChild(fillList);
+		fillList.onmouseenter = () => {
+			for (let item in fillList.children){
+				item = fillList.children[item];
+				if (item.className === "fill_hid") {
+					item.style.display = "initial";
+				}
+			}
+		}
+		fillList.onmouseleave = () => {
+			for (let item in fillList.children){
+				item = fillList.children[item];
+				if (item.className === "fill_hid") {
+					item.style.display = "none";
+				}
+			}
+		}
+	}
 
 	//Zet de omschrijving er bij als hij die heeft
 	if(cocktail.desc != null){
@@ -77,6 +122,34 @@ function printCocktail(cocktail){
 		creator.className = "creator";
 		creator.innerHTML = "Deze cocktail is bedacht door:<br>{}".format(cocktail.creator);
 		div.appendChild(creator);
+	}
+
+	//voeg admin knoppen als in de admin interface
+	if (document.location.pathname.includes("admin")) {
+		let aDiv = document.createElement("div");
+		aDiv.id = "adminDiv";
+
+		let edit = document.createElement("button");
+		edit.id = "edit";
+		edit.onclick = () => {
+			location.href = "/admin/cocktails/edit?cocktail=" + getId(cocktail.name);
+		};
+		edit.innerHTML = "Edit"
+
+		let remove = document.createElement("button");
+		remove.id = "remove";
+		remove.onclick = () => {
+			confirm("removeConfirm", () => {
+				div.remove();
+				let put = new XMLHttpRequest();
+				put.open("PUT", "/admin/cocktails?remove=" + getId(cocktail.name));
+				put.send();
+			});
+		};
+		remove.innerHTML = "Remove";
+
+		aDiv.append(edit, remove);
+		div.appendChild(aDiv);
 	}
 
 	return div;
@@ -107,53 +180,35 @@ function sortAlpha(){
 	printToWebpage(alphabeticOrder);
 }
 
-//zorgt voor de interactie op de webpagina
-document.getElementById("selectNonAlcohol").onclick = function(){
-	selectGlas()
-};
-
-document.getElementById("randomCocktail").onclick = function(){
-	randomCocktail()
-};
-
-document.getElementById("search").onkeyup = function(){
-	searchCocktail(cocktailDB)
-};
-
-document.getElementById("selectGlass").onchange = function(){
-	selectGlas()
-};
-
-document.getElementById("sorteer").onchange = function(){
-	switch(document.getElementById("sorteer").value){
-		case "Alfabetische Volgorde":
-			sortAlpha();
-			break;
-		case "Prijs Laag -> Hoog":
-			sortByPriceLH();
-			break;
-		case "Prijs Hoog -> Laag":
-			sortByPrice();
-			break;
-		case "Alcoholpercentage Laag -> Hoog":
-			sortByAlcLH();
-			break;
-		case "Alcoholpercentage Hoog -> Laag":
-			sortByAlc();
-			break;
-		}
-};
-
 //print alle cocktails op de webpagina
 function printToWebpage(cocktails){
 	document.getElementById('content').innerHTML = "";
 	for (let key in cocktails){
-		document.getElementById('content').innerHTML += printCocktail(cocktails[key]);
+		document.getElementById('content').appendChild(printCocktail(cocktails[key]));
 	}
 }
 
 function backToAll(){
-	document.getElementById('buttons').innerHTML = "<button onclick='randomCocktail()'>Krijg een random Cocktail</button>";
+	document.getElementById('backToAll').style.display = "none";
+
+	let cookie = getCookie("bolk-oath-access-token");
+	if (cookie != null) {
+		let login = document.getElementById("login");
+		login.style.display = "none";
+
+		let logout = document.getElementById("logout");
+		logout.style.display = "inherit";
+
+		let new_cock = document.getElementById("new");
+		new_cock.style.display = "initial";
+
+		//test management
+		//https://login.i.bolkhuis.nl/ictcom/?access_token=example-access-token response should be 200 OK
+		if (true) {
+			let admin = document.getElementById("admin");
+			admin.style.display = "inherit";
+		}
+	}
 	printToWebpage(cocktailDB);
 }
 
@@ -161,52 +216,39 @@ function backToAll(){
 function randomCocktail(){
 	let randomNumber = Math.floor(Math.random() * cocktailKeys.length);
 	document.getElementById('content').innerHTML = "";
-	document.getElementById('content').innerHTML = printCocktail(cocktailDB[cocktailKeys[randomNumber]]);
-	document.getElementById('buttons').innerHTML = "<button class='afterclick' onclick='randomCocktail()'>Krijg een random Cocktail</button>" +
-	 											   "<button class='afterclick' onclick='backToAll()'>Terug naar alle Cocktails</button>";
+	document.getElementById('content').appendChild(printCocktail(cocktailDB[cocktailKeys[randomNumber]]));
+
+	document.getElementById('backToAll').style.display = "block";
 }
 
 //selecteer welk non alcohol en of glas je wilt
-function selectGlas(){
-	let glass = document.getElementById('selectGlass').value;
-	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
-	let glassArray = [];
-	if (glass === "Alle glazen" && nonAlcohol === "Alle non alcohol") {
-		printToWebpage(cocktailDB);
-	} else {
-		for (let key in cocktailDB) {
-			if ((glass === "Alle glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
-				(nonAlcohol === "Alle non alcohol" && glass === cocktailDB[key].glass) ||
-				(nonAlcohol === cocktailDB[key].nonAlcohol && glass === cocktailDB[key].glass)){
-				glassArray.push(cocktailDB[key]);
-			}
-		}
-		if(glassArray.length ===  0) {
-			document.getElementById('content').innerHTML = "<h2>Helaas heb ik dit niet gevonden</h2>";
-		} else {
-			printToWebpage(glassArray);
-		}
-	}
-}
-
 function returnSelected(){
-	let glass = document.getElementById('selectGlass').value;
-	let nonAlcohol = document.getElementById('selectNonAlcohol').value;
-	let glassArray = [];
+	let glass = getId(document.getElementById('selectGlass').value);
+	let nonAlcohol = getId(document.getElementById('selectNonAlcohol').value);
+	let alcohol = getId(document.getElementById('selectAlcohol').value);
+	let selected = [];
+
 	if (glass === "Alle glazen" && nonAlcohol === "Alle non alcohol") {
 		return Object.values(cocktailDB);
 	} else {
 		for (let key in cocktailDB) {
-			if ((glass === "Alle glazen" && nonAlcohol === cocktailDB[key].nonAlcohol) ||
-				(nonAlcohol === "Alle non alcohol" && glass === cocktailDB[key].glass) ||
-				(nonAlcohol === cocktailDB[key].nonAlcohol && glass === cocktailDB[key].glass)){
-				glassArray.push(cocktailDB[key]);
+			let item = cocktailDB[key];
+
+			if ((glass === "alle_glazen" && nonAlcohol === "alle_non_alcohol" && alcohol === "alle_alcohol") ||
+				(glass === "alle_glazen" && nonAlcohol === "alle_non_alcohol" && alcohol in item.alcohol) ||
+				(glass === "alle_glazen" && nonAlcohol in item.nonAlcohol && alcohol === "alle_alcohol") ||
+				(glass === "alle_glazen" && nonAlcohol in item.nonAlcohol && alcohol in item.alcohol) ||
+				(glass === item.glass && nonAlcohol === "alle_non_alcohol" && alcohol === "alle_alcohol") ||
+				(glass === item.glass && nonAlcohol === "alle_non_alcohol" && alcohol in item.alcohol) ||
+				(glass === item.glass && nonAlcohol in item.nonAlcohol && alcohol === "alle_alcohol") ||
+				(glass === item.glass && nonAlcohol in item.nonAlcohol && alcohol in item.alcohol)) {
+				selected.push(item);
 			}
 		}
-		if(glassArray.length ===  0) {
+		if(selected.length ===  0) {
 			document.getElementById('content').innerHTML = "<h2>Helaas heb ik dit niet gevonden</h2>";
 		} else {
-			return glassArray;
+			return selected;
 		}
 	}
 }
