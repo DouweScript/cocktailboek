@@ -153,6 +153,7 @@ class Cocktail {
 			} else {
 				vol = this.alcohol[key][0] * volShotglas;
 			}
+
 			usedVolume += vol;
 			alcCont += alcoholItem.alcPer/100 * vol;
 			price += alcoholItem.price * vol / alcoholItem.vol;
@@ -191,7 +192,7 @@ class Cocktail {
 			}
 			usedVolume += useVol;
 		}
-		this.alcPer = (alcCont/usedVolume * 100).toFixed(2);
+		this.alcPer = (alcCont/glassVolume * 100).toFixed(2);
 		this.price = price.toFixed(2);
 
 	}
