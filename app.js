@@ -144,4 +144,19 @@ app.put("/admin/alcohol", (req, res) => {
     res.sendStatus(200);
 });
 
+app.get("/admin/nonalcohol", (req, res) => {
+    res.sendFile(path.join(__dirname, '/html/admin/nonalcohol.html'));
+});
+
+app.put("/admin/nonalcohol", (req, res) => {
+    if (req.query.remove) {
+        removeDrink(req.query.remove);
+    } else if (req.query.edit) {
+        editDrink(req.body);
+    } else if (req.query.add) {
+        addDrink(req.body);
+    }
+    res.sendStatus(200);
+});
+
 app.listen(3000)

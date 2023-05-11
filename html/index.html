@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/styles/style.css" rel="stylesheet" type="text/css">
 		<link href="/styles/shared.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta charset="utf-8">
 		<meta name="alles" content="yes">
 		<title>Bolksche Cocktailboek</title>
@@ -13,17 +14,21 @@
 	<body>
 		<header id="header">
 			<ul id="navbar">
-				<li id="randomCocktail"><a href="javascript:void(0)">Random Cocktail</a></li>
-				<li id="backToAll" style="display: none"><a href="javascript:void(0)">Alle cocktails</a></li>
+				<a id="hamburger" class="icon" style="display: none">
+					<i class="fa fa-bars"></i>
+				</a>
+				<div class="topnav" id="topnav">
+				<li id="randomCocktail"><a>Random Cocktail</a></li>
+				<li id="backToAll" style="display: none"><a>Alle cocktails</a></li>
 				<li id="login"><a href="/login">Log In</a></li>
 				<li id="logout" style="display:none"><a href="/logout">Log Out</a></li>
 				<li id="new" style="display:none"><a href="/new">Nieuwe Cocktail</a></li>
 				<li class="dropdown" id="admin" style="display:none">
-					<a href="javascript:void(0)">Admin</a>
+					<a>Admin</a>
 					<div class="dropdown-content">
 						<a href="/admin/cocktails">Cocktails</a>
 						<a href="/admin/alcohol">Alcohols</a>
-						<a href="#">Non Alcohols</a>
+						<a href="/admin/nonalcohol">Non Alcohols</a>
 					</div>
 				</li>
 				<li class="filter">
@@ -55,6 +60,7 @@
 
 					<input id="search" type="text" placeholder="Zoek een Cocktail">
 				</li>
+				</div>
 			</ul>
 		</header>
 

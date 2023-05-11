@@ -64,7 +64,7 @@ function printToPage(database) {
 			alcPer.step = ".1";
 
 			let alcPerLabel = document.createElement("label");
-			alcPerLabel.innerHTML = "Alcohol percentage [%]";
+			alcPerLabel.innerHTML = "Alcohol gehalte [%]";
 			alcPerLabel.htmlFor = alcPer.id;
 
 			div.append(alcPerLabel, alcPer);
@@ -215,7 +215,6 @@ function addNew() {
 
 	butDiv.append(edit);
 	div.appendChild(butDiv);
-	console.log(document.getElementById("content").firstChild);
 	document.getElementById('content').insertBefore(div, document.getElementById("content").firstChild);
 }
 

@@ -56,6 +56,10 @@ p{
     z-index: 2;
 }
 
+header {
+    background-color: #80090C;
+}
+
 header ul {
     list-style-type: none;
     margin: 0;
@@ -94,7 +98,7 @@ header li a:hover {
     position: absolute;
     background-color: #CB2821;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 4;
 }
 
 .dropdown-content a{
@@ -164,7 +168,16 @@ button:hover{
 /* Tablet Scherm */
 @media screen and (min-width: 760px) and (max-width: 1000px){
     header{
-        height: 108px;
+        height: available;
+        font-size: x-large;
+    }
+
+    .filter{
+        float: left !important;
+    }
+
+    .window{
+        border-radius: 25px;
     }
 }
 
@@ -172,6 +185,56 @@ button:hover{
 /* Telefoon Scherm*/
 @media screen and (max-width: 760px){
     header{
-        height: 108px;
+        font-size: x-large;
+    }
+
+    #content{
+        margin-top: 10vh;
+    }
+
+    .icon {
+        display: block !important;
+        background: #80090C;
+        color: #ee2f28;
+        position: absolute;
+        font-size: xxx-large;
+        margin: 0px;
+        padding: 2vw;
+        right: 0px;
+        top: 0px;
+        z-index: 3;
+    }
+
+    .topnav{
+        display: none;
+        position: relative;
+        z-index: 2;
+        height: 34vh;
+        max-height: 50vh;
+        background-color: #80090C;
+    }
+
+    .dropdown-content a{
+        font-size: x-large;
+    }
+
+    select{
+        max-width: 40%;
+        min-width: 40%;
+        font-size: large;
+    }
+
+    input{
+        max-width: 80%;
+        min-width: 80%;
+        font-size: large;
+    }
+
+    .filter{
+        float: left !important;
+    }
+
+    .window{
+        border-radius: 25px;
     }
 }

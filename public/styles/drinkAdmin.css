@@ -47,14 +47,14 @@ label {
 }
 
 #edit{
-	max-width: 40%;
+	max-width: 45%;
 	max-height: 100%;
 	margin-left: 5%;
 	float: left;
 }
 
 #remove{
-	max-width:  40%;
+	max-width:  45%;
 	max-height: 100%;
 	margin-right: 5%;
 	float: right;
@@ -70,8 +70,8 @@ label {
 
 	.drink{
 		margin: 1%;
-		height: 250px;
-		width: 300px;
+		height: 200px;
+		width: 270px;
 		border-radius: 25px;
 	}
 }

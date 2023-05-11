@@ -48,6 +48,8 @@ select{
 	float: right;
 	font-size: inherit;
 	border: 1px solid darkgray;
+	margin: 0px;
+	padding: 0px;
 }
 
 input{
@@ -55,12 +57,17 @@ input{
 	text-align: left;
 	font-size: inherit;
 	border: 1px solid darkgray;
+	margin: 0px;
+	padding: 0px;
 }
 
 textarea{
 	float: right;
 	text-align: left;
 	font-size: inherit;
+	margin: -2px;
+	padding: 0px;
+	border: 1px solid darkgray;
 }
 
 /* Desktop Scherm*/
@@ -82,7 +89,7 @@ textarea{
 
 	select{
 		height: available;
-		width: calc(60% - 2px);
+		width: 60%;
 	}
 
 	input{
@@ -106,14 +113,18 @@ textarea{
 /* Tablet Scherm */
 @media screen and (min-width: 760px) and (max-width: 1000px){
 	form{
-		width: 80vw;
-		vertical-align: center;
+		min-width: 80vw;
+		max-width: 80vw;
+	}
+
+	fieldset{
+		border-radius: 25px;
 	}
 
 	.field{
 		width: 90%;
 		height: fit-content;
-		font-size: xx-large;
+		font-size: large;
 	}
 
 	select{
@@ -123,7 +134,13 @@ textarea{
 
 	input{
 		height: available;
-		width: 60%;
+		width: calc(60% - 2px);
+	}
+
+	.hoeveelheid {
+		float: right;
+		width: calc(30% - 2px);
+		margin-left: 4px;
 	}
 
 	textarea{

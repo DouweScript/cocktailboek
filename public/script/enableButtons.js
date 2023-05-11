@@ -107,3 +107,18 @@ if (location.pathname === "/new") {
 		}
 	};
 }
+
+document.getElementById("hamburger").onclick = function() {
+	let bar = document.getElementById("topnav");
+	let content = document.getElementById("content");
+	if (bar.style.display !== "none"){
+		bar.style.display = "none";
+		content.style.top = "0px";
+		content.style.marginTop = "10vh";
+		content.zIndex = "none";
+	} else {
+		bar.style.display = "inline-block";
+		content.style.marginTop = "-18vh";
+		content.zIndex = -1;
+	}
+}

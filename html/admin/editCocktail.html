@@ -12,7 +12,14 @@
     <header id="header">
         <ul id="navbar">
             <li><a href="/admin/cocktails" id="terug">Terug</a></li>
-            <li><a href="/admin" id="admin">Admin</a></li>
+            <li class="dropdown" id="admin">
+                <a>Admin</a>
+                <div class="dropdown-content">
+                    <a href="/admin/cocktails">Cocktails</a>
+                    <a href="/admin/alcohol">Alcohols</a>
+                    <a href="/admin/nonalcohol">Non Alcohols</a>
+                </div>
+            </li>
         </ul>
     </header>
 
