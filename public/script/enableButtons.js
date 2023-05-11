@@ -16,7 +16,6 @@ if (location.pathname === "/new") {
 	document.getElementById("reset").onclick = reset;
 
 } else if (["/", "/admin/cocktails"].includes(location.pathname)) {
-	console.log("HELL");
 	//zorgt voor de interactie op de webpagina
 	document.getElementById("selectNonAlcohol").onclick = function(){
 		printToWebpage(returnSelected());
@@ -38,21 +37,21 @@ if (location.pathname === "/new") {
 		printToWebpage(returnSelected());
 	};
 
-	document.getElementById("sorteer").onchange = function(){
-		switch(document.getElementById("sorteer").value){
-			case "Alfabetische Volgorde":
+	document.getElementById("sort").onchange = function(){
+		switch(document.getElementById("sort").value){
+			case "Alfabetisch":
 				sortAlpha();
 				break;
-			case "Prijs Laag -> Hoog":
+			case "Prijs laag -> Hoog":
 				sortByPriceLH();
 				break;
-			case "Prijs Hoog -> Laag":
+			case "Prijs hoog -> Laag":
 				sortByPrice();
 				break;
-			case "Alcoholpercentage Laag -> Hoog":
+			case "Alcohol laag -> hoog":
 				sortByAlcLH();
 				break;
-			case "Alcoholpercentage Hoog -> Laag":
+			case "Alcohol hoog -> laag":
 				sortByAlc();
 				break;
 			}

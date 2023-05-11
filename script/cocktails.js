@@ -27,8 +27,9 @@ function refreshDatabase() {
 	for (let name in cocktailDB) {
 		try{
 			let cock = cocktailDB[name];
-
-			cocktailDB[name] = Cocktail.create(cock.name, cock.glass.toLowerCase(), cock.alcohol, cock.nonAlcohol, cock.creator, cock.desc, false);
+			let temp = Cocktail.create(cock.name, cock.glass.toLowerCase(), cock.alcohol, cock.nonAlcohol, cock.creator, cock.desc, false);
+			delete cocktailDB[name];
+			cocktailDB[getId(name)] = temp;
 		} catch (e) {
 			console.log("ERR: " + name + " could not conform!");
 			console.log(e.message);

@@ -29,6 +29,22 @@ function blockEvent(e){
 	e.preventDefault();
 }
 
+function printToPage(database) {
+
+	for (let item in database) {
+		console.log(item);
+		let drink = database[item];
+		let div = document.createElement("div");
+
+
+		if ("alcper" in drink) {
+
+		}
+	}
+
+}
+
+
 if (location.pathname.includes("/admin/cocktails/edit")) {
 	const cocktailID = new URLSearchParams(window.location.search).get('cocktail');
 	if (cocktailID in cocktailDB) {

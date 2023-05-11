@@ -13,11 +13,6 @@ p{
 	padding: 0;
 }
 
-#headercontainer{
-	height: inherit;
-	width: inherit;
-}
-
 .cocktail{
 	background-color: white;
 	border-color: grey;
@@ -25,15 +20,7 @@ p{
 	border-style: solid;
 	text-align: center;
 	position: relative;
-}
-
-.fill_hid{
-	display:none;
-}
-
-#selecteer{
-	float: right;
-	margin: auto 2%;
+	z-index: 1 !important;
 }
 
 #adminDiv{
@@ -42,20 +29,20 @@ p{
 	max-height: 15%;
 	height: 15%;
 	position: absolute;
-	bottom: 10px;
+	bottom: 0px;
 }
 
 #edit{
-	max-width: calc(35% - 10px);
+	max-width: 35%;
 	max-height: 100%;
-	margin: 0px 10px;
+	margin: 0px 5%;
 	float: left;
 }
 
 #remove{
-	max-width: calc(35% - 10px);
+	max-width: 35%;
 	max-height: 100%;
-	margin: 0px 10px;
+	margin: 0px 5%;
 	float: right;
 }
 
@@ -76,26 +63,6 @@ p{
 
 	ul{
 		margin-left: 20px;
-	}
-
-	#selecteer{
-		max-width: 30vw;
-		min-width: 30vw;
-	}
-
-	select{
-		height: available;
-		margin-bottom: 2%;
-		max-width: 12vw;
-		width: 12vw;
-	}
-
-	input{
-		text-align: center;
-		border: 1px solid darkgray;
-		padding: 0px;
-		width: 30vw;
-		max-width: calc(30vw - 2px);
 	}
 }
 
@@ -118,37 +85,6 @@ p{
 		margin-left: 20px;
 	}
 
-	#selecteer{
-		margin-left: 5%;
-		margin-right: 5%;
-	}
-
-	.afterclick{
-		width: 40%;
-		margin-left: 4%;
-		margin-right: 2%;
-		font-size: 16px;
-	}
-
-	select{
-		float: left;
-		width: 27%;
-		margin-top: 10px;
-		margin-right: 3%;
-		margin-left: 3%;
-		height: 20px;
-	}
-
-	input{
-		float: left;
-		text-align: center;
-		border-radius: 2%;
-		height: 50px;
-		width: 84%;
-		margin-top: 10px;
-		margin-left: 8%;
-		margin-right: 8%;
-	}
 }
 
 
@@ -165,21 +101,6 @@ p{
 		width: 80%;
 		margin-top: 10%;
 		border-radius: 20px;
-	}
-
-	select{
-		width: 25%;
-		margin: 5px;
-		content: "\A";
-		white-space: pre-line;
-	}
-
-	input{
-		margin: 10px;
-		width: 82%;
-		height: 50px;
-		text-align: center;
-		font-size: 20px;
 	}
 
 	ul{

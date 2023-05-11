@@ -33,7 +33,7 @@ function sortOnKeys(db) {
         tempDict[sorted[i]] = db[sorted[i]];
     }
 
-    return db;
+    return tempDict;
 }
 
 //function die naar de database schrijft
@@ -77,4 +77,9 @@ function nonAlcohol(name, price, vol) {
 	nonAlcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
 }
 
-module.exports = { alcoholDB, alcohol, nonAlcoholDB, nonAlcohol, databaseWriter}
+function removeDrink(name) {
+
+}
+
+
+module.exports = { alcoholDB, alcohol, nonAlcoholDB, nonAlcohol, databaseWriter, removeDrink}

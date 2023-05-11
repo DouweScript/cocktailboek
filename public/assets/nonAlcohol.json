@@ -1,117 +1,117 @@
 {
-	"appelsap": {
-		"name": "Appelsap",
-		"price": 0.80,
-		"vol": 250
-	},
-	"bitter_lemon": {
-		"name": "Bitter Lemon",
-		"price": 0.80,
-		"vol": 250
-	},
-	"chocomel": {
-		"name": "Chocomel",
-		"price": 0.80,
-		"vol": 250
-	},
-	"cola": {
-		"name": "Cola",
-		"price": 0.80,
-		"vol": 250
-	},
-	"fanta": {
-		"name": "Fanta",
-		"price": 0.80,
-		"vol": 250
-	},
-	"sinaasappelsap": {
-		"name": "Sinaasappelsap",
-		"price": 0.80,
-		"vol": 250
-	},
-	"sprite": {
-		"name": "Sprite",
-		"price": 0.80,
-		"vol": 250
-	},
-	"bananensap": {
-		"name": "Bananensap",
-		"price": 1.00,
-		"vol": 250
-	},
-	"cassis": {
-		"name": "Cassis",
-		"price": 0.80,
-		"vol": 250
-	},
-	"monin_rietsuiker": {
-		"name": "Monin Rietsuiker",
-		"price": 0.80,
-		"vol": 40
-	},
-	"monin_amaretto": {
-		"name": "Monin Amaretto",
-		"price": 0.80,
-		"vol": 40
-	},
-	"monin_hazelnoot": {
-		"name": "Monin Hazelnoot",
-		"price": 0.80,
-		"vol": 40
-	},
-	"monin_karamel": {
-		"name": "Monin Karamel",
-		"price": 0.80,
-		"vol": 40
-	},
-	"monin_grenadine": {
-		"name": "Monin Grenadine",
-		"price": 0.80,
-		"vol": 40
-	},
-	"tonic": {
-		"name": "Tonic",
-		"price": 0.80,
-		"vol": 250
-	},
-	"ginger_ale": {
-		"name": "Ginger Ale",
-		"price": 0.80,
-		"vol": 250
-	},
-	"ice_tea": {
-		"name": "Ice Tea",
-		"price": 0.80,
-		"vol": 250
-	},
-	"ice_tea_green": {
-		"name": "Ice Tea Green",
-		"price": 0.80,
-		"vol": 250
-	},
-	"aa": {
-		"name": "AA",
-		"price": 1.20,
-		"vol": 330
-	},
-	"water": {
-		"name": "water",
-		"price": 0,
-		"vol": 1
-	},
-	"limoensap": {
-		"name": "Limoensap",
-		"price": 2.93,
-		"vol": 1000
-	},
-	"citroensap": {
-		"name": "Citroensap",
-		"price": 2.93,
-		"vol": 1000
-	},
-	"ginger_beer": {
-		"name": "Ginger Beer",
-		"price": 1.20,
-		"vol": 200
-	}
+  "aa": {
+    "name": "AA",
+    "price": 1.2,
+    "vol": 330
+  },
+  "appelsap": {
+    "name": "Appelsap",
+    "price": 0.8,
+    "vol": 250
+  },
+  "bananensap": {
+    "name": "Bananensap",
+    "price": 1,
+    "vol": 250
+  },
+  "bitter_lemon": {
+    "name": "Bitter Lemon",
+    "price": 0.8,
+    "vol": 250
+  },
+  "cassis": {
+    "name": "Cassis",
+    "price": 0.8,
+    "vol": 250
+  },
+  "chocomel": {
+    "name": "Chocomel",
+    "price": 0.8,
+    "vol": 250
+  },
+  "citroensap": {
+    "name": "Citroensap",
+    "price": 2.93,
+    "vol": 1000
+  },
+  "cola": {
+    "name": "Cola",
+    "price": 0.8,
+    "vol": 250
+  },
+  "fanta": {
+    "name": "Fanta",
+    "price": 0.8,
+    "vol": 250
+  },
+  "ginger_ale": {
+    "name": "Ginger Ale",
+    "price": 0.8,
+    "vol": 250
+  },
+  "ginger_beer": {
+    "name": "Ginger Beer",
+    "price": 1.2,
+    "vol": 200
+  },
+  "ice_tea": {
+    "name": "Ice Tea",
+    "price": 0.8,
+    "vol": 250
+  },
+  "ice_tea_green": {
+    "name": "Ice Tea Green",
+    "price": 0.8,
+    "vol": 250
+  },
+  "limoensap": {
+    "name": "Limoensap",
+    "price": 2.93,
+    "vol": 1000
+  },
+  "monin_amaretto": {
+    "name": "Monin Amaretto",
+    "price": 0.8,
+    "vol": 40
+  },
+  "monin_grenadine": {
+    "name": "Monin Grenadine",
+    "price": 0.8,
+    "vol": 40
+  },
+  "monin_hazelnoot": {
+    "name": "Monin Hazelnoot",
+    "price": 0.8,
+    "vol": 40
+  },
+  "monin_karamel": {
+    "name": "Monin Karamel",
+    "price": 0.8,
+    "vol": 40
+  },
+  "monin_rietsuiker": {
+    "name": "Monin Rietsuiker",
+    "price": 0.8,
+    "vol": 40
+  },
+  "sinaasappelsap": {
+    "name": "Sinaasappelsap",
+    "price": 0.8,
+    "vol": 250
+  },
+  "sprite": {
+    "name": "Sprite",
+    "price": 0.8,
+    "vol": 250
+  },
+  "tonic": {
+    "name": "Tonic",
+    "price": 0.8,
+    "vol": 250
+  },
+  "water": {
+    "name": "water",
+    "price": 0,
+    "vol": 1
+  }
 }

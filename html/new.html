@@ -10,19 +10,24 @@
     </head>
 
     <header id="header">
-      <div id="headercontainer">
-        <div id="buttons">
-            <a href="/"><button id="terug">Terug</button></a>
-            <a href="/admin"><button id="admin">Admin</button></a>
-        </div>
-      </div>
+        <ul id="navbar">
+            <li><a href="/" id="terug">Terug</a></li>
+            <li class="dropdown" id="admin" style="display:none">
+                <a href="javascript:void(0)">Admin</a>
+                <div class="dropdown-content">
+                    <a href="/admin/cocktails">Cocktails</a>
+                    <a href="/admin/alcohol">Alcohols</a>
+                    <a href="#">Non Alcohols</a>
+                </div>
+            </li>
+        </ul>
     </header>
 
     <body>
     <form action="/new" method="POST">
       <fieldset>
           <div class="field">
-            <h3>Nieuwe cocktail</h3>
+            <h2>Nieuwe cocktail</h2>
           </div>
 
           <div class="field">
@@ -89,6 +94,8 @@
 
     <script src="/script/getDrank.js"> </script>
     <script src="/script/nieuwecocktail_functions.js"></script>
+    <script src="/script/functions.js"></script>
     <script src="/script/enableButtons.js"></script>
+    <script src="/script/loginButtons.js"></script>
     </body>
 </html>

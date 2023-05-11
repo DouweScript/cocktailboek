@@ -16,7 +16,7 @@
 			<li id="logout"><a href="/logout">Log Out</a></li>
 			<li id="new"><a href="/new">Nieuwe Cocktail</a></li>
 			<li class="filter">
-				<select id="sort">
+				<select id="sortAlcohol">
 					<option id="alphabet">Alfabetisch</option>
 					<option id="lowhigh">Prijs laag -> hoog</option>
 					<option id="highlow">Prijs hoog -> laag</option>
@@ -24,25 +24,7 @@
 					<option id="alchighlow">Alcohol hoog -> laag</option>
 				</select>
 
-				<select id="selectGlass">
-					<option selected="selected">Alle Glazen</option>
-					<option id="selectLongdrink">Longdrink</option>
-					<option id="selectTumbler">Tumbler</option>
-					<option id="selectPapa">Papa</option>
-					<option id="selectPul">Pul</option>
-					<option id="selectPitcher">Pitcher</option>
-					<option id="selectShot">Shot</option>
-				</select>
-
-				<select id="selectNonAlcohol">
-					<option selected="selected">Alle Non Alcohol</option>
-				</select>
-
-				<select id="selectAlcohol">
-					<option selected="selected">Alle Alcohol</option>
-				</select>
-
-				<input id="search" type="text" placeholder="Zoek een Cocktail">
+				<input id="searchAlcohol" type="text" placeholder="Zoek een Cocktail">
 			</li>
 		</ul>
 	</header>
@@ -61,11 +43,10 @@
 			<button id="no"  style="margin-left: 5%;">Nee</button>
 		</div>
 
-		<script src="/script/getDrank.js"></script>
 		<script src="/script/functions.js"></script>
-		<script src="/script/getCocktails.js"></script>
 		<script src="/script/adminFunctions.js"></script>
 		<script src="/script/enableButtons.js"></script>
+		<script src="/script/alcoholAdminInit.js"></script>
 
 	</body>
 </html>

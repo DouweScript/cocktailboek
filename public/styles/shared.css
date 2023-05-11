@@ -1,5 +1,29 @@
+@font-face{
+    font-family: "Bierstadt";
+    src: url("/assets/BIERSTADT.ttf");
+}
+
+@font-face{
+    font-family: "Bierstadt";
+    src: url("/assets/BIERSTADT_BOLD.ttf");
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "Bierstadt";
+    src: url("/assets/BIERSTADT_ITALIC.ttf");
+    font-style: italic;
+}
+
+@font-face{
+    font-family: "Bierstadt";
+    src: url("/assets/BIERSTADT_BOLD_ITALIC.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
 body {
-    font-family: 'Open sans';
+    font-family: 'Bierstadt';
     text-align: center;
     background-image: url("/assets/achtergrond.png");
     margin: 0;
@@ -29,31 +53,68 @@ p{
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     cursor: pointer;
+    z-index: 2;
 }
 
-button{
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    padding: 0px;
-    border-radius: 6px;
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: #80090C;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    margin: 12px;
 }
 
-header{
+header li {
+    float: left;
+}
+
+.filter{
+    float: right !important;
+    padding: 14px 16px;
+}
+
+header li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header li a:hover {
     background-color: #CB2821;
-    width: 100%;
+}
+
+.dropdown{
     display: inline-block;
 }
 
-button:hover{
+.dropdown-content{
+    display: none;
+    position: absolute;
     background-color: #CB2821;
-    transform: scale(1.02);
-    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.dropdown-content a{
+    display: block;
+    text-align: left;
+    color: white;
+    font-family: "Open sans";
+    font-size: 20px;
+    padding: 12px 16px;
+    margin-bottom: 2px;
+    background-color: #CB2821;
+    height: available;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+header input{
+    border: 1px solid darkgray;
 }
 
 .window{
@@ -65,23 +126,35 @@ button:hover{
  	background-color: white;
 	border: 2px solid gray;
 	text-align: center;
+    z-index: 3;
+}
+
+.window h1{
+    margin: 2%;
+}
+
+button{
+    font-size: 30px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: #80090C;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover{
+    color: #CB2821;
+    transform: translate(1.02%);
 }
 
 /* Desktop Scherm*/
 @media screen and (min-width: 1000px){
 
     header{
-        height: 124px;
-    }
-
-    button{
-        float: left;
-        height: 100px;
-        width: 200px;
+        height: available;
     }
 
     .window{
-        width: 500px;
         border-radius: 25px;
     }
 }
@@ -92,21 +165,11 @@ button:hover{
     header{
         height: 108px;
     }
-
-    button{
-        height: 100px;
-        width: 200px;
-    }
 }
 
 
 /* Telefoon Scherm*/
 @media screen and (max-width: 760px){
-    button{
-        height: 50px;
-        width: 35vw;
-    }
-
     header{
         height: 108px;
     }

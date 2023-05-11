@@ -5,7 +5,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 //laad cocktails
-const {nonAlcoholDB, alcoholDB} = require("./script/drank");
+const {nonAlcoholDB, alcoholDB, databaseWriter, removeDrink} = require("./script/drank");
 const {Cocktail, refreshDatabase, removeCocktail} = require("./script/cocktails");
 
 const app = express();
@@ -71,6 +71,8 @@ app.use(cookieParser());
 app.use(helmet());
 
 refreshDatabase();
+databaseWriter("alcohol");
+databaseWriter("nonAlcohol");
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/html/index.html'));
@@ -123,6 +125,16 @@ app.post("/admin/cocktails/edit", (req, res) => {
     removeCocktail(req.query.cocktail);
     parseForm(data);
     res.redirect("/admin/cocktails");
+});
+
+app.get("/admin/alcohol", (req, res) => {
+    res.sendFile(path.join(__dirname, '/html/admin/alcohol.html'));
+});
+
+app.put("/admin/alcohol", (req, res) => {
+    if (req.query.remove) {
+        removeDrink(req.query.remove);
+    }
 });
 
 app.listen(3000)

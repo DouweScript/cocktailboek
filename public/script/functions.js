@@ -71,14 +71,15 @@ function printCocktail(cocktail){
 
 	let fillList = document.createElement("label");
 	fillList.innerHTML = 'Aanvullen met ';
-	//zet het aan te vullen vocht erbij als het het heeft
+	//zet het aan te vullen vocht erbij als het dat heeft
 	if (fill.length > 0) {
 		for (let item in fill){
 			let drank = fill[item];
-			if (item > 1 && item < fill.length - 1) {
-				fillList.innerHTML += ", {} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
-			} else if (item === 0){
+			item = parseInt(item);
+			if (item === 0){
 				fillList.innerHTML += "{} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
+			} else if (item > 1 && item < fill.length - 1) {
+				fillList.innerHTML += ", {} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
 			} else {
 				fillList.innerHTML += " & {} <a class='fill_hid'>(reken {}x af)</a>".format(drank[0].name, drank[1][0]);
 			}

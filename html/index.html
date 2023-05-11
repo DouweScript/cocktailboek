@@ -12,26 +12,30 @@
 
 	<body>
 		<header id="header">
-			<div id="headercontainer">
-				<div id="buttons">
-					<button id="randomCocktail">Krijg een random Cocktail</button>
-					<button id="backToAll" style="display: none">Terug naar alle cocktails</button>
-					<a href="/login"><button id="login">Log In</button></a>
-					<a href="/logout"><button id="logout" style="display:none">Log Out</button></a>
-					<a href="/new"><button id="new" style="display:none">Nieuwe Cocktail</button></a>
-					<a href="/admin"><button id="admin" style="display:none">Admin</button></a>
-				</div>
-				<br>
-				<div id="selecteer">
-					<select id="sorteer" style="float:left;margin-right:2%;">
-						<option id="alphabet">Alfabetische Volgorde</option>
-						<option id="lowhigh">Prijs Laag -> Hoog</option>
-						<option id="highlow">Prijs Hoog -> Laag</option>
-						<option id="alclowhigh">Alcoholpercentage Laag -> Hoog</option>
-						<option id="alchighlow">Alcoholpercentage Hoog -> Laag</option>
+			<ul id="navbar">
+				<li id="randomCocktail"><a href="javascript:void(0)">Random Cocktail</a></li>
+				<li id="backToAll" style="display: none"><a href="javascript:void(0)">Alle cocktails</a></li>
+				<li id="login"><a href="/login">Log In</a></li>
+				<li id="logout" style="display:none"><a href="/logout">Log Out</a></li>
+				<li id="new" style="display:none"><a href="/new">Nieuwe Cocktail</a></li>
+				<li class="dropdown" id="admin" style="display:none">
+					<a href="javascript:void(0)">Admin</a>
+					<div class="dropdown-content">
+						<a href="/admin/cocktails">Cocktails</a>
+						<a href="/admin/alcohol">Alcohols</a>
+						<a href="#">Non Alcohols</a>
+					</div>
+				</li>
+				<li class="filter">
+					<select id="sort">
+						<option id="alphabet">Alfabetisch</option>
+						<option id="lowhigh">Prijs laag -> hoog</option>
+						<option id="highlow">Prijs hoog -> laag</option>
+						<option id="alclowhigh">Alcohol laag -> hoog</option>
+						<option id="alchighlow">Alcohol hoog -> laag</option>
 					</select>
 
-					<select id="selectGlass" style="float:right;margin-left:2%;">
+					<select id="selectGlass">
 						<option selected="selected">Alle Glazen</option>
 						<option id="selectLongdrink">Longdrink</option>
 						<option id="selectTumbler">Tumbler</option>
@@ -41,21 +45,17 @@
 						<option id="selectShot">Shot</option>
 					</select>
 
-					<br>
-
-					<select id="selectNonAlcohol" style="float:left;margin-right:2%;">
+					<select id="selectNonAlcohol">
 						<option selected="selected">Alle Non Alcohol</option>
 					</select>
 
-					<select id="selectAlcohol" style="float:right;margin-left:2%;">
+					<select id="selectAlcohol">
 						<option selected="selected">Alle Alcohol</option>
 					</select>
 
-					<br>
-
 					<input id="search" type="text" placeholder="Zoek een Cocktail">
-				</div>
-			</div>	
+				</li>
+			</ul>
 		</header>
 
 		<div id="content">

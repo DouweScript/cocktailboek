@@ -8,12 +8,11 @@ form{
 	position: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50px;
-	border-radius: 25px;
+	margin-top: 25px;
 }
 
 fieldset{
-	background-color: #80090C;
+	background-color: white;
 	border: 2px solid gray;
 }
 
@@ -69,6 +68,10 @@ textarea{
 	form{
 		min-width: 40vw;
 		max-width: 40vw;
+	}
+
+	fieldset{
+		border-radius: 25px;
 	}
 
 	.field{
