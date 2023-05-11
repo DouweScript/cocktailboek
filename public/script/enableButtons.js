@@ -58,4 +58,52 @@ if (location.pathname === "/new") {
 	};
 
 	document.getElementById("backToAll").onclick = backToAll;
+} else if (["/admin/alcohol", "/admin/nonalcohol"].includes(location.pathname)) {
+	let db = [];
+
+	if (location.pathname.includes("nonalcohol")) {
+		for (let item in nonAlcoholDB){
+			item = nonAlcoholDB[item];
+			db.push(item);
+		}
+	} else {
+		for (let item in alcoholDB){
+			item = alcoholDB[item];
+			db.push(item);
+		}
+	}
+
+	document.getElementById("new").onclick = function() {
+		addNew();
+	}
+
+	document.getElementById("search").onkeyup = function(){
+		search(db);
+	};
+
+	document.getElementById("sort").onchange = function(){
+		switch(document.getElementById("sort").value){
+			case "Alfabetisch":
+				sortAlpha(db);
+				break;
+			case "Prijs laag -> Hoog":
+				sortByPriceLH(db);
+				break;
+			case "Prijs hoog -> Laag":
+				sortByPrice(db);
+				break;
+			case "Alcohol laag -> hoog":
+				sortByAlcLH(db);
+				break;
+			case "Alcohol hoog -> laag":
+				sortByAlc(db);
+				break;
+			case "Volume laag -> hoog":
+				sortByVolLH(db);
+				break;
+			case "Voluem hoog -> laag":
+				sortByVol(db);
+				break;
+		}
+	};
 }

@@ -31,19 +31,229 @@ function blockEvent(e){
 
 function printToPage(database) {
 
+	document.getElementById('content').innerHTML = "";
 	for (let item in database) {
-		console.log(item);
+		let type;
 		let drink = database[item];
+
 		let div = document.createElement("div");
+		div.className = "drink";
 
+		let name = document.createElement("h3");
+		name.innerHTML = drink.name;
+		div.appendChild(name);
 
-		if ("alcper" in drink) {
+		const serveSize = document.createElement("input");
+		serveSize.value = drink.vol;
+		serveSize.type = "number";
+		serveSize.step = "1";
+		serveSize.id = "serveSize";
 
+		let serveSizeLabel = document.createElement("label");
+		serveSizeLabel.innerHTML = "Serveer volume [mL]";
+		serveSizeLabel.htmlFor = serveSize.id;
+
+		div.append(serveSizeLabel, serveSize);
+
+		if ("alcPer" in drink) {
+			type = "alcohol";
+			const alcPer = document.createElement("input");
+			alcPer.value = drink.alcPer;
+			alcPer.id = "alcPer";
+			alcPer.type = "number";
+			alcPer.step = ".1";
+
+			let alcPerLabel = document.createElement("label");
+			alcPerLabel.innerHTML = "Alcohol percentage [%]";
+			alcPerLabel.htmlFor = alcPer.id;
+
+			div.append(alcPerLabel, alcPer);
+
+		} else{
+			type = "nonalcohol";
 		}
+
+		const price = document.createElement("input");
+		price.value = drink.price;
+		price.type = "number";
+		price.step = ".01";
+		price.id = "price";
+
+		let priceLabel = document.createElement("label");
+		priceLabel.innerHTML = "Prijs €";
+		priceLabel.htmlFor = price.id;
+
+		div.append(priceLabel, price);
+
+		let butDiv = document.createElement("div");
+		butDiv.id = "butDiv";
+
+		let edit = document.createElement("button");
+		edit.id = "edit";
+		edit.onclick = () => {
+			let put = new XMLHttpRequest();
+			let newDrink = {name: drink.name, price: price.value, vol: serveSize.value}
+
+			if (type === "alcohol") {
+				newDrink["alcPer"] = alcPer.value;
+			}
+
+			put.open("PUT", "/admin/{}?edit={}".format(type, getId(drink.name)));
+			put.setRequestHeader("Content-Type", "application/json");
+			put.onreadystatechange = function() {
+				if (put.status === 200) {
+					location.reload();
+				}
+			}
+			put.send(JSON.stringify(newDrink));
+		};
+		edit.innerHTML = "Submit";
+
+		let remove = document.createElement("button");
+		remove.id = "remove";
+		remove.onclick = () => {
+			confirm("removeConfirm", () => {
+				div.remove();
+				let put = new XMLHttpRequest();
+				put.open("PUT", "/admin/" + type + "?remove=" + getId(drink.name));
+				put.onreadystatechange = function() {
+					if (put.status === 200) {
+						location.reload();
+					}
+				}
+				put.send();
+			});
+		};
+		remove.innerHTML = "Remove";
+
+		butDiv.append(edit, remove);
+		div.appendChild(butDiv);
+		document.getElementById('content').appendChild(div);
 	}
 
 }
 
+function addNew() {
+	let type;
+
+	if (location.pathname.includes("nonalcohol")) {
+		type = "nonAlcohol";
+	} else {
+		type = "alcohol";
+	}
+
+	let div = document.createElement("div");
+	div.className = "drink";
+
+	const name = document.createElement("input");
+	name.placeholder = "Naam";
+	name.id = "name";
+	div.append(name);
+
+	const serveSize = document.createElement("input");
+	serveSize.value = 40;
+	serveSize.type = "number";
+	serveSize.step = "1";
+	serveSize.id = "serveSize";
+
+	let serveSizeLabel = document.createElement("label");
+	serveSizeLabel.innerHTML = "Serveer volume [mL]";
+	serveSizeLabel.htmlFor = serveSize.id;
+
+	div.append(serveSizeLabel, serveSize);
+
+	const alcPer = document.createElement("input");
+	if (type === "alcohol") {
+		alcPer.value = 38;
+		alcPer.id = "alcPer";
+		alcPer.type = "number";
+		alcPer.step = ".1";
+
+		let alcPerLabel = document.createElement("label");
+		alcPerLabel.innerHTML = "Alcohol percentage [%]";
+		alcPerLabel.htmlFor = alcPer.id;
+
+		div.append(alcPerLabel, alcPer);
+
+	}
+
+	const price = document.createElement("input");
+	price.value = 1.3;
+	price.type = "number";
+	price.step = ".01";
+	price.id = "price";
+
+	let priceLabel = document.createElement("label");
+	priceLabel.innerHTML = "Prijs €";
+	priceLabel.htmlFor = price.id;
+
+	div.append(priceLabel, price);
+
+	let butDiv = document.createElement("div");
+	butDiv.id = "butDiv";
+
+	let edit = document.createElement("button");
+	edit.id = "edit";
+	edit.onclick = () => {
+		let put = new XMLHttpRequest();
+		let newDrink = {name: name.value, price: price.value, vol: serveSize.value}
+
+		if (type === "alcohol") {
+			newDrink["alcPer"] = alcPer.value;
+		}
+
+		put.open("PUT", "/admin/{}?add={}".format(type, getId(name.value)));
+		put.setRequestHeader("Content-Type", "application/json");
+		put.onreadystatechange = function() {
+			if (put.status === 200) {
+				location.reload();
+			}
+		}
+		put.send(JSON.stringify(newDrink));
+	};
+	edit.innerHTML = "Submit";
+
+	butDiv.append(edit);
+	div.appendChild(butDiv);
+	console.log(document.getElementById("content").firstChild);
+	document.getElementById('content').insertBefore(div, document.getElementById("content").firstChild);
+}
+
+function search(array){
+	let input = document.getElementById('search').value.toString().toLowerCase();
+	let searchedArray = array.filter(element => element.name.toString().toLowerCase().includes(input))
+	printToPage(searchedArray);
+}
+
+function sortAlpha(database) {
+	const sort = database.sort();
+	printToPage(sort);
+}
+function sortByPriceLH(database){
+	const sort = database.sort((a,b) => (a.price - b.price));
+	printToPage(sort);
+}
+function sortByPrice(database){
+	const sort = database.sort((a,b) => (b.price - a.price));
+	printToPage(sort);
+}
+function sortByAlcLH(database){
+	const sort = database.sort((a,b) => (a.alcPer - b.alcPer));
+	printToPage(sort);
+}
+function sortByAlc(database){
+	const sort = database.sort((a,b) => (b.alcPer - a.alcPer));
+	printToPage(sort);
+}
+
+function sortByVolLH(database) {
+	const sort = database.sort((a,b) => (a.vol - b.vol));
+	printToPage(sort);
+}
+function sortByVol(database) {
+	const sort = database.sort((a,b) => (b.vol - a.vol));
+	printToPage(sort);
+}
 
 if (location.pathname.includes("/admin/cocktails/edit")) {
 	const cocktailID = new URLSearchParams(window.location.search).get('cocktail');

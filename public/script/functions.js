@@ -144,6 +144,11 @@ function printCocktail(cocktail){
 				div.remove();
 				let put = new XMLHttpRequest();
 				put.open("PUT", "/admin/cocktails?remove=" + getId(cocktail.name));
+				put.onreadystatechange = function() {
+					if (put.status === 200) {
+						location.reload();
+					}
+				}
 				put.send();
 			});
 		};

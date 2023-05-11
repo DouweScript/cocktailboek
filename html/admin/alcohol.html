@@ -2,7 +2,7 @@
 <html lang="nl">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="/styles/style.css" rel="stylesheet" type="text/css">
+		<link href="/styles/drinkAdmin.css" rel="stylesheet" type="text/css">
 		<link href="/styles/shared.css" rel="stylesheet" type="text/css">
 		<meta charset="utf-8">
 		<meta name="alles" content="yes">
@@ -14,17 +14,20 @@
 		<ul id="navbar">
 			<li id="backToAll"><a href="/">Terug</a></li>
 			<li id="logout"><a href="/logout">Log Out</a></li>
-			<li id="new"><a href="/new">Nieuwe Cocktail</a></li>
+			<li id="new"><a href="javascript:void(0)">Nieuwe Drank</a></li>
 			<li class="filter">
-				<select id="sortAlcohol">
+				<select id="sort">
 					<option id="alphabet">Alfabetisch</option>
 					<option id="lowhigh">Prijs laag -> hoog</option>
 					<option id="highlow">Prijs hoog -> laag</option>
 					<option id="alclowhigh">Alcohol laag -> hoog</option>
 					<option id="alchighlow">Alcohol hoog -> laag</option>
+					<option id="vollowhigh">Volume laag -> hoog</option>
+					<option id="volhighlow">Volume hoog -> laag</option>
+
 				</select>
 
-				<input id="searchAlcohol" type="text" placeholder="Zoek een Cocktail">
+				<input id="search" type="text" placeholder="Zoek een Cocktail">
 			</li>
 		</ul>
 	</header>
@@ -45,8 +48,8 @@
 
 		<script src="/script/functions.js"></script>
 		<script src="/script/adminFunctions.js"></script>
-		<script src="/script/enableButtons.js"></script>
 		<script src="/script/alcoholAdminInit.js"></script>
+		<script src="/script/enableButtons.js"></script>
 
 	</body>
 </html>

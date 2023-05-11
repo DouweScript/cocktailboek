@@ -3,6 +3,10 @@ const fs = require("fs");
 let alcoholDB = {};
 let nonAlcoholDB = {};
 
+function getId(name) {
+	return name.toLowerCase().replace(/ /g, "_");
+}
+
 //function die de database leest en in een callback zet
 function databaseReader() {
 	try {
@@ -64,22 +68,50 @@ databaseReader();
 //constructor voor een alcohol object
 function alcohol(name, alcPer, price, vol) {
 	this.name = name;
-	this.alcPer = alcPer;
-	this.price = price;
-	this.vol = vol;
-	alcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
+	this.alcPer = parseFloat(alcPer);
+	this.price = parseFloat(price);
+	this.vol = parseFloat(vol);
+	alcoholDB[getId(name)] = {name: this.name, alcPer: this.alcPer, price: this.price, vol: this.vol};
 }
 
 function nonAlcohol(name, price, vol) {
 	this.name = name;
-	this.price = price;
-	this.vol = vol;
-	nonAlcoholDB[name.toLowerCase().replaceAll(" ", "_")] = this;
+	this.price = parseFloat(price);
+	this.vol = parseFloat(vol);
+	nonAlcoholDB[getId(name)] = {name: this.name, price: this.price, vol: this.vol};
 }
 
 function removeDrink(name) {
+	if (getId(name) in alcoholDB) {
+		delete alcoholDB[name];
+		databaseWriter("alcohol");
+	} else {
+		delete nonAlcoholDB[name];
+		databaseWriter("nonAlcohol");
+	}
+}
+
+function editDrink(json) {
+	if (getId(json.name) in alcoholDB) {
+		delete alcoholDB[json.name];
+		alcohol(json.name, json.alcPer, json.price, json.vol);
+		databaseWriter("alcohol");
+	} else if (getId(json.name) in nonAlcoholDB) {
+		delete nonAlcoholDB[json.name];
+		nonAlcohol(json.name, json.price, json.vol);
+		databaseWriter("nonAlcohol");
+	}
+}
+
+function addDrink(json) {
+	if ("alcPer" in json) {
+		alcohol(json.name, json.alcPer, json.price, json.vol);
+		databaseWriter("alcohol");
+	} else {
+		nonAlcohol(json.name, json.price, json.vol);
+		databaseWriter("nonAlcohol");
+	}
 
 }
 
-
-module.exports = { alcoholDB, alcohol, nonAlcoholDB, nonAlcohol, databaseWriter, removeDrink}
+module.exports = { alcoholDB, alcohol, nonAlcoholDB, nonAlcohol, databaseWriter, removeDrink, editDrink, addDrink}

@@ -5,7 +5,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 //laad cocktails
-const {nonAlcoholDB, alcoholDB, databaseWriter, removeDrink} = require("./script/drank");
+const {nonAlcoholDB, alcoholDB, databaseWriter, removeDrink, editDrink, addDrink} = require("./script/drank");
 const {Cocktail, refreshDatabase, removeCocktail} = require("./script/cocktails");
 
 const app = express();
@@ -65,6 +65,7 @@ function parseForm(data) {
 }
 
 //start server
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(cookieParser());
@@ -114,6 +115,7 @@ app.put("/admin/cocktails", (req, res) => {
     if (req.query.remove) {
         removeCocktail(req.query.remove);
     }
+    res.sendStatus(200);
 });
 
 app.get("/admin/cocktails/edit", (req, res) => {
@@ -134,7 +136,12 @@ app.get("/admin/alcohol", (req, res) => {
 app.put("/admin/alcohol", (req, res) => {
     if (req.query.remove) {
         removeDrink(req.query.remove);
+    } else if (req.query.edit) {
+        editDrink(req.body);
+    } else if (req.query.add) {
+        addDrink(req.body);
     }
+    res.sendStatus(200);
 });
 
 app.listen(3000)
