@@ -1,64 +1,91 @@
-if (location.pathname === "/new") {
-	document.getElementById("selectAlcohol").addEventListener("mousedown", (e) => {
-		if (e.target.tagName.toLowerCase() === "option") {
-			selectEasy(e.target);
-			e.preventDefault();
+function enableButton(elementId, eventType, listener, antiLocations) {
+	let e = document.getElementById(elementId);
+	antiLocations = (antiLocations === undefined) ? [""] : antiLocations;
+	if (e !== undefined && e !== null && typeof e !== undefined && !antiLocations.includes(location.pathname)){
+		e.addEventListener(eventType, listener);
+	}
+}
+enableButton("selectAlcohol", "mousedown", (e) => {
+	if (e.target.tagName.toLowerCase() === "option") {
+		selectEasy(e.target);
+		console.log("YO");
+		e.preventDefault();
+	}
+});
+enableButton("selectNonAlcohol", "mousedown", (e) => {
+	if (e.target.tagName.toLowerCase() === "option") {
+		selectEasy(e.target);
+		e.preventDefault();
+	}
+});
+
+enableButton("reset", "click", function() {
+document.getElementById("alcoholAmount").innerHTML = "";
+    document.getElementById("nonAlcoholAmount").innerHTML = "";
+
+    let selectAlcohol = document.getElementById("selectAlcohol");
+    for (let i = 0; i < selectAlcohol.children.length; i++) {
+        let child = selectAlcohol.children.item(i);
+        if (child.hasAttribute("selected")) {
+            child.removeAttribute("selected");
+        }
+    }
+
+    let selectNonAlcohol = document.getElementById("selectNonAlcohol");
+    for (let i = 0; i < selectNonAlcohol.children.length; i++) {
+        let child = selectNonAlcohol.children.item(i);
+        if (child.hasAttribute("selected")) {
+            child.removeAttribute("selected");
+        }
+    }
+});
+
+//zorgt voor de interactie op de webpagina
+enableButton("selectNonAlcohol", "click", function(){
+	printToWebpage(returnSelected());
+});
+
+enableButton("selectAlcohol", "click", function(){
+	printToWebpage(returnSelected());
+});
+
+enableButton("randomCocktail", "click", function(){
+	randomCocktail();
+});
+
+enableButton("search", "keyup", function(){
+
+	console.log("YO MOMA");
+	searchCocktail(returnSelected());
+}, ["/admin/alcohol", "/admin/nonalcohol"]);
+
+enableButton("selectGlass", "change", function(){
+	printToWebpage(returnSelected());
+});
+
+enableButton("sort", "change", function(){
+	switch(document.getElementById("sort").value){
+		case "Alfabetisch":
+			sortAlpha();
+			break;
+		case "Prijs laag -> Hoog":
+			sortByPriceLH();
+			break;
+		case "Prijs hoog -> Laag":
+			sortByPrice();
+			break;
+		case "Alcohol laag -> hoog":
+			sortByAlcLH();
+			break;
+		case "Alcohol hoog -> laag":
+			sortByAlc();
+			break;
 		}
-	});
+}, ["/admin/alcohol", "/admin/nonalcohol"]);
 
-	document.getElementById("selectNonAlcohol").addEventListener("mousedown", (e) => {
-		if (e.target.tagName.toLowerCase() === "option") {
-			selectEasy(e.target);
-			e.preventDefault();
-		}
-	});
+enableButton("backToAll", "click", backToAll);
 
-	document.getElementById("reset").onclick = reset;
-
-} else if (["/", "/admin/cocktails"].includes(location.pathname)) {
-	//zorgt voor de interactie op de webpagina
-	document.getElementById("selectNonAlcohol").onclick = function(){
-		printToWebpage(returnSelected());
-	};
-
-	document.getElementById('selectAlcohol').onclick = function(){
-		printToWebpage(returnSelected());
-	};
-
-	document.getElementById("randomCocktail").onclick = function(){
-		randomCocktail();
-	};
-
-	document.getElementById("search").onkeyup = function(){
-		searchCocktail(returnSelected());
-	};
-
-	document.getElementById("selectGlass").onchange = function(){
-		printToWebpage(returnSelected());
-	};
-
-	document.getElementById("sort").onchange = function(){
-		switch(document.getElementById("sort").value){
-			case "Alfabetisch":
-				sortAlpha();
-				break;
-			case "Prijs laag -> Hoog":
-				sortByPriceLH();
-				break;
-			case "Prijs hoog -> Laag":
-				sortByPrice();
-				break;
-			case "Alcohol laag -> hoog":
-				sortByAlcLH();
-				break;
-			case "Alcohol hoog -> laag":
-				sortByAlc();
-				break;
-			}
-	};
-
-	document.getElementById("backToAll").onclick = backToAll;
-} else if (["/admin/alcohol", "/admin/nonalcohol"].includes(location.pathname)) {
+if (location.pathname.includes("admin")) {
 	let db = [];
 
 	if (location.pathname.includes("nonalcohol")) {
@@ -73,15 +100,15 @@ if (location.pathname === "/new") {
 		}
 	}
 
-	document.getElementById("new").onclick = function() {
+	enableButton("new", "click", function() {
 		addNew();
-	}
+	});
 
-	document.getElementById("search").onkeyup = function(){
+	enableButton("search", "keyup", function(){
 		search(db);
-	};
+	});
 
-	document.getElementById("sort").onchange = function(){
+	enableButton("sort", "change", function(){
 		switch(document.getElementById("sort").value){
 			case "Alfabetisch":
 				sortAlpha(db);
@@ -105,20 +132,15 @@ if (location.pathname === "/new") {
 				sortByVol(db);
 				break;
 		}
-	};
+	});
 }
 
-document.getElementById("hamburger").onclick = function() {
+enableButton("hamburger", "click", function() {
 	let bar = document.getElementById("topnav");
 	let content = document.getElementById("content");
 	if (bar.style.display !== "none"){
 		bar.style.display = "none";
-		content.style.top = "0px";
-		content.style.marginTop = "10vh";
-		content.zIndex = "none";
 	} else {
 		bar.style.display = "inline-block";
-		content.style.marginTop = "-18vh";
-		content.zIndex = -1;
 	}
-}
+});

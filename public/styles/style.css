@@ -24,8 +24,8 @@ p{
 }
 
 #adminDiv{
-	max-width: inherit;
-	width: inherit;
+	max-width: 100%;
+	width: 100%;
 	max-height: 15%;
 	height: 15%;
 	position: absolute;
@@ -35,24 +35,23 @@ p{
 #edit{
 	max-width: 35%;
 	max-height: 100%;
-	margin: 0px 5%;
+	margin: 5%;
 	float: left;
+	text-align: left;
 }
 
 #remove{
 	max-width: 35%;
 	max-height: 100%;
-	margin: 0px 5%;
+	margin: 5%;
 	float: right;
+	text-align: right;
 }
 
 
 
 /* Desktop Scherm*/
 @media screen and (min-width: 1200px){
-	#content{
-		margin-top: 30px;
-	}
 
 	.cocktail{
 		margin: 1%;
@@ -69,9 +68,6 @@ p{
 
 /* Tablet Scherm */
 @media screen and (min-width: 760px) and (max-width: 1200px){
-	#content{
-		margin-top: 100px;
-	}
 
 	.cocktail{
 		margin: 1%;

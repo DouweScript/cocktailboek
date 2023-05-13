@@ -33,6 +33,8 @@ function selectEasy(el) {
                     input.required = true;
                     label.innerHTML = ele.innerHTML;
                     label.style.marginLeft = '1%';
+                    label.style.maxWidth = "35%";
+                    label.style.textAlign = "left";
                     select.name = "selectType" + ele.value.replaceAll(" ", "_");
                     select.id = "selectType" + ele.value.replaceAll(" ", "_");
                     select.className = "hoeveelheid";
@@ -80,25 +82,4 @@ function selectEasy(el) {
         return true;
     }
     return false;
-}
-
-function reset() {
-    document.getElementById("alcoholAmount").innerHTML = "";
-    document.getElementById("nonAlcoholAmount").innerHTML = "";
-
-    let selectAlcohol = document.getElementById("selectAlcohol");
-    for (let i = 0; i < selectAlcohol.children.length; i++) {
-        let child = selectAlcohol.children.item(i);
-        if (child.hasAttribute("selected")) {
-            child.removeAttribute("selected");
-        }
-    }
-
-    let selectNonAlcohol = document.getElementById("selectNonAlcohol");
-    for (let i = 0; i < selectNonAlcohol.children.length; i++) {
-        let child = selectNonAlcohol.children.item(i);
-        if (child.hasAttribute("selected")) {
-            child.removeAttribute("selected");
-        }
-    }
 }

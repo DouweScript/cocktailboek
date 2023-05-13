@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html lang="nl">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="/styles/style.css" rel="stylesheet" type="text/css">
-		<link href="/styles/shared.css" rel="stylesheet" type="text/css">
-		<meta charset="utf-8">
-		<meta name="alles" content="yes">
-		<title>Bolksche Cocktailboek</title>
-		<link rel="shortcut icon" href="/assets/bolkvis.png"/>
-	</head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+    <link href="/styles/shared.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="alles" content="yes">
+    <title>Bolksche Cocktailboek</title>
+    <link rel="shortcut icon" href="/assets/bolkvis.png"/>
+</head>
 
-	<header id="header">
-		<ul id="navbar">
-			<li id="backToAll"><a href="/">Terug</a></li>
-			<li id="logout"><a href="/logout">Log Out</a></li>
-			<li class="dropdown" id="admin">
-				<a>Admin</a>
-				<div class="dropdown-content">
-					<a href="/admin/alcohol">Alcohols</a>
-					<a href="/admin/nonalcohol">Non Alcohols</a>
-				</div>
-			</li>
-			<li id="new"><a href="/new">Nieuwe Cocktail</a></li>
-			<li class="filter">
-				<select id="sort">
-					<option id="alphabet">Alfabetisch</option>
-					<option id="lowhigh">Prijs laag -> hoog</option>
-					<option id="highlow">Prijs hoog -> laag</option>
-					<option id="alclowhigh">Alcohol laag -> hoog</option>
-					<option id="alchighlow">Alcohol hoog -> laag</option>
-				</select>
+<header id="header">
+    <ul id="navbar">
+        <a href="/" class="home" , style="display: none">Bolksch Cocktailboek</a>
+        <a id="hamburger" class="icon" style="display: none">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="topnav" id="topnav">
+            <li id="backToAll"><a href="/">Terug</a></li>
+            <li id="logout"><a href="/logout">Log Out</a></li>
+            <li class="dropdown" id="admin">
+                <a>Admin</a>
+                <div class="dropdown-content">
+                    <a href="/admin/alcohol">Alcohols</a>
+                    <a href="/admin/nonalcohol">Non Alcohols</a>
+                </div>
+            </li>
+            <li id="new"><a href="/new">Nieuwe Cocktail</a></li>
+            <li class="filter">
+                <select id="sort">
+                    <option id="alphabet">Alfabetisch</option>
+                    <option id="lowhigh">Prijs laag -> hoog</option>
+                    <option id="highlow">Prijs hoog -> laag</option>
+                    <option id="alclowhigh">Alcohol laag -> hoog</option>
+                    <option id="alchighlow">Alcohol hoog -> laag</option>
+                </select>
 
-				<select id="selectGlass">
-					<option selected="selected">Alle Glazen</option>
-					<option id="selectLongdrink">Longdrink</option>
-					<option id="selectTumbler">Tumbler</option>
-					<option id="selectPapa">Papa</option>
-					<option id="selectPul">Pul</option>
-					<option id="selectPitcher">Pitcher</option>
-					<option id="selectShot">Shot</option>
-				</select>
+                <select id="selectGlass">
+                    <option selected="selected">Alle Glazen</option>
+                    <option id="selectLongdrink">Longdrink</option>
+                    <option id="selectTumbler">Tumbler</option>
+                    <option id="selectPapa">Papa</option>
+                    <option id="selectPul">Pul</option>
+                    <option id="selectPitcher">Pitcher</option>
+                    <option id="selectShot">Shot</option>
+                </select>
 
-				<select id="selectNonAlcohol">
-					<option selected="selected">Alle Non Alcohol</option>
-				</select>
+                <select id="selectNonAlcohol">
+                    <option selected="selected">Alle Non Alcohol</option>
+                </select>
 
-				<select id="selectAlcohol">
-					<option selected="selected">Alle Alcohol</option>
-				</select>
+                <select id="selectAlcohol">
+                    <option selected="selected">Alle Alcohol</option>
+                </select>
 
-				<input id="search" type="text" placeholder="Zoek een Cocktail">
-			</li>
-		</ul>
-	</header>
+                <input id="search" type="text" placeholder="Zoek een Cocktail">
+            </li>
+        </div>
+    </ul>
+</header>
 
-	<body>
+<body>
 
-		<div id="content">
-		</div>
+<div id="content">
+</div>
 
-		<div id="overlay"></div>
+<div id="overlay"></div>
 
-		<div id="removeConfirm" class="window">
-			<h1>Weet je het zeker?</h1>
-			<br>
-			<button id="yes" style="margin-right: 5%;">Ja</button>
-			<button id="no"  style="margin-left: 5%;">Nee</button>
-		</div>
+<div id="removeConfirm" class="window">
+    <h1>Weet je het zeker?</h1>
+    <br>
+    <button id="yes" style="margin-right: 5%;">Ja</button>
+    <button id="no" style="margin-left: 5%;">Nee</button>
+</div>
 
-		<script src="/script/getDrank.js"></script>
-		<script src="/script/functions.js"></script>
-		<script src="/script/getCocktails.js"></script>
-		<script src="/script/adminFunctions.js"></script>
-		<script src="/script/enableButtons.js"></script>
+<script src="/script/getDrank.js"></script>
+<script src="/script/functions.js"></script>
+<script src="/script/getCocktails.js"></script>
+<script src="/script/adminFunctions.js"></script>
+<script src="/script/enableButtons.js"></script>
 
-	</body>
+</body>
 </html>

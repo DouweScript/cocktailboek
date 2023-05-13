@@ -152,14 +152,13 @@ textarea{
 
 /* Telefoon Scherm*/
 @media screen and (max-width: 760px){
-	#terug {
-		margin: 29px;
+	form{
+		min-width: 95vw;
+		max-width: 95vw;
 	}
 
-
-	form{
-		width: 90vw;
-		vertical-align: center;
+	fieldset{
+		border-radius: 15px;
 	}
 
 	.field{
@@ -175,7 +174,13 @@ textarea{
 
 	input{
 		height: available;
-		width: 60%;
+		width: calc(60% - 2px);
+	}
+
+	.hoeveelheid {
+		float: right;
+		width: calc(30% - 2px);
+		margin-left: 4px;
 	}
 
 	textarea{

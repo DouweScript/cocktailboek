@@ -17,7 +17,7 @@ function parseForm(data) {
 
     console.log(data);
 
-    if (typeof data.selectAlcohol != "string") {
+    if (typeof data.header selectAlcohol != "string") {
         for (let item in data.selectAlcohol) {
             item = data.selectAlcohol[item];
             item = item.replaceAll(" ", "_");
