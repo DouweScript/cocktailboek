@@ -139,10 +139,12 @@ app.post("/new", (req, res) => {
 app.get("/login", (req, res) => {
 	checkCreateSession(req);
 	if (req.query.code === undefined && req.query.error === undefined) {
+		console.log("Redirecting to https://auth.debolk.nl/authenticate?response_type=code&client_id=cocktailboek&redirect_uri=https://cocktails.debolk.nl/login&state=" + req.session.stateID)
 		res.redirect("https://auth.debolk.nl/authenticate?response_type=code&client_id=cocktailboek&redirect_uri=https://cocktails.debolk.nl/login&state=" + req.session.stateID);
 	} else {
 		if (req.query.state.toString() !== req.session.stateID && req.query.error !== undefined) {
 			res.status(400);
+			res.redirect("/");
 		} else {
 			let post = https.request(prismPOST, (postRES) => {
 				const data = [];
@@ -183,6 +185,7 @@ app.get("/login", (req, res) => {
 								console.log("https://" + getPerm.host + getPerm.path);
 							} else {
 								res.status(403);
+								res.redirect("/");
 							}
 						});
 					});
@@ -200,6 +203,7 @@ app.get("/login", (req, res) => {
 				client_secret: client_secret
 			}));
 			post.end();
+			res.redirect("/");
 
 		}
 	}
