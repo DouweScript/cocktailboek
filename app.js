@@ -146,6 +146,8 @@ app.get("/login", (req, res) => {
 			res.status(400);
 			res.redirect("/");
 		} else {
+			console.log("Query: " + req.query);
+
 			let post = https.request(prismPOST, (postRES) => {
 				const data = [];
 				postRES.on("data", d => data.push(d));
