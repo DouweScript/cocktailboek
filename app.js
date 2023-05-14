@@ -11,7 +11,7 @@ const {readFileSync} = require("fs");
 const {removeDrink, editDrink, addDrink} = require("./script/drank");
 const {Cocktail, removeCocktail} = require("./script/cocktails");
 
-const client_secret = readFileSync("./client_secret", "utf-8");
+const client_secret = readFileSync("./client_secret", "utf-8").trimEnd();
 
 const prismPOST = {
 	hostname: "login.i.bolkhuis.nl",
