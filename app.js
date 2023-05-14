@@ -171,7 +171,7 @@ app.get("/login", (req, res) => {
 								res.cookie("bolk-oath-access-token", token);
 								req.session.user = jsonData.user_id;
 								console.log("Logged in " + jsonData.user_id + " with access token " + token);
-								console.log(jsonData.access_token);
+								// console.log(jsonData.access_token);
 								getPerm = https.request({
 									hostname: "login.i.bolkhuis.nl",
 									path: "/ictcom/?access_token=" + token,
@@ -179,6 +179,7 @@ app.get("/login", (req, res) => {
 								}, (getRes) => {
 									if (getRes.statusCode === 200) {
 										res.cookie("bolk-oath-permission", "true");
+										console.log("Admin permissions verified.")
 									}
 									res.redirect("/");
 								});
@@ -206,14 +207,13 @@ app.get("/login", (req, res) => {
 			}));
 			post.end();
 			console.log("Attempting to retrieve access token...");
-			console.log(JSON.stringify({
-				grant_type: "authorization_code",
-				redirect_uri: "https://cocktails.debolk.nl/login",
-				code: req.query.code,
-				client_id: "cocktailboek",
-				client_secret: client_secret
-			}));
-			res.redirect("/");
+			// console.log(JSON.stringify({
+			// 	grant_type: "authorization_code",
+			// 	redirect_uri: "https://cocktails.debolk.nl/login",
+			// 	code: req.query.code,
+			// 	client_id: "cocktailboek",
+			// 	client_secret: client_secret
+			// }));
 
 		}
 	}
