@@ -90,9 +90,9 @@ app.use(session({
 }));
 app.use(helmet());
 
-refreshDatabase();
-databaseWriter("alcohol");
-databaseWriter("nonAlcohol");
+// refreshDatabase();
+// databaseWriter("alcohol");
+// databaseWriter("nonAlcohol");
 
 function checkCreateSession(req) {
 	if (req.session.stateID === undefined) {
@@ -157,8 +157,10 @@ app.get("/login", (req, res) => {
 						const data = [];
 						getRes.on("data", d => data.push(d));
 						getRes.on("end", () => {
-							if (token === JSON.parse(Buffer.concat(data)).access_token) {
+							let jsonData = JSON.parse(Buffer.concat(data));
+							if (token === jsonData.access_token) {
 								res.cookie("bolk-oath-access-token", token);
+								console.log("Logged in " + jsonData.user_id);
 								getPerm = https.request({
 									hostname: "login.i.bolkhuis.nl",
 									path: "/ictcom/?access_token=" + token,
@@ -170,6 +172,8 @@ app.get("/login", (req, res) => {
 									res.redirect("/");
 								});
 								getPerm.end();
+								console.log("Attempting to retrieve admin permissions...")
+								console.log("https://" + getPerm.host + getPerm.path);
 							} else {
 								res.status(403);
 							}
