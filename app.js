@@ -203,6 +203,9 @@ app.get("/login", (req, res) => {
 				client_secret: client_secret
 			}));
 			post.end();
+			console.log("Attempting to retrieve access token...")
+			console.log("code: " + req.query.code)
+			console.log("secret: " + client_secret)
 			res.redirect("/");
 
 		}
