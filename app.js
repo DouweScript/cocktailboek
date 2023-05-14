@@ -8,8 +8,8 @@ const https = require("https");
 const {readFileSync} = require("fs");
 
 //laad cocktails
-const {databaseWriter, removeDrink, editDrink, addDrink} = require("./script/drank");
-const {Cocktail, refreshDatabase, removeCocktail} = require("./script/cocktails");
+const {removeDrink, editDrink, addDrink} = require("./script/drank");
+const {Cocktail, removeCocktail} = require("./script/cocktails");
 
 const client_secret = readFileSync("./client_secret", "utf-8");
 
@@ -161,6 +161,7 @@ app.get("/login", (req, res) => {
 						const data = [];
 						getRes.on("data", d => data.push(d));
 						getRes.on("end", () => {
+							let jsonData = JSON.parse(Buffer.concat(data));
 
 							if (token === jsonData.access_token && token !== undefined) {
 								res.cookie("bolk-oath-access-token", token);
