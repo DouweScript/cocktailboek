@@ -148,7 +148,11 @@ app.get("/login", (req, res) => {
 				const data = [];
 				postRES.on("data", d => data.push(d));
 				postRES.on("end", () => {
-					let token = JSON.parse(Buffer.concat(data)).access_token;
+					let jsonResponse = JSON.parse(Buffer.concat(data));
+					console.log(jsonResponse);
+
+					let token = jsonResponse.access_token;
+
 					get = https.request({
 						hostname: "login.i.bolkhuis.nl",
 						path: "/resource/?access_token=" + token,
@@ -157,9 +161,8 @@ app.get("/login", (req, res) => {
 						const data = [];
 						getRes.on("data", d => data.push(d));
 						getRes.on("end", () => {
-							let jsonData = JSON.parse(Buffer.concat(data));
-							console.log(jsonData);
-							if (token === jsonData.access_token) {
+
+							if (token === jsonData.access_token && token !== undefined) {
 								res.cookie("bolk-oath-access-token", token);
 								req.session.user = jsonData.user_id;
 								console.log("Logged in " + jsonData.user_id + " with access token " + token);
