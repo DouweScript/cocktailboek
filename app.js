@@ -146,7 +146,7 @@ app.get("/login", (req, res) => {
 			res.status(400);
 			res.redirect("/");
 		} else {
-			console.log("Query: " + req.query);
+			console.log("Query: " + req.query.code + "|" + req.query.state);
 
 			let post = https.request(prismPOST, (postRES) => {
 				const data = [];
@@ -205,9 +205,14 @@ app.get("/login", (req, res) => {
 				client_secret: client_secret
 			}));
 			post.end();
-			console.log("Attempting to retrieve access token...")
-			console.log("code: " + req.query.code)
-			console.log("secret: " + client_secret)
+			console.log("Attempting to retrieve access token...");
+			console.log(JSON.stringify({
+				grant_type: "authorization_code",
+				redirect_uri: "https://cocktails.debolk.nl/login",
+				code: req.query.code,
+				client_id: "cocktailboek",
+				client_secret: client_secret
+			}));
 			res.redirect("/");
 
 		}
