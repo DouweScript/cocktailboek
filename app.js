@@ -158,9 +158,12 @@ app.get("/login", (req, res) => {
 						getRes.on("data", d => data.push(d));
 						getRes.on("end", () => {
 							let jsonData = JSON.parse(Buffer.concat(data));
+							console.log(jsonData);
 							if (token === jsonData.access_token) {
 								res.cookie("bolk-oath-access-token", token);
-								console.log("Logged in " + jsonData.user_id);
+								req.session.user = jsonData.user_id;
+								console.log("Logged in " + jsonData.user_id + " with access token " + token);
+								console.log(jsonData.access_token);
 								getPerm = https.request({
 									hostname: "login.i.bolkhuis.nl",
 									path: "/ictcom/?access_token=" + token,
@@ -198,6 +201,7 @@ app.get("/login", (req, res) => {
 	}
 });
 app.get("/logout", (req, res) => {
+	console.log("Logged out " + req.session.user);
 	res.clearCookie("bolk-oath-access-token");
 	res.clearCookie("bolk-oath-permission");
 	res.redirect("/");
