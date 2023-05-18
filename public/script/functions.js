@@ -210,7 +210,7 @@ function backToAll(){
 
 		//test management
 		//https://login.i.bolkhuis.nl/ictcom/?access_token=example-access-token response should be 200 OK
-		if (true) {
+		if (getCookie("bolk-oath-permission") != null) {
 			let admin = document.getElementById("admin");
 			admin.style.display = "inherit";
 		}
@@ -239,6 +239,13 @@ function returnSelected(){
 	} else {
 		for (let key in cocktailDB) {
 			let item = cocktailDB[key];
+
+			if (item.nonAlcohol === null) {
+				item.nonAlcohol = [];
+			}
+			if (item.alcohol === null) {
+				item.alcohol = [];
+			}
 
 			if ((glass === "alle_glazen" && nonAlcohol === "alle_non_alcohol" && alcohol === "alle_alcohol") ||
 				(glass === "alle_glazen" && nonAlcohol === "alle_non_alcohol" && alcohol in item.alcohol) ||

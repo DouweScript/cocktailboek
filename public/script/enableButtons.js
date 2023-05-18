@@ -5,14 +5,14 @@ function enableButton(elementId, eventType, listener, antiLocations) {
 		e.addEventListener(eventType, listener);
 	}
 }
-enableButton("selectAlcohol", "mousedown", (e) => {
+enableButton("nieuweSelectAlcohol", "mousedown", (e) => {
 	if (e.target.tagName.toLowerCase() === "option") {
 		selectEasy(e.target);
 		console.log("YO");
 		e.preventDefault();
 	}
 });
-enableButton("selectNonAlcohol", "mousedown", (e) => {
+enableButton("nieuweSelectNonAlcohol", "mousedown", (e) => {
 	if (e.target.tagName.toLowerCase() === "option") {
 		selectEasy(e.target);
 		e.preventDefault();
@@ -128,7 +128,7 @@ if (location.pathname.includes("admin")) {
 			case "Volume laag -> hoog":
 				sortByVolLH(db);
 				break;
-			case "Voluem hoog -> laag":
+			case "Volume hoog -> laag":
 				sortByVol(db);
 				break;
 		}
@@ -137,7 +137,6 @@ if (location.pathname.includes("admin")) {
 
 enableButton("hamburger", "click", function() {
 	let bar = document.getElementById("topnav");
-	let content = document.getElementById("content");
 	if (bar.style.display !== "none"){
 		bar.style.display = "none";
 	} else {

@@ -4,7 +4,7 @@ function selectEasy(el) {
         if (el.hasAttribute('selected')) el.removeAttribute('selected');
         else el.setAttribute('selected', '');
 
-        if (el.parentNode.name === "selectAlcohol" || el.parentNode.name === "selectNonAlcohol") {
+        if (el.parentNode.name === "nieuweSelectAlcohol" || el.parentNode.name === "nieuweSelectNonAlcohol") {
 
             let type = el.parentNode.name.replace("select", "");
             type = type.charAt(0).toLowerCase() + type.slice(1);
